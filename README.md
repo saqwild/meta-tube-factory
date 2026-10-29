@@ -54,6 +54,28 @@ Video rendering itself is LTX-2.5 i2v, an external owner-run renderer —
 no Muse video generation model exists. Muse Glimmer and Muse Spark Open
 are open-weight, self-hosted only, not called from this repo.
 
+## Human in the loop — the safety system
+
+Automation drafts. Humans decide. The factory never publishes, never
+spends render budget, and never locks identity or scope without a person.
+
+- **Owner gates.** Stages flagged `owner_gate` in a channel profile stop
+  hard until a human runs `preflight.py complete ... --approve`. An agent
+  may prepare the work; it may never self-approve past a gate. At pilot QA
+  (04h), no agent may record a verdict for a clip nobody has watched.
+- **Compliance before script.** Stage `02b-compliance` runs before a word
+  of script exists. A BLOCKED verdict stops the episode outright.
+- **Scope lock.** At `01b` the owner approves what a complete explanation
+  must answer. Later stages may add to it, never silently shrink it.
+- **Verdicts, not vibes.** Every stage completes only when its validator
+  returns a passing verdict bound to the exact file hashes it read. Any
+  later edit makes that verdict stale and blocks completion.
+- **Spend control.** Validators are local and free; paid Muse calls happen
+  only after the free checks pass, so credit is spent on approved work.
+
+This human-gated design is the point: the factory is a production house
+with an accountable owner, not an unattended content pump.
+
 ## One flow, multiple channels
 
 `channel_profiles/<slug>/channel.json` is the only place a channel's
