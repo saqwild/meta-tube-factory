@@ -11,6 +11,7 @@ repo; selected clips and this log are committed.
 | 00-preflight | 2026-10-29 | preflight new, EP001 created | episode-state.json |
 | 01-ideation | 2026-10-29 | premise + story definition written, stage completed | story/premise.md, story/story-definition.md |
 | 01b-coverage-scan | 2026-10-29 | YouTube benchmark scan (4 queries), coverage map written, validators PASS, review + scope lock emitted | story/youtube-benchmark.md, story/coverage-map.json, story/coverage-review.json, story/coverage-scope.lock.json |
+| 02-research | 2026-10-29 | Live Muse Spark synthesis call; web sources per COV01-COV07; coverage validator PASS | story/research-notes.md |
 
 ## Notes
 

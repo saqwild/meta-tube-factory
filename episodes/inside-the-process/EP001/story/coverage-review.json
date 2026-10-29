@@ -1,13 +1,15 @@
 {
   "schema_version": 1,
   "episode_id": "EP001",
-  "stage": "01b-coverage-scan",
+  "stage": "02-research",
   "status": "PASS",
-  "reviewed_at_utc": "2026-10-29T21:40:29Z",
+  "reviewed_at_utc": "2026-10-29T21:43:20Z",
   "validator_sha256": "582c5604ff2a1bcfb75e906ce544e0f178e3176b411a1d57a9ffcf3f473d614a",
   "input_sha256": {
     "story/coverage-map.json": "99d9c594454e013e0a2f513fd3459910da4281b2c7abdb17fe92c54812025d00",
-    "story/youtube-benchmark.md": "037a63e932253513b3e2369ec619b19c301f36fc62ee9fbeb6a2a8a8b4913402"
+    "story/youtube-benchmark.md": "037a63e932253513b3e2369ec619b19c301f36fc62ee9fbeb6a2a8a8b4913402",
+    "story/coverage-scope.lock.json": "dacee73bc24b3c0e1dd5b4fe7f2ad9b6be8488c279e09833216ffdd4f6cf119c",
+    "story/research-notes.md": "e1c0303ee6e989172c8aa24c39c2cae47d8f730e062c99a2072aa27873295534"
   },
   "errors": [],
   "warnings": []
