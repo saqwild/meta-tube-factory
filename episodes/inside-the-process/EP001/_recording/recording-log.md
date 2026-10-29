@@ -23,3 +23,5 @@ repo; selected clips and this log are committed.
 | 02a-sourcing | 2026-10-29 | Claim + visualization ledgers, claims bound, owner approved | story/sources.md |
 | 02b-compliance | 2026-10-29 | 14-gate compliance CLEARED, owner approved | story/compliance.md |
 | 03a-writer | 2026-10-29 | Live Muse Wonder call; 12-row script, clip split PASS, coverage PASS | story/characters.md, story/script.md |
+| 03b-script-review | 2026-10-29 | Three independent review rounds, REVISE x2 then CLEARED, owner approved | story/script-review.md, story/script-review-final.md |
+| 04a-visual-brief | 2026-10-29 | Live Muse Wonder call; 8 scenes, 12 clips = 12 stills, locked masters verified | visual/scene-list.md |

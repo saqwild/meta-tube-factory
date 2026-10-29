@@ -13,3 +13,4 @@
 - 2026-10-29T21:55:19+00:00 -- owner-approved revision reopened from 03b-script-review to 03a-writer -- 03b follow-up: R1 R4 R5 R6 remainders
 - 2026-10-29T21:56:13+00:00 -- completed 03a-writer; digest 3e2cd98f; next: 03b-script-review
 - 2026-10-29T21:58:54+00:00 -- completed 03b-script-review (owner-approved); digest 1903529f; next: 04a-visual-brief
+- 2026-10-29T22:02:05+00:00 -- completed 04a-visual-brief; digest 261fd6e9; next: 04b-character-refs
