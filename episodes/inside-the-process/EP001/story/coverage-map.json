@@ -29,6 +29,9 @@
       "claim_ids": [
         "CLM-3",
         "CLM-4"
+      ],
+      "script_rows": [
+        "12"
       ]
     },
     {
@@ -39,6 +42,9 @@
       "question": "What are flour, water, yeast and salt, and where does each come from?",
       "claim_ids": [
         "CLM-1"
+      ],
+      "script_rows": [
+        "2"
       ]
     },
     {
@@ -49,6 +55,10 @@
       "question": "How are the ingredients mixed and kneaded before the main transformation?",
       "claim_ids": [
         "CLM-2"
+      ],
+      "script_rows": [
+        "3",
+        "6"
       ]
     },
     {
@@ -61,6 +71,11 @@
         "CLM-1",
         "CLM-2",
         "CLM-4"
+      ],
+      "script_rows": [
+        "4",
+        "5",
+        "8"
       ]
     },
     {
@@ -72,6 +87,10 @@
       "claim_ids": [
         "CLM-5",
         "CLM-6"
+      ],
+      "script_rows": [
+        "7",
+        "9"
       ]
     },
     {
@@ -83,6 +102,10 @@
       "claim_ids": [
         "CLM-7",
         "CLM-8"
+      ],
+      "script_rows": [
+        "10",
+        "11"
       ]
     },
     {
@@ -93,6 +116,10 @@
       "question": "How does the finished loaf get sliced, stored and eaten?",
       "claim_ids": [
         "CLM-8"
+      ],
+      "script_rows": [
+        "11",
+        "12"
       ]
     },
     {

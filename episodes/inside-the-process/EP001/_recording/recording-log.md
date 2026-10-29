@@ -19,3 +19,7 @@ repo; selected clips and this log are committed.
   English opening-caption sample on 2026-10-29); B01-B03 are the top
   eligible directly relevant videos. No transcript text is stored.
 - Next: owner approves 01b scope lock, then 02-research.
+
+| 02a-sourcing | 2026-10-29 | Claim + visualization ledgers, claims bound, owner approved | story/sources.md |
+| 02b-compliance | 2026-10-29 | 14-gate compliance CLEARED, owner approved | story/compliance.md |
+| 03a-writer | 2026-10-29 | Live Muse Wonder call; 12-row script, clip split PASS, coverage PASS | story/characters.md, story/script.md |
