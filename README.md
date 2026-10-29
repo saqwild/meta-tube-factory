@@ -13,22 +13,46 @@ spent.
 > [SUBMISSION.md](SUBMISSION.md) for the submission summary and
 > [META_MAPPING.md](META_MAPPING.md) for the model allocation.
 
-## The Meta Muse stack
+## The Meta stack
 
-Every model call goes through one client, `tools/meta_models.py`, to the
-Meta Model API (`https://api.meta.ai/v1`, key: `MODEL_API_KEY`).
+Five Meta models, five organs. Every call goes through one client,
+`tools/meta_models.py`, to the Meta Model API (`https://api.meta.ai/v1`,
+key: `MODEL_API_KEY`).
 
-| Job | Model | Where it works |
-|---|---|---|
-| Reasoning / planning | Muse Spark (`muse-spark-1.3`) | Coverage, research, sourcing, compliance, shot plan, prompt compile, metadata |
-| Creative writing | Muse Wonder (`muse-wonder-1.0`) | Script (03a), visual brief (04a) |
-| Image generation | Muse Image (`muse-image-1.0`) | Reference sheets (04b/04c), storyboards (04e), frame-0 stills (04f2) |
-| Segmentation | SAM 3.1 (`sam-3.1`) | Pilot QA on approved stills (04h) |
-| Speech-to-text | Muse Voice Transcribe (`muse-voice-transcribe-1.0`) | Render dialogue QA (05a) |
-| Video (external) | LTX-2.5 i2v | Renders each 20 s clip from its frame-0 still; no Muse video model exists, so this stays an external owner-run renderer |
+### Muse Spark series — the main brain
 
-Muse Glimmer and Muse Spark Open are open-weight, self-hosted only — they
-have no Model API ID and are not called from this repo.
+`muse-spark-1.3`. The best reasoning/planning model from Meta.
+Research synthesis, scriptwriting support, compliance, SEO, and coverage
+logic — every decision stage (01b, 02, 02a, 02b, 03b, 04d, 04f, 04f3, 06)
+runs on Spark.
+
+### Muse Wonder — the creative brain
+
+`muse-wonder-1.0`. Deep multi-step reasoning plus story planning.
+Complex branching, moral dilemmas, and plot consistency — the script
+(03a) and the visual brief (04a) run on Wonder.
+
+### Muse Image — the eyes
+
+`muse-image-1.0`. Image generation and edit.
+Character refs (04b), scene refs (04c), storyboards (04e), frame-0 stills
+(04f2), thumbnails, and B-roll.
+
+### Muse Voice Transcribe — the ears
+
+`muse-voice-transcribe-1.0`. Speech to text.
+Caption QA, audio audit (`tools/render_audio_audit.py`), and voiceover
+transcription at render QA (05a).
+
+### SAM 3.1 — the hands
+
+`sam-3.1`. Finds and separates each item in a photo or video.
+Segmentation, character consistency checks, and background isolation at
+pilot QA (04h).
+
+Video rendering itself is LTX-2.5 i2v, an external owner-run renderer —
+no Muse video generation model exists. Muse Glimmer and Muse Spark Open
+are open-weight, self-hosted only, not called from this repo.
 
 ## One flow, multiple channels
 
