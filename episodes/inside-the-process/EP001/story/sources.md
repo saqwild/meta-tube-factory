@@ -35,7 +35,7 @@ claims are made; no clinician review claimed).
 | VIS-05 | Crust browning and steam escaping at the surface | CLM-5, CLM-8 | Surface view, natural colour | Representation | Browning is shown as colour change, not a chemical diagram. |
 | VIS-06 | COV08 disclosure card over the mixing bowl opening | Approved scope, coverage-map COV08 | Text added in post, not generated | Neither | Exact disclosure: "the flour began as wheat in a field long before it reached this bowl". |
 
-| VIS-07 | Yeast described as workers/breathers and the rise as an engine (spoken metaphors) | CLM-1, CLM-10 | Spoken metaphor, no visual change | Metaphor | Mechanism wording stays literal in the same lines. |
+| VIS-07 | Yeast as workers/breathers, rise as engine, colour as receipt, patience as ingredient (spoken metaphors) | CLM-1, CLM-10 | Spoken metaphor, no visual change | Metaphor | Mechanism wording stays literal in the same lines. |
 | VIS-08 | Time-compression card: hours of fermentation shown in seconds | CLM-6 | Post-produced text card, stage 06a | Neither | Exact line planned: "Hours of rising, shown here in seconds." |
 ## Coverage binding
 
