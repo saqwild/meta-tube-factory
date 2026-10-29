@@ -25,3 +25,4 @@ repo; selected clips and this log are committed.
 | 03a-writer | 2026-10-29 | Live Muse Wonder call; 12-row script, clip split PASS, coverage PASS | story/characters.md, story/script.md |
 | 03b-script-review | 2026-10-29 | Three independent review rounds, REVISE x2 then CLEARED, owner approved | story/script-review.md, story/script-review-final.md |
 | 04a-visual-brief | 2026-10-29 | Live Muse Wonder call; 8 scenes, 12 clips = 12 stills, locked masters verified | visual/scene-list.md |
+| 04b-character-refs | 2026-10-29 | Locked masters copied byte-identical, identity viewed by eye, no generation spend | visual/references/manifest.md, visual/references/characters/*.png |
