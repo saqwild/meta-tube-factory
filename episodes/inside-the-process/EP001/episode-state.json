@@ -1,0 +1,75 @@
+{
+  "episode_id": "EP001",
+  "channel_slug": "inside-the-process",
+  "status": "open",
+  "stage_sequence": [
+    "00-preflight",
+    "01-ideation",
+    "01b-coverage-scan",
+    "02-research",
+    "02a-sourcing",
+    "02b-compliance",
+    "03a-writer",
+    "03b-script-review",
+    "04a-visual-brief",
+    "04b-character-refs",
+    "04c-scene-refs",
+    "04d-shot-plan",
+    "04e-storyboard",
+    "04f-ltx-prompt-draft",
+    "04f2-frame0-stills",
+    "04f3-ltx-prompt-final",
+    "04g-ltx-render-package",
+    "04h-ltx-pilot-qa",
+    "05-render-ingest",
+    "05a-render-qa",
+    "06-distribution-metadata",
+    "06a-postproduction-assembly",
+    "07-final-package-qa"
+  ],
+  "next_stage": "02-research",
+  "completed_stages": [
+    {
+      "stage": "00-preflight",
+      "completed_at": "2026-10-29T19:12:42+00:00",
+      "approved": false,
+      "note": ""
+    },
+    {
+      "stage": "01-ideation",
+      "completed_at": "2026-10-29T19:48:16+00:00",
+      "approved": false,
+      "note": "",
+      "deliverable_digest": {
+        "digest_sha256": "f85fdbb0c1211dea1636ed7846a9a870523ac41025ed58ec65430cbeaf1d496a",
+        "files": [
+          {
+            "path": "story/premise.md",
+            "sha256": "5672af3ac3a815af0602e163221d2e0bf2cd306396b4b941f9c6af469ed2a6d3"
+          }
+        ]
+      }
+    },
+    {
+      "stage": "01b-coverage-scan",
+      "completed_at": "2026-10-29T21:42:10+00:00",
+      "approved": true,
+      "note": "",
+      "deliverable_digest": {
+        "digest_sha256": "c0e1ce5182b4659e4bf8cafa6f38e786ed017b287dca00922848cb1504581622",
+        "files": [
+          {
+            "path": "story/coverage-scope.lock.json",
+            "sha256": "dacee73bc24b3c0e1dd5b4fe7f2ad9b6be8488c279e09833216ffdd4f6cf119c"
+          },
+          {
+            "path": "story/youtube-benchmark.md",
+            "sha256": "037a63e932253513b3e2369ec619b19c301f36fc62ee9fbeb6a2a8a8b4913402"
+          }
+        ]
+      }
+    }
+  ],
+  "created_at": "2026-10-29T19:12:36+00:00",
+  "updated_at": "2026-10-29T21:42:10+00:00"
+}

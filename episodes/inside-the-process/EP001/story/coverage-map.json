@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "episode_id": "EP001",
+  "topic": "how bread rises, inside the dough",
+  "archetype": "manufactured_product",
+  "process_chain": [
+    "milled flour, water, yeast, salt",
+    "mixing and hydration",
+    "kneading, gluten network forms",
+    "bulk fermentation, yeast releases carbon dioxide",
+    "bubbles inflate the network, dough rises",
+    "degassing and shaping",
+    "proofing, second rise",
+    "baking, oven spring and crust set",
+    "cooling, crumb sets",
+    "sliced loaf in use"
+  ],
+  "scope": {
+    "starts_at": "mixing bowl, dry ingredients meeting water",
+    "ends_at": "a cooled, sliced loaf being eaten"
+  },
+  "items": [
+    {"id": "COV01", "dimension": "composition", "priority": "MUST", "scope": "in", "question": "What is bread actually made of, and what does each part - crumb, crust, bubbles - do?"},
+    {"id": "COV02", "dimension": "raw_materials", "priority": "MUST", "scope": "in", "question": "What are flour, water, yeast and salt, and where does each come from?"},
+    {"id": "COV03", "dimension": "preparation", "priority": "MUST", "scope": "in", "question": "How are the ingredients mixed and kneaded before the main transformation?"},
+    {"id": "COV04", "dimension": "transformation", "priority": "MUST", "scope": "in", "question": "What makes the dough rise, and what changes again in the oven?"},
+    {"id": "COV05", "dimension": "conditions", "priority": "MUST", "scope": "in", "question": "What time, warmth and oven heat does each step need, and why?"},
+    {"id": "COV06", "dimension": "quality_control", "priority": "MUST", "scope": "in", "question": "How do you know the loaf is done and safe, and what defects happen?"},
+    {"id": "COV07", "dimension": "product_in_use", "priority": "MUST", "scope": "in", "question": "How does the finished loaf get sliced, stored and eaten?"},
+    {"id": "COV08", "dimension": "raw_materials", "priority": "MUST", "scope": "out", "question": "How is wheat grown, harvested and milled into flour?", "reason": "Farming and milling are separate full processes and their own episodes.", "disclosure": "the flour began as wheat in a field long before it reached this bowl"}
+  ],
+  "benchmark_topics": [
+    {"topic": "yeast makes dough rise", "seen_in": ["B01", "B02", "B03"], "item": "COV04"},
+    {"topic": "carbon dioxide trapped in dough", "seen_in": ["B01", "B03"], "item": "COV04"},
+    {"topic": "gluten network and kneading", "seen_in": ["B01", "B03"], "item": "COV03"},
+    {"topic": "what yeast is, dry packet to living dough", "seen_in": ["B02"], "item": "COV02"},
+    {"topic": "wheat kernels to flour", "seen_in": ["B01"], "item": "COV08"},
+    {"topic": "holes and bubbles in bread crumb", "seen_in": ["B02"], "item": "COV01"}
+  ],
+  "naive_viewer_questions": [
+    {"question": "Why does the dough get bigger if nothing is added?", "item": "COV04"},
+    {"question": "Is yeast alive, and do we eat it?", "item": "COV02"},
+    {"question": "Why knead if the yeast does the work?", "item": "COV03"},
+    {"question": "What are the holes in bread, and are they safe?", "item": "COV01"},
+    {"question": "Why does it rise again in the oven, then stop?", "item": "COV05"},
+    {"question": "How do bakers know it is cooked all the way through?", "item": "COV06"}
+  ]
+}
