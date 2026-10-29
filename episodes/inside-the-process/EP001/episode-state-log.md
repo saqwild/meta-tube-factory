@@ -8,3 +8,5 @@
 - 2026-10-29T21:44:41+00:00 -- completed 02a-sourcing (owner-approved); digest 9b8684d6; next: 02b-compliance
 - 2026-10-29T21:46:59+00:00 -- completed 02b-compliance (owner-approved); digest 6043f2c0; next: 03a-writer
 - 2026-10-29T21:49:48+00:00 -- completed 03a-writer; digest 8a25ac44; next: 03b-script-review
+- 2026-10-29T21:53:43+00:00 -- owner-approved revision reopened from 03b-script-review to 03a-writer -- 03b REVISE R1-R7
+- 2026-10-29T21:54:28+00:00 -- completed 03a-writer; digest c0ae3e94; next: 03b-script-review

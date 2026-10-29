@@ -19,6 +19,11 @@ claims are made; no clinician review claimed).
 | CLM-7 | The yeast in finished bread is dead; baking kills it. | https://www.pizzablab.com/learning-and-resources/baking/dough-baking-processes/ (yeast thermal death in stage table) | Objection beat ("is the yeast still alive?"), COV06 | None material; thermal death is gradual, script says "the heat kills the yeast as the loaf bakes". | SUPPORTED |
 | CLM-8 | Doneness is judged by crust colour, internal temperature, and sound/texture cues; under-baked crumb stays gummy, and cooling finishes crumb set. | https://dev.bakerpedia.com/processes/thermal-profiling/ ; https://www.sustainweb.org/realbread/articles/jul21-bread-science-101/ | Quality control and cooling, COV06/COV07 | Internal-temperature targets vary by loaf type; script gives no single universal number. | QUALIFIED |
 
+
+| CLM-9 | Salt slows yeast fermentation slightly and tightens the gluten network, helping dough hold gas and shape. | https://www.sustainweb.org/realbread/articles/jul21-bread-science-101/ (ingredients/salt function) | Salt role in row 2, COV02 | Amount varies by recipe; script makes no universal quantity claim. | SUPPORTED |
+| CLM-10 | Baker's yeast is a living single-celled organism sold dry and dormant; warm water and dough reactivate it. | https://science.howstuffworks.com/innovation/edible-innovations/bread.htm (yeast as living leavening) | Yeast identity and activation, row 2, COV02 | Strain products vary; no medical or probiotic claim is made. | SUPPORTED |
+| CLM-11 | Shaping presses out oversized gas bubbles and redistributes smaller ones; a tightened surface helps the shaped loaf hold its form during proofing. | https://www.sustainweb.org/realbread/articles/jul21-bread-science-101/ (shaping/proving overview) | Shaping beat, row 6, COV03 | Technique varies by loaf style; script describes this loaf only. | QUALIFIED |
+| CLM-12 | After cooling, crumb firms further as starch recrystallizes (staling) over hours to days; the crust softens as moisture migrates outward. | https://www.sustainweb.org/realbread/articles/jul21-bread-science-101/ (cooling/storage overview) | Storage and crumb-vs-crust, rows 11-12, COV01/COV07 | Rate varies with storage and formula; no storage guarantee is promised. | QUALIFIED |
 ## Visualization ledger
 
 | Visual ID | Planned illustration | Factual support/claim IDs | Scale/time/color/cutaway convention | Fiction or metaphor | Audience clarification |
@@ -30,6 +35,8 @@ claims are made; no clinician review claimed).
 | VIS-05 | Crust browning and steam escaping at the surface | CLM-5, CLM-8 | Surface view, natural colour | Representation | Browning is shown as colour change, not a chemical diagram. |
 | VIS-06 | COV08 disclosure card over the mixing bowl opening | Approved scope, coverage-map COV08 | Text added in post, not generated | Neither | Exact disclosure: "the flour began as wheat in a field long before it reached this bowl". |
 
+| VIS-07 | Yeast described as workers/breathers and the rise as an engine (spoken metaphors) | CLM-1, CLM-10 | Spoken metaphor, no visual change | Metaphor | Mechanism wording stays literal in the same lines. |
+| VIS-08 | Time-compression card: hours of fermentation shown in seconds | CLM-6 | Post-produced text card, stage 06a | Neither | Exact line planned: "Hours of rising, shown here in seconds." |
 ## Coverage binding
 
 claim_ids are filled in story/coverage-map.json for COV01-COV07, then

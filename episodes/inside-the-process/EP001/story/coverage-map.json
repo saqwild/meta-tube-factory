@@ -28,9 +28,12 @@
       "question": "What is bread actually made of, and what does each part - crumb, crust, bubbles - do?",
       "claim_ids": [
         "CLM-3",
-        "CLM-4"
+        "CLM-4",
+        "CLM-8",
+        "CLM-12"
       ],
       "script_rows": [
+        "9",
         "12"
       ]
     },
@@ -41,7 +44,9 @@
       "scope": "in",
       "question": "What are flour, water, yeast and salt, and where does each come from?",
       "claim_ids": [
-        "CLM-1"
+        "CLM-1",
+        "CLM-9",
+        "CLM-10"
       ],
       "script_rows": [
         "2"
@@ -54,7 +59,8 @@
       "scope": "in",
       "question": "How are the ingredients mixed and kneaded before the main transformation?",
       "claim_ids": [
-        "CLM-2"
+        "CLM-2",
+        "CLM-11"
       ],
       "script_rows": [
         "3",
@@ -115,7 +121,8 @@
       "scope": "in",
       "question": "How does the finished loaf get sliced, stored and eaten?",
       "claim_ids": [
-        "CLM-8"
+        "CLM-8",
+        "CLM-12"
       ],
       "script_rows": [
         "11",

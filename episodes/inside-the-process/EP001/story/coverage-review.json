@@ -3,15 +3,15 @@
   "episode_id": "EP001",
   "stage": "03a-writer",
   "status": "PASS",
-  "reviewed_at_utc": "2026-10-29T21:49:41Z",
+  "reviewed_at_utc": "2026-10-29T21:54:28Z",
   "validator_sha256": "582c5604ff2a1bcfb75e906ce544e0f178e3176b411a1d57a9ffcf3f473d614a",
   "input_sha256": {
-    "story/coverage-map.json": "9f1ef1e9e70e1b2c56efe13e468fdbd0dad8a18fd459cb0448b9f58db53b92db",
+    "story/coverage-map.json": "13524793ef8e0eed540b57e49b44592f539ed0d5b122293c93db3483d39c7940",
     "story/youtube-benchmark.md": "037a63e932253513b3e2369ec619b19c301f36fc62ee9fbeb6a2a8a8b4913402",
     "story/coverage-scope.lock.json": "dacee73bc24b3c0e1dd5b4fe7f2ad9b6be8488c279e09833216ffdd4f6cf119c",
     "story/research-notes.md": "e1c0303ee6e989172c8aa24c39c2cae47d8f730e062c99a2072aa27873295534",
-    "story/sources.md": "770802aa0aa6456b3e65f57109e6fd014fd123d8fd44e77363395f00926430ad",
-    "story/script.md": "c7ad80ef69bc1343af0d6b556678bd432fa55b9d5d7f25778ec28a87bffa5508"
+    "story/sources.md": "5d7eebac37f024d034e857318b830c63a4bac10aee8fb6144bed6adf9ddb71db",
+    "story/script.md": "57d92c29bca7b3a4dac3f5f724dc610e4f6f5a9b52d21352108a3bf0b1f5b250"
   },
   "errors": [],
   "warnings": []
