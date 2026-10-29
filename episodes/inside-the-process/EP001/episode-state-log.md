@@ -5,3 +5,4 @@
 - 2026-10-29T19:48:16+00:00 -- completed 01-ideation; digest f85fdbb0; next: 01b-coverage-scan
 - 2026-10-29T21:42:10+00:00 -- completed 01b-coverage-scan (owner-approved); digest c0e1ce51; next: 02-research
 - 2026-10-29T21:43:20+00:00 -- completed 02-research; digest 6d3e3fab; next: 02a-sourcing
+- 2026-10-29T21:44:41+00:00 -- completed 02a-sourcing (owner-approved); digest 9b8684d6; next: 02b-compliance
