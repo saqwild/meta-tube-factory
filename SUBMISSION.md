@@ -30,6 +30,7 @@ No demo episode yet. All prior EP folders were removed on 2026-10-29; the first 
 - `muse-image-1.0`, `sam-3.1`, `muse-voice-transcribe-1.0` endpoints are wired
   and unit-tested with mocked transport, but not yet called live. First live
   image spend happens only after still prompts freeze (stage 04f2).
+- Muse Glimmer and Muse Spark Open gate roles are defined in README (free local guards via Modal). They must be run live during the EP001 proof and receipts recorded here before submission; until then this is architecture, not verified usage.
 - LTX-2.5 rendering and postproduction are external owner-run tools; they earn
   no Meta credit and are unchanged history for prior episodes.
 

@@ -50,9 +50,26 @@ transcription at render QA (05a).
 Segmentation, character consistency checks, and background isolation at
 pilot QA (04h).
 
-Video rendering itself is LTX-2.5 i2v, an external owner-run renderer —
-no Muse video generation model exists. Muse Glimmer and Muse Spark Open
-are open-weight, self-hosted only, not called from this repo.
+Video is LTX-2.5 i2v. Frame-0s are Muse Image validated by SAM 3.1.
+Glimmer and Spark Open run locally for free preflight/compliance gates via
+Modal; paid Muse Spark/Wonder calls run only after free gates pass.
+
+### Free gate before the paid gate
+
+The open-weight models never duplicate the API models. They guard them.
+
+- **Muse Glimmer (local, $0 API cost)** — ultra-fast preflight gate:
+  `tools/preflight.py`, `tools/check_download_freshness.py`,
+  `tools/project_paths.py`. Does the file exist? Is the hash stale? Is the
+  owner gate approved? If Glimmer says no, paid Spark is never called.
+- **Muse Spark Open (local, $0 API cost)** — local compliance gate:
+  `tools/metadata_validator.py`, `tools/episode_state.py`, and durability
+  checks. Privacy-sensitive checks stay offline, and the 307-test suite
+  runs without spending API credit.
+
+API models are the paid brain, spent only on work that passed both free
+gates. Local open weights are the free guards. That split is spend control,
+not duplication.
 
 ## Human in the loop — the safety system
 
