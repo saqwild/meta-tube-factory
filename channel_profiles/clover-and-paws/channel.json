@@ -1,0 +1,241 @@
+{
+  "schema_version": "1.0",
+  "slug": "clover-and-paws",
+  "reference_bible_path": "channel_profiles/clover-and-paws/bible",
+  "reference_bible_note": "Imported VERBATIM from C:\\pycode\\clover_and_paws\\channel_profile on 2026-10-29 \u2014 42 files, byte-identical at import, verified by diff -r. Deep identity lives there: CAST.md (registry), CHARACTER_BIBLE.md (identity contract), KEY_CHARACTER_PROMPTS.md (prompt compiler), characters/CAST-001..007 master cards, characters/reference_sheets/ (7 locked identity images), VISUAL_STYLE_CONTRACT.md, CINEMATOGRAPHY_CONTRACT.md, EPISODE_SPEC.md, COMPLIANCE_GATE.md. That folder's own bible/channel.json is the SOURCE repo's schema (schema_version 2.0, different shape) and is retained unread as part of the verbatim import; THIS file is the one tools/preflight.py and the stage contracts read. Post-import the bible received the two standing repo corrections (retired-engine references removed; clip duration and aspect brought to the locked figures) and, on 2026-10-29, an owner-directed doctrine change loosening the rigid co-appearance and sidekick rules into defaults. All three are recorded in bible/IMPORT_NOTE.md.",
+  "channel": {
+    "name": "Clover & Bruno Stories",
+    "handle": "@cloverandbruno",
+    "made_for_kids": false,
+    "spine": "Polite kitten Clover, usually with Mama Rosa and Papa Fin, meets Bruno \u2014 a 70-year-old retired grumpy dog who never says yes the first time, usually with Pip. 70% of episodes bring both families together.",
+    "tagline": "Every day starts with Clover. Every legend starts grumpy."
+  },
+  "models": {
+    "image": "muse-image-1.0",
+    "image_note": "Muse Image throughout, via the muse-image CLI skill (Meta Model API). THREE tiers, and they must not be confused. (1) CHANNEL MASTERS at bible/characters/reference_sheets/ - 7 locked identity sheets, read-only, never edited by a stage; they lock WHO a character is. (2) EPISODE SHEETS at episodes/<EPID>/visual/references/characters/ - generated fresh at 04b every episode, only for the characters that episode uses, conditioned on the master for identity and carrying THIS episode's look, feel and wardrobe. (3) FRAME-0 STILLS at 04f2 - one per clip, conditioned on the EPISODE sheet, not on the master. Owner decision 2026-10-29.",
+    "video": "ltx-2.5",
+    "video_note": "i2v, native prose, native audio. The generation unit is the clip: one approved frame-0 still conditions exactly one generation."
+  },
+  "pipeline_stages": [
+    {
+      "id": "00-preflight"
+    },
+    {
+      "id": "01-ideation"
+    },
+    {
+      "id": "02-research"
+    },
+    {
+      "id": "02b-compliance",
+      "owner_gate": true
+    },
+    {
+      "id": "03a-writer"
+    },
+    {
+      "id": "03b-script-review",
+      "owner_gate": true
+    },
+    {
+      "id": "04a-visual-brief"
+    },
+    {
+      "id": "04b-character-refs"
+    },
+    {
+      "id": "04c-scene-refs"
+    },
+    {
+      "id": "04d-shot-plan"
+    },
+    {
+      "id": "04e-storyboard"
+    },
+    {
+      "id": "04f-ltx-prompt-draft"
+    },
+    {
+      "id": "04f2-frame0-stills"
+    },
+    {
+      "id": "04f3-ltx-prompt-final"
+    },
+    {
+      "id": "04g-ltx-render-package",
+      "owner_gate": true
+    },
+    {
+      "id": "04h-ltx-pilot-qa",
+      "owner_gate": true
+    },
+    {
+      "id": "05-render-ingest"
+    },
+    {
+      "id": "05a-render-qa"
+    },
+    {
+      "id": "06-distribution-metadata",
+      "owner_gate": true
+    },
+    {
+      "id": "06a-postproduction-assembly",
+      "owner_gate": true
+    },
+    {
+      "id": "07-final-package-qa"
+    }
+  ],
+  "cast": {
+    "registry_reference": "bible/CAST.md",
+    "identity_contract": "bible/CHARACTER_BIBLE.md",
+    "master_card_directory": "bible/characters",
+    "locked_reference_sheets": "bible/characters/reference_sheets",
+    "master_cast_count": 7,
+    "anchor_ids": [
+      "CAST-001",
+      "CAST-004"
+    ],
+    "anchor_note": "CAST-001 Clover and CAST-004 Bruno are the two anchors. CAST-002 Rosa, CAST-003 Fin and CAST-005 Pip are family anchors; CAST-006 Mimi and CAST-007 Tico are street-recurring.",
+    "core_cast_locked": true,
+    "same_episode_multi_role_allowed": false,
+    "maximum_speaking_characters": 6,
+    "maximum_speaking_characters_note": "6 for long-form, 3 for a Short's covered section. From bible/EPISODE_SPEC.md; preferred 3-4 on long-form.",
+    "character_rules": [
+      "DEFAULTS, not laws (owner decision 2026-10-29). Depart from any of these when the story is better for it, and declare the departure in the episode's cast snapshot at 03a-writer. An unremarked departure is a defect; a reasoned one is the point.",
+      "Clover usually appears with at least one parent, often both.",
+      "Bruno usually appears with Pip.",
+      "Pip is loyal to Bruno; whose side he takes in a given episode is a story choice, not a fixed two-stage move."
+    ],
+    "new_performer_default_scope": "episode_local",
+    "signature_beat": "Bruno's Never-Yes-First: first answer is No with attitude, second is a reluctant yes followed by helping. RETAINED as a hard rule (owner, 2026-10-29) - and it is CHARACTER, not a gag. He is 70, retired, experienced and arrogant enough to want to seem apart from it all; agreeing straight away would cost him the version of himself he presents. The refusal is therefore inevitable, but the EXCUSE should vary every episode (retirement, the back, not-my-business, a counter-complaint) - that variation is where a writer's room inside the rule lives. A Bruno who reaches for the identical excuse every time is written as a mechanism, not a character.",
+    "tier_note": "Rosa (CAST-002) is a MAIN character - Clover's mother, core household, present in most episodes. Mimi (CAST-006) is SUPPORTING - Street Recurring, appears only when a story needs her. They must stay behaviourally distinct (Rosa steady, Mimi spirals) and Mimi must never absorb Rosa's role.",
+    "reference_tiers": {
+      "tier0_identity": "bible/characters/identity/ - ONE BARE FIGURE per character. No wardrobe, neutral pose, plain backdrop, no panels or labels. Locks WHO the character is. The root; conditioned on nothing.",
+      "tier1_episode_sheet": "episodes/<EPID>/visual/references/characters/ - this episode's look and wardrobe, conditioned on Tier 0. Only the characters the episode uses.",
+      "tier2_frame0_stills": "episodes/<EPID>/renders/stills/ - one per clip, conditioned on the Tier-1 episode sheet.",
+      "never_condition_on_a_sheet": "A character SHEET is a composed page - panels, backdrop, captions, style. Conditioning on one delivers the page: a 2026-10-29 six-run test (in the source repo C:\\pycode\\clover_and_paws) reproduced the source sheet's text labels despite the prompt saying 'no text', and its rendering style overrode every restyle attempt. Bare figures only.",
+      "fix_at_the_root": "If a Tier-1 sheet is wrong, fix Tier 0 and regenerate. Never patch the derivative.",
+      "promotion_rule": "Episode sheets are never promoted into Tier 0 - they carry one episode's wardrobe. Promotion applies only to a NEW recurring character on its second episode, which then gets its own BARE identity master and card.",
+      "upload_ceiling": "Flow's uploader silently rejects large references (12MB/3840x2160 and 22MB/5504x3072 both failed; ~2MB JPEG at 2752x1536 works). Keep Tier-0 masters inside that budget or upload a downscaled JPEG proxy - never modify the master.",
+      "download_integrity": "muse-image CLI --download can return images the current prompt did NOT produce - it appears to take the most recent images in the PROJECT. Verified 2026-10-29: a Bruno run returned two Clover images and one unrelated two-shot, zero Bruno. Generate ONE character per run into its OWN folder, hash every download against all previous downloads, and look at the image before promoting it. Critical at 04f2, where a stale still would land in the wrong clip's slot and render without anyone noticing."
+    },
+    "identity_masters": {
+      "clover": "bible/characters/identity/clover_identity_v2.jpg",
+      "mama_rosa": "bible/characters/identity/mama_rosa_identity_v2.jpg",
+      "bruno": "bible/characters/identity/bruno_identity_v2.jpg",
+      "pip": "bible/characters/identity/pip_identity_v2.jpg",
+      "papa_finn": "bible/characters/identity/papa_finn_identity.png  (v1 import, NOT yet regenerated photoreal - regenerate when a clover-and-paws episode first casts Fin)",
+      "_missing": "mimi (CAST-006), tico (CAST-007) - generate when an episode first needs them.",
+      "_v2_note": "Regenerated photoreal 2026-10-29 from the v1 imports, per owner decision to redesign from scratch while staying close to the existing designs. Each is ONE bare figure: no clothing, permanent identity accessory only, plain seamless backdrop, no panels or labels. The v1 imports are retained alongside as provenance.",
+      "_accessories_kept_when_bare": "Clover: green collar with gold tag, plus her four-leaf clover CHEST FUR MARKING. Bruno: bronze spectacle chain with round tortoiseshell glasses. Pip: red bandana. Rosa: none.",
+      "_clover_motif_rule": "The four-leaf clover appears TWICE over: as a darker fur marking on her chest (intrinsic, survives undressing, on the identity master) AND repeated as a print or embroidery on the chest of every garment she wears. Owner decision 2026-10-29. Either alone fails - a garment hides the marking, and a garment-only motif dies when she changes clothes. Together she is never without it, which keeps 'is the clover visible?' a valid binary QA check at draft resolution."
+    }
+  },
+  "format": {
+    "aspect_ratio": "16:9",
+    "aspect_ratio_note": "LOCKED 16:9 for every format (owner decision 2026-10-29, reverting the 2026-10-29 format-dependent experiment). The proven LTX-2.5 graph is fixed-aspect 16:9, so every still, clip and render is 16:9. A 9:16 Short is a post-production reframe of that same 16:9 footage, never its own still or clip batch - the frame-0 still and the clip it conditions must share an aspect, so a format-dependent aspect would force a full re-generation of every still. The graph's ResolutionSelector is fixed, never set per episode.",
+    "short_length_seconds": [
+      160,
+      180
+    ],
+    "long_form_length_seconds_floor": 540,
+    "long_form_length_seconds_target": [
+      570,
+      900
+    ],
+    "delivery_words_per_minute": 140,
+    "content_mix_percent": {
+      "duo_both_families": 70,
+      "clover_family_only": 15,
+      "bruno_and_co_only": 15
+    },
+    "shorts_are_post_reframe": true
+  },
+  "render": {
+    "mode": "i2v",
+    "model": "LTX-2.5",
+    "prompt_format": "prompt_relay_beats_v1",
+    "prompt_format_note": "Owner-locked PromptRelay-style beat packet, adopted 2026-10-29 from the vidgen-codex-ltx sibling where a 20-second LTX-2.5 render of the beat form outperformed the regular-prose alternative. Every clip prompt is one 'GLOBAL:: Continue from the still. … Low motion.' line plus 'BEAT:: <frames> ::' lines totalling 481. The frame labels are a model-facing pacing convention, NOT the old ComfyUI-PromptRelay node. Enforced by LTXV-D001/D002; see pipeline/LTX_I2V_CONTRACT.md. clover-and-paws has no live episode past 04e, so nothing here needs re-drafting.",
+    "generation_unit": "clip",
+    "generation_unit_note": "One approved frame-0 still conditions exactly one 20-second clip. Postprod concatenates clips and bridges them with controlled inserts and room tone; it does not cut within one.",
+    "clip_duration_seconds": 20,
+    "clip_duration_note": "Fixed 20s for every clip on every channel in this repo, owner decision 2026-10-29. The imported bible originally specified an 8-15s performance unit and was corrected on import, so nothing in this repo states a different figure. At 24 fps this lands on 481 frames (1 + 8*60), satisfying LTX-2.5's num_frames%8==1 rule. vidgen-dist takes SECONDS and derives the frame count itself \u2014 never hand-enter a frame count.",
+    "fps": 24,
+    "aspect_ratio": "16:9",
+    "aspect_ratio_note": "LOCKED 16:9, every format (owner decision 2026-10-29). The LTX-2.5 two-stage graph's ResolutionSelector is fixed; 9:16 Shorts are a post-production reframe of the same 16:9 render, never a separate still or clip batch. See format.aspect_ratio_note.",
+    "megapixels": 0.98,
+    "megapixels_note": "0.98 -> 1344x768, 16:9, 64-clean on both axes.",
+    "spoken_word_band": [
+      31,
+      34
+    ],
+    "spoken_word_band_note": "At this channel's 140 wpm a 20s clip carries ~31-34 quoted words if speech fills ~67-73% of the clip, leaving room for visible action, chore/prop business and a productive tail. DERIVED FROM WPM, NOT MEASURED on LTX-2.5 \u2014 re-derive from the first pilot batch, see research section 6 open question 2. Bruno's delivery is deliberately slower than Clover's, so his clips will sit at the low end of the band.",
+    "style_echo": "Photorealistic anthropomorphic cozy family, bipedal upright human-like posture, fine realistic fur texture, soft natural light, warm golden cozy grade, clean uncluttered composition, high-end photographic finish",
+    "workflow": "LTX25_T2V_I2V_Two_Stage_Distilled.json",
+    "cfg": 1.0,
+    "cfg_refine": 1.0,
+    "cfg_audio": 1.0,
+    "img_compression": 18,
+    "max_prompt_words": 450,
+    "max_prompt_words_note": "RUNAWAY TRIPWIRE, not a ceiling (retired 2026-10-29). LTX-2.5 has no vendor word limit and the Gemma encoder is built for long prompts; the old 200 figure was LTX-2-era sibling guidance. LTXV-D004 warns past 450 to catch a repeated room inventory or duration filler only. A dense three-hander normally runs 260-330 words and must not be trimmed to fit. See pipeline/LTX_I2V_CONTRACT.md §Length.",
+    "negative_prompt_additions": [
+      "photorealistic human face",
+      "human hands",
+      "2D illustration",
+      "cel shading",
+      "painterly graphic-novel rendering",
+      "comic caricature",
+      "flat vector",
+      "glossy plastic materials",
+      "toy 3D rendering",
+      "cartoon proportions",
+      "oversized anime eyes",
+      "dark navy grade"
+    ],
+    "negative_prompt_note": "Appended to pipeline/negative-prompt-base.txt at 04g, plus a 'second <Name>' term per cast member in the episode. Drawn from bible/VISUAL_STYLE_CONTRACT.md's own realism lock, which names the specific defects this channel drifts toward rather than a generic style label. This is the ONLY place suppression lives: the same terms in a positive prompt cause the artifact they name (LTXV-D010 rejects them).",
+    "look_and_feel": "Photorealistic image of anthropomorphic {species} with fine realistic fur texture and clear, readable facial expressions. Soft natural lighting with a gentle, cozy color grade in warm golden or bright daylight tones, evoking a tender, inviting, picture-book mood. Clean, uncluttered composition with a high-end photographic finish.",
+    "look_and_feel_note": "Owner-declared 2026-10-29, and it settles the photoreal-vs-stylized question in favour of PHOTOREAL. {species} is substituted per sheet ('cats' / 'dogs' / 'cats and dogs') because the cast is mixed - the owner's string said 'cats' but Bruno and Pip are dogs. Everything else is verbatim. This governs 04b episode sheets and every 04f2 frame-0 still conditioned on them. The CHANNEL MASTERS remain stylized 3D and are unaffected: under the three-tier model they are identity scaffolding only, never the on-screen look.",
+    "style_echo_note": "'bipedal upright human-like posture' added 2026-10-29 after frame-0 stills rendered quadruped real cats: a crouching cat is a pose a real cat holds, so the animal prior reasserted. It lives here, once, rather than as a repeated sentence in every still prompt."
+  },
+  "youtube": {
+    "made_with_altered_or_synthetic_content": true,
+    "required_hashtags": [
+      "#catanddog",
+      "#cloverandbruno"
+    ],
+    "title_max_characters": 90,
+    "description_line_required": "AI-generated original stories. Not real footage. Photoreal anthropomorphic cat and dog family stories \u2014 Kitten Clover and Grumpy Dog Bruno."
+  },
+  "hard_safety_floor": [
+    "Never frame content as real footage or as real animals.",
+    "No real, identifiable people, brands or logos.",
+    "No peril in Arc A / D / E and all Clover-only and Bruno-only content \u2014 there the worst outcome is a setback, a mess, or a plan going wrong. Bounded, non-graphic jeopardy is allowed ONLY inside Arc B (Stand Tall) and Arc C (Rescue Dash) and ONLY under ADVENTURE_ARCS_LOCKED.md 'Compliance for Action': no graphic violence (push, block, stand tall \u2014 never a punch or blood); no weapons; antagonists are faceless, non-speaking, two to three at most, and leave rather than are beaten; every rescue resolves safely (the tree falls away, the cart is stopped, no character is actually hurt); Clover is never in danger alone; spy arcs stay comedic and daytime. Reconciled per owner decision 2026-10-29 (see bible/IMPORT_NOTE.md \u00a75).",
+    "Every background character must be stated as an anthropomorphic animal \u2014 a bare 'neighbours/kids/adults' renders as photoreal humans."
+  ],
+  "metadata_validation": {
+    "required_disclosure_terms": [
+      "AI-generated",
+      "Not real footage"
+    ],
+    "required_hashtags": [
+      "#catanddog"
+    ],
+    "banned_description_terms": [
+      "real cat and dog footage",
+      "true story of real animals",
+      "leaked footage"
+    ],
+    "title_max_chars": 90,
+    "title_must_contain_cat_or_dog_or_names": true,
+    "thumbnail_overlay_words_min": 2,
+    "thumbnail_overlay_words_max": 4
+  },
+  "compliance": {
+    "fictional_only": true,
+    "real_names_and_logos_prohibited": true,
+    "synthetic_media_disclosure_required": true,
+    "no_real_animal_footage_claim": true
+  }
+}

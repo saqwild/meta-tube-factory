@@ -1,0 +1,1 @@
+duplicate character, cloned character, extra character beyond those described, merged faces, identity drift, deformed hands, deformed paws, extra limbs, duplicate prop, floating object, on-screen text, subtitles, captions, watermark, logo, motion blur smear, warped geometry, flickering artifacts

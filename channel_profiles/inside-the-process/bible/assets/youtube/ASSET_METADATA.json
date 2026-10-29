@@ -1,0 +1,49 @@
+{
+  "channel": "Explained From Within",
+  "generated_on": "2026-10-29",
+  "generator": "Muse Image; deterministic Pillow resize, crop, type and export",
+  "source_images": {
+    "profile": "C:\\Users\\Administrator\\.codex\\generated_images\\01a0af09-182f-7461-a8b4-edbd7d6138f9\\exec-fdd95555-3923-4070-8ae4-1032b0c5d8cf.png",
+    "banner_background": "C:\\Users\\Administrator\\.codex\\generated_images\\01a0af09-182f-7461-a8b4-edbd7d6138f9\\exec-650cca02-7d03-4463-bc59-96542a068119.png"
+  },
+  "youtube_assets": {
+    "profile_picture": {
+      "path": "assets/youtube/explained-from-within-profile-1024.png",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "bytes": 929516,
+      "limit_bytes": 4000000,
+      "sha256": "e6193cfc6dc0ebd77d10e3789a7c34b6f602c884cfcf9a031a656fc85164b99e"
+    },
+    "banner": {
+      "path": "assets/youtube/explained-from-within-banner-2560x1440.jpg",
+      "dimensions": [
+        2560,
+        1440
+      ],
+      "bytes": 707638,
+      "limit_bytes": 6000000,
+      "sha256": "814588c1a89c86b53e94a7912a552d25acfdf0f0688a9a6d30c825c8fdf22669"
+    },
+    "video_watermark": {
+      "path": "assets/youtube/explained-from-within-watermark-150.png",
+      "dimensions": [
+        150,
+        150
+      ],
+      "bytes": 43012,
+      "limit_bytes": 1000000,
+      "sha256": "e7692bd8c77f9181f4aac95b7e56dba38dc34579bee60fcb5ddfc8e13b895839"
+    }
+  },
+  "banner_safe_area": {
+    "dimensions": [
+      1546,
+      423
+    ],
+    "centered": true
+  },
+  "status": "technically_validated_pending_owner_visual_acceptance"
+}

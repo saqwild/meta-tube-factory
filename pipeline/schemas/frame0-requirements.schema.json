@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "frame-0 requirements",
+  "description": "episodes/<slug>/<EPID>/_context/frame0-requirements.json — written at 04f, consumed at 04f2. The handoff that makes each still DERIVABLE from its clip prompt rather than guessed alongside it. Validated by LTXV-S001/S002/S003.",
+  "type": "object",
+  "required": ["schema_version", "episode_id", "clips"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "episode_id": { "type": "string", "pattern": "^EP[0-9]{3}" },
+    "channel_slug": { "type": "string" },
+    "clips": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/block" }
+    }
+  },
+  "additionalProperties": false,
+
+  "$defs": {
+    "block": {
+      "type": "object",
+      "required": [
+        "clip", "touched_objects", "characters", "frame0_state",
+        "props_at_rest", "first_action_performable", "continues_from", "end_state"
+      ],
+      "properties": {
+        "clip": { "type": "string", "pattern": "^SC[0-9]{2,3}$" },
+        "touched_objects": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "description": "EVERY object a character contacts, lifts, leans on, reaches for, or treats as a focal object. i2v never invents objects — an omission here is how a clip ends up reaching for a prop that does not exist in its own first frame. Every entry must also appear as a key in props_at_rest and be named in the clip prose."
+        },
+        "characters": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Must equal the visible cast in blocking.json for this clip (LTXV-S003)."
+        },
+        "frame0_state": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "object",
+            "required": ["pos", "facing", "gaze", "pose", "expression", "mouth", "hands"],
+            "properties": {
+              "pos": { "type": "string", "minLength": 1 },
+              "facing": { "type": "string", "minLength": 1 },
+              "gaze": { "type": "string", "minLength": 1 },
+              "pose": { "type": "string", "minLength": 1 },
+              "expression": { "type": "string", "minLength": 1 },
+              "mouth": { "type": "string", "minLength": 1 },
+              "hands": { "type": "string", "minLength": 1 }
+            },
+            "additionalProperties": false
+          }
+        },
+        "props_at_rest": {
+          "type": "object",
+          "description": "Keyed by the same object name used in touched_objects. Value is the settled frame-0 state — never mid-motion.",
+          "additionalProperties": { "type": "string", "minLength": 1 }
+        },
+        "first_action_performable": {
+          "const": true,
+          "description": "Asserting this means the clip's opening action was actually checked as physically beginnable from that frozen instant. It is not a formality: a still showing a door already open cannot support a clip that knocks on it. If it is not true, fix the still or the blocking — never advance with false."
+        },
+        "continues_from": {
+          "type": ["string", "null"],
+          "description": "The immediately preceding clip id, or null for the episode's first clip. Drives LTXV-S004."
+        },
+        "end_state": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["pos", "pose", "hands"],
+            "properties": {
+              "pos": { "type": "string" },
+              "pose": { "type": "string" },
+              "hands": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

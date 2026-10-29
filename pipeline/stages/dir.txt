@@ -1,0 +1,30 @@
+Directory of C:\pycode\vidgen-meta\pipeline\stages
+
+29-Oct-26  02:27 AM    <DIR>          .
+29-Oct-26  01:18 AM    <DIR>          ..
+29-Aug-26  03:08 AM             1,102 00-preflight.md
+02-Oct-26  02:40 PM             2,806 01-ideation.md
+24-Sep-26  01:18 PM             3,451 01b-coverage-scan.md
+24-Sep-26  01:21 PM             1,586 02-research.md
+24-Sep-26  01:21 PM             4,502 02a-sourcing.md
+29-Aug-26  05:13 AM             2,082 02b-compliance.md
+02-Oct-26  02:40 PM             5,142 03a-writer.md
+02-Oct-26  02:40 PM             5,192 03b-script-review.md
+02-Oct-26  03:15 PM             2,239 04a-visual-brief.md
+04-Sep-26  08:03 AM             9,270 04b-character-refs.md
+13-Sep-26  01:30 AM             3,554 04c-scene-refs.md
+03-Sep-26  02:43 PM             4,938 04d-shot-plan.md
+30-Aug-26  08:47 PM             1,801 04e-storyboard.md
+24-Sep-26  01:01 PM             5,073 04f-ltx-prompt-draft.md
+24-Sep-26  01:01 PM             7,235 04f2-frame0-stills.md
+24-Sep-26  01:01 PM             6,384 04f3-ltx-prompt-final.md
+24-Sep-26  01:01 PM             6,979 04g-ltx-render-package.md
+24-Sep-26  01:03 PM             4,116 04h-ltx-pilot-qa.md
+30-Aug-26  08:49 PM             2,233 05-render-ingest.md
+02-Oct-26  03:15 PM             4,108 05a-render-qa.md
+27-Sep-26  05:03 AM             6,081 06-distribution-metadata.md
+09-Sep-26  02:33 PM            11,052 06a-postproduction-assembly.md
+24-Sep-26  01:02 PM             1,393 07-final-package-qa.md
+29-Oct-26  02:27 AM                 0 dir.txt
+              24 File(s)        102,319 bytes
+               2 Dir(s)  112,285,032,448 bytes free

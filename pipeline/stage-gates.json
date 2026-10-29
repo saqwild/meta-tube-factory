@@ -1,0 +1,112 @@
+{
+  "_comment": "Per-stage completion gates, read by tools/episode_state.py's stage_gate_check(). A stage cannot be marked complete unless every path in 'outputs' exists and is non-empty (a '*' or '?' or '[' makes it a glob needing >=1 match), and, where 'verdict' is declared, the verdict artifact carries a passing result and does NOT carry a blocking one. This is channel-agnostic: a stage produces the same deliverable regardless of channel. Stages absent from this file are not gated on deliverables (currently every declared stage is listed). Paths are relative to episodes/<slug>/<EPID>/. A blocking verdict (compliance BLOCKED, script-review REVISE, a review JSON status != PASS, a pilot-QA status != PASS, a render-QA or final-QA **STAGE VERDICT: FAIL**) hard-stops completion -- the way forward is to fix the deliverable or reopen an earlier stage. A 'forbid' entry names a marker that must be gone from a deliverable before the stage counts as done.",
+
+  "00-preflight":                 { "outputs": ["episode-state.json", "episode-state-log.md"] },
+  "_when_stage_comment": "A 'when_stage' block adds its outputs/verdict ONLY for an episode whose own stage_sequence contains that stage. Used for the inside-the-process coverage checks (pipeline/process_coverage.md): episodes created after 01b-coverage-scan was added get them at 02/02a/03a/03b; older episodes and other channels are untouched. A verdict's 'fresh_inputs_field' names a {path: sha256} map inside the review; any file changed since the review ran fails the gate.",
+
+  "01-ideation":                  { "outputs": ["story/premise.md"] },
+  "01b-coverage-scan": {
+    "outputs": ["story/youtube-benchmark.md", "story/coverage-map.json", "story/coverage-scope.lock.json", "story/coverage-review.json"],
+    "verdict": {
+      "file": "story/coverage-review.json",
+      "json_status": "PASS",
+      "json_fields": { "stage": "01b-coverage-scan" },
+      "fresh_inputs_field": "input_sha256"
+    }
+  },
+  "02-research": {
+    "outputs": ["story/research-notes.md"],
+    "when_stage": {
+      "01b-coverage-scan": {
+        "outputs": ["story/coverage-map.json", "story/coverage-review.json"],
+        "verdict": { "file": "story/coverage-review.json", "json_status": "PASS", "json_fields": { "stage": "02-research" }, "fresh_inputs_field": "input_sha256" }
+      }
+    }
+  },
+  "02a-sourcing": {
+    "outputs": ["story/sources.md"],
+    "when_stage": {
+      "01b-coverage-scan": {
+        "outputs": ["story/coverage-map.json", "story/coverage-review.json"],
+        "verdict": { "file": "story/coverage-review.json", "json_status": "PASS", "json_fields": { "stage": "02a-sourcing" }, "fresh_inputs_field": "input_sha256" }
+      }
+    }
+  },
+  "02b-compliance": {
+    "outputs": ["story/compliance.md"],
+    "verdict": {
+      "file": "story/compliance.md",
+      "pass": "OVERALL VERDICT:\\s*\\*\\*CLEARED\\*\\*",
+      "block": "OVERALL VERDICT:\\s*\\*\\*BLOCKED\\*\\*"
+    }
+  },
+  "03a-writer": {
+    "outputs": ["story/characters.md", "story/script.md"],
+    "when_stage": {
+      "01b-coverage-scan": {
+        "outputs": ["story/coverage-map.json", "story/coverage-review.json"],
+        "verdict": { "file": "story/coverage-review.json", "json_status": "PASS", "json_fields": { "stage": "03a-writer" }, "fresh_inputs_field": "input_sha256" }
+      }
+    }
+  },
+  "03b-script-review": {
+    "outputs": ["story/script-review.md"],
+    "verdict": {
+      "file": "story/script-review.md",
+      "pass": "\\*\\*VERDICT:\\s*`?PASS`?\\*\\*",
+      "block": "\\*\\*VERDICT:\\s*`?REVISE`?\\*\\*"
+    },
+    "when_stage": {
+      "01b-coverage-scan": {
+        "outputs": ["story/coverage-review.json"],
+        "verdict": { "file": "story/coverage-review.json", "json_status": "PASS", "json_fields": { "stage": "03b-script-review" }, "fresh_inputs_field": "input_sha256" }
+      }
+    }
+  },
+  "04a-visual-brief":             { "outputs": ["visual/scene-list.md"] },
+  "04b-character-refs":           { "outputs": ["visual/references/manifest.md"] },
+  "04c-scene-refs":               { "outputs": ["visual/references/manifest.md"] },
+  "04d-shot-plan":                { "outputs": ["_context/blocking.json"] },
+  "04e-storyboard":               { "outputs": ["exports/storyboard.html"] },
+  "04f-ltx-prompt-draft":         { "outputs": ["prompts/7-video-prompts.md", "_context/frame0-requirements.json"] },
+  "04f2-frame0-stills":           { "outputs": ["prompts/6-image-prompts.md", "prompts/6-image-agent-packet.md", "qa/still-gate.md", "renders/stills/*.png"] },
+  "04f3-ltx-prompt-final": {
+    "outputs": ["prompts/7-video-prompts.md", "_context/ltx-prompt-review.json", "_context/ltx-prompt-manifest.json"],
+    "forbid": [
+      {
+        "file": "prompts/7-video-prompts.md",
+        "pattern": "\\bPROVISIONAL\\b",
+        "reason": "04f's draft marker is still present; the 04f3 re-anchor pass rewrites every GLOBAL:: line against its approved still and updates the file header"
+      }
+    ],
+    "verdict": {
+      "file": "_context/ltx-prompt-review.json",
+      "json_status": "PASS",
+      "json_fields": { "mode": "strict" }
+    }
+  },
+  "04g-ltx-render-package":       { "outputs": ["exports/ltx-render-package/master-prompt.txt", "exports/ltx-render-package/render-manifest.json", "exports/ltx-render-package/negative-prompt.txt", "exports/ltx-render-package/render-settings.json", "exports/ltx-render-package/stills/*"] },
+  "04h-ltx-pilot-qa": {
+    "outputs": ["qa/ltx-pilot-qa.json"],
+    "verdict": { "file": "qa/ltx-pilot-qa.json", "json_status": "PASS" }
+  },
+  "05-render-ingest":            { "outputs": ["renders/render-manifest.json"] },
+  "05a-render-qa": {
+    "outputs": ["qa/render-qa.md"],
+    "verdict": {
+      "file": "qa/render-qa.md",
+      "pass": "\\*\\*STAGE VERDICT:\\s*PASS\\*\\*",
+      "block": "\\*\\*STAGE VERDICT:\\s*FAIL\\*\\*"
+    }
+  },
+  "06-distribution-metadata":    { "outputs": ["metadata/package.md"] },
+  "06a-postproduction-assembly": { "outputs": ["postprod/postprod-config.json", "postprod/staging-manifest.json", "postprod/handoff.md", "postprod/postprod-manifest.json", "exports/final/*.mp4"] },
+  "07-final-package-qa": {
+    "outputs": ["final-qa.md"],
+    "verdict": {
+      "file": "final-qa.md",
+      "pass": "\\*\\*STAGE VERDICT:\\s*PASS\\*\\*",
+      "block": "\\*\\*STAGE VERDICT:\\s*FAIL\\*\\*"
+    }
+  }
+}

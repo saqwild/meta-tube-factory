@@ -1,0 +1,12 @@
+# vidgen-ltx tools. Everything else in tools/ is standard-library Python 3.10+.
+#
+# episode_health.py validates episode JSON against pipeline/schemas/. Without this
+# package that check is SKIPPED with only a WARN, not failed -- install it.
+jsonschema>=4.26
+#
+# render_audio_audit.py (stage 05a) transcribes via Muse Voice Transcribe
+# (tools/meta_models.py, MODEL_API_KEY). No local speech model.
+#
+# Not pip packages, but required on PATH:
+#   ffmpeg / ffprobe  -- render_audio_audit extracts WAV via ffmpeg; episode_health.py probes the
+#                        final MP4s with ffprobe (tested with ffmpeg 8.1, winget Gyan.FFmpeg)

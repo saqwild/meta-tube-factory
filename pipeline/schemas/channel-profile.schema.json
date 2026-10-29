@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "channel-profile",
+  "description": "channel_profiles/<slug>/channel.json — the only place a channel's identity, render numbers, and stage sequence live. Stage contracts describe process; they read numbers from here and never hardcode them. If a contract and this file disagree, this file wins for that channel.",
+  "type": "object",
+  "required": ["schema_version", "slug", "channel", "models", "pipeline_stages", "render"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "slug": { "type": "string", "description": "must match the channel_profiles/<slug> and episodes/<slug> folder name" },
+    "reference_bible_path": {
+      "type": "string",
+      "description": "path to this channel's local, self-contained brand/cast/compliance copy; treated as immutable reference"
+    },
+    "reference_bible_note": { "type": "string" },
+    "channel": {
+      "type": "object",
+      "required": ["name", "handle"],
+      "properties": {
+        "name": { "type": "string" },
+        "handle": { "type": "string" },
+        "made_for_kids": { "type": "boolean" },
+        "spine": { "type": "string" },
+        "tagline": { "type": "string" }
+      }
+    },
+    "models": {
+      "type": "object",
+      "required": ["image", "video"],
+      "properties": {
+        "image": {
+          "const": "muse-image-1.0",
+          "description": "Two distinct image jobs: reference sheets at 04b/04c (identity locks, a handful per episode) and frame-0 stills at 04f2 (one per clip, the literal first frame). Never mix image generators inside one episode."
+        },
+        "video": {
+          "const": "ltx-2.5",
+          "description": "i2v, native prose, native audio."
+        },
+        "image_note": { "type": "string" },
+        "video_note": { "type": "string" }
+      }
+    },
+    "pipeline_stages": {
+      "type": "array",
+      "description": "ordered list of stage ids this channel walks; each id must have a matching pipeline/stages/<id>.md",
+      "items": {
+        "type": "object",
+        "required": ["id"],
+        "properties": {
+          "id": { "type": "string" },
+          "owner_gate": { "type": "boolean", "default": false }
+        }
+      },
+      "minItems": 1
+    },
+    "cast": { "type": "object" },
+    "format": { "type": "object" },
+
+    "render": {
+      "type": "object",
+      "required": [
+        "mode", "model", "generation_unit", "clip_duration_seconds",
+        "fps", "aspect_ratio", "megapixels", "spoken_word_band", "style_echo"
+      ],
+      "properties": {
+        "mode": { "const": "i2v" },
+        "model": { "type": "string" },
+        "generation_unit": {
+          "const": "clip",
+          "description": "Universally the clip: one still, one prompt, one fixed-duration generation. There is no per-channel scene-versus-shot choice."
+        },
+        "clip_duration_seconds": {
+          "type": "number",
+          "description": "vidgen-dist takes duration as a global app setting in SECONDS and derives the frame count internally as 1 + floor(fps*duration/8)*8, satisfying LTX-2.5's num_frames%8==1 rule."
+        },
+        "clip_duration_note": { "type": "string" },
+        "fps": { "type": "integer" },
+        "aspect_ratio": { "type": "string" },
+        "megapixels": { "type": "number" },
+        "spoken_word_band": {
+          "type": "array",
+          "items": { "type": "integer" },
+          "minItems": 2,
+          "maxItems": 2,
+          "description": "Quoted words per clip at the channel's planning pace. Enforced by LTXV-D034."
+        },
+        "style_echo": {
+          "type": "string",
+          "description": "The channel's trailing style sentence. Passed to the validator so LTXV-D041 can exclude it when locating the clip's final action beat."
+        },
+        "workflow": { "type": "string" },
+        "cfg": { "type": "number" },
+        "cfg_refine": { "type": "number" },
+        "cfg_audio": { "type": "number" },
+        "img_compression": { "type": "integer" },
+        "max_prompt_words": { "type": "integer" }
+      }
+    },
+
+    "youtube": { "type": "object" },
+    "hard_safety_floor": { "type": "array", "items": { "type": "string" } },
+    "metadata_validation": { "type": "object" },
+    "compliance": { "type": "object" }
+  }
+}

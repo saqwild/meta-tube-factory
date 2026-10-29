@@ -1,0 +1,213 @@
+{
+  "schema_version": "1.0",
+  "slug": "signed-anyway",
+  "reference_bible_path": "channel_profiles/signed-anyway/bible",
+  "reference_bible_note": "Local, self-contained copy. Deep brand voice, full cast bios (bible/CAST.md, bible/CHARACTER_BIBLE.md), bible/COMPLIANCE_GATE.md, bible/VISUAL_STYLE_CONTRACT.md, bible/CINEMATOGRAPHY_CONTRACT.md, bible/assets/, bible/characters/. This channel.json carries only what tools/preflight.py and the stage contracts need to run.",
+  "channel": {
+    "name": "Signed Anyway",
+    "handle": "@signedanyway",
+    "made_for_kids": false,
+    "spine": "A hidden financial decision destroys trust; both sides argue the case and the viewer decides who crossed the line.",
+    "tagline": "They knew the cost. They signed anyway."
+  },
+  "models": {
+    "image": "muse-image-1.0",
+    "image_note": "Two distinct jobs. 04b/04c produce reference SHEETS (identity locks, a handful per episode, reused). 04f2 produces frame-0 STILLS — one per clip, the literal first frame each clip is conditioned on.",
+    "video": "ltx-2.5",
+    "video_note": "i2v, native prose, native audio. The generation unit is the clip: one approved frame-0 still conditions exactly one generation."
+  },
+  "pipeline_stages": [
+    {
+      "id": "00-preflight"
+    },
+    {
+      "id": "01-ideation"
+    },
+    {
+      "id": "02-research"
+    },
+    {
+      "id": "02a-sourcing"
+    },
+    {
+      "id": "02b-compliance",
+      "owner_gate": true
+    },
+    {
+      "id": "03a-writer"
+    },
+    {
+      "id": "03b-script-review",
+      "owner_gate": true
+    },
+    {
+      "id": "04a-visual-brief"
+    },
+    {
+      "id": "04b-character-refs"
+    },
+    {
+      "id": "04c-scene-refs"
+    },
+    {
+      "id": "04d-shot-plan"
+    },
+    {
+      "id": "04e-storyboard"
+    },
+    {
+      "id": "04f-ltx-prompt-draft"
+    },
+    {
+      "id": "04f2-frame0-stills"
+    },
+    {
+      "id": "04f3-ltx-prompt-final"
+    },
+    {
+      "id": "04g-ltx-render-package",
+      "owner_gate": true
+    },
+    {
+      "id": "04h-ltx-pilot-qa",
+      "owner_gate": true
+    },
+    {
+      "id": "05-render-ingest"
+    },
+    {
+      "id": "05a-render-qa"
+    },
+    {
+      "id": "06-distribution-metadata",
+      "owner_gate": true
+    },
+    {
+      "id": "06a-postproduction-assembly",
+      "owner_gate": true
+    },
+    {
+      "id": "07-final-package-qa"
+    }
+  ],
+  "cast": {
+    "registry_reference": "CAST.md",
+    "reference_card_directory": "bible/characters",
+    "same_episode_multi_role_allowed": false,
+    "maximum_speaking_characters": 5,
+    "max_characters_in_frame": 2,
+    "reference_workflow": "Per-episode, ONE six-panel sheet per character. NO persistent bare-figure masters; NOT clover's three-tier model. Deliverable per character = a single clean six-panel character sheet (front / 3-quarter / profile / full-body / emotional-range / full figure), generated from that character's bible/characters/CAST-XX.md prompt with the painterly style clause VERBATIM, plus the episode's wardrobe/condition overlay from story/characters.md. That sheet is the SOLE reference for every 04f2 frame-0 still — no separate portrait/full-body/seated deliverable (they are only a generation fallback if the sheet's face drifts). 'Never condition on a sheet' was a FLUX text-label/restyle failure and is formally overturned for this use (carried from sibling-repo, owner-flagged 2026-10-29). Try the sheet prompt direct first; portrait-first only on drift. Owner decisions 2026-10-29.",
+    "locked_references_path": "channel_profiles/signed-anyway/locked-references/characters",
+    "locked_references_note": "Channel-level source of truth for a cast identity, reused across episodes (see that folder's README). A character is promoted here on its SECOND use across episodes. Currently locked: CAST-001 Evelyn Shaw, CAST-010 Omar Haddad (both copied verbatim from the sibling repo sibling-repo's approved painterly signed-anyway assets — same channel, same cards v1.0.0, model-agnostic images). An 04b run copies from here, never regenerates a locked identity.",
+    "episode_local_rule": "A character absent from the CAST-001..010 registry that RECURS is promoted to its own CAST-XX-style card (owner sign-off). A character appearing in one episode only is episode-local: a scoped card at episodes/<EPID>/story/characters/ following the CAST-XX structure but marked episode-local. Owner direction 2026-10-29.",
+    "flow_project_id": "0cce8053-84e0-4ab2-b811-4edce0d8fa13",
+    "flow_project_url": "https://flow.google.com/project/0cce8053-84e0-4ab2-b811-4edce0d8fa13",
+    "flow_project_note": "Owner-supplied 2026-10-29 for EP001 04b onward. All signed-anyway Muse Image / muse-image CLI runs target this project."
+  },
+  "format": {
+    "target_runtime_seconds": 570,
+    "minimum_runtime_seconds": 480,
+    "maximum_runtime_seconds": 660,
+    "target_spoken_words_per_minute": 145,
+    "required_verdict_options": 2,
+    "aspect_ratio": "16:9"
+  },
+  "render": {
+    "mode": "i2v",
+    "model": "LTX-2.5",
+    "prompt_format": "prompt_relay_beats_v1",
+    "prompt_format_note": "Owner-locked PromptRelay-style beat packet, adopted 2026-10-29 from the vidgen-codex-ltx sibling where a 20-second LTX-2.5 render of the beat form outperformed the regular-prose alternative. Every clip prompt in prompts/7-video-prompts.md is one 'GLOBAL:: Continue from the still. … Low motion.' line plus 'BEAT:: <frames> ::' lines totalling 481 (24fps x 20s + 1). The frame labels are a model-facing pacing convention passed through the current LTX-2.5 graph unchanged, NOT the old ComfyUI-PromptRelay node. Enforced by LTXV-D001/D002; see pipeline/LTX_I2V_CONTRACT.md.",
+    "generation_unit": "clip",
+    "generation_unit_note": "One approved frame-0 still conditions exactly one 20-second clip. A dramatic scene from story/script.md becomes several clips, bridged in post with controlled inserts, room tone and J/L cuts — the bible's CINEMATOGRAPHY_CONTRACT discipline of 'do not generate a continuous ten-minute scene' still holds; only the unit length changed.",
+    "clip_duration_seconds": 20,
+    "clip_duration_note": "Fixed 20s for every clip, owner decision 2026-10-29. The bible's performance unit was updated to match, so nothing in this repo now states a different figure. At 24 fps this lands on 481 frames (1 + 8*60), satisfying num_frames%8==1; vidgen-dist takes SECONDS and derives the frame count itself, so never hand-enter a frame count. Watch at 04h whether performances pad or drift in the final third: 20s is longer than this channel's dramatic register was originally written for.",
+    "fps": 24,
+    "aspect_ratio": "16:9",
+    "megapixels": 0.98,
+    "spoken_word_band": [
+      32,
+      36
+    ],
+    "spoken_word_band_note": "At this channel's 145 wpm a 20s clip carries ~32-36 quoted words if speech fills ~70% of the clip. UNVERIFIED on LTX-2.5 and derived, not measured — see research section 6, open question 2, and re-derive from the pilot batch.",
+    "style_echo": "Cinematic painterly graphic-novel realism, restrained ink-navy and slate palette with aged-brass accents, matte prestige-drama lighting",
+    "style_echo_note": "Updated 2026-10-29 to carry the painterly-graphic-novel medium (render.look_and_feel) plus tone/palette in one trailing phrase. This exact string is the closing sentence of every LTX clip prompt and is what LTXV-D041 excludes from the final-beat check — keep prompt and channel.json identical. The earlier grounded-corporate-drama phrasing did not name the medium and would have rendered photoreal.",
+    "look_and_feel": "Cinematic painterly graphic-novel realism — the channel scope, for stills AND video. Hand-painted editorial texture with controlled visible brushwork; natural adult proportions and grounded facial anatomy (NOT caricature, NOT cel-shaded cartoon, NOT flat vector, NOT glossy 3D); restrained near-monochrome ink-navy and slate palette with aged-brass the only warm accent; soft directional prestige-drama (Rembrandt) key light, matte finish, deep-but-not-crushed shadow. Explicitly NOT photoreal. Faces read clearly at a 98-pixel crop. Inline this whole clause into every Muse Image image prompt and every LTX clip prompt's style anchor.",
+    "look_and_feel_note": "Owner-confirmed 2026-10-29 with a style reference image. An earlier same-day note reinterpreting the look toward photoreal was WRONG and is withdrawn. bible/VISUAL_STYLE_CONTRACT.md and KEY_CHARACTER_PROMPTS.md §1 are correct as written — use their style anchor verbatim; do NOT swap it for a photoreal clause. style_echo below describes tone/lighting/palette, not the rendering medium. Open pilot-QA item (04h): whether LTX-2.5 holds this painterly look across a 20s i2v clip from a painterly still — untested, but it is the look; if it cannot, the fix is prompt/still craft, not switching to photoreal without a new owner decision.",
+    "on_screen_text": "Native on-screen text is permitted (owner decision 2026-10-29). Muse Image renders short legible text reliably on frame-0 stills — prop labels, form fields, hand-inked initials, a document header — so readable prop text is baked into the 04f2 STILL and carried forward; the LTX clip prompt does not request new or changed text, so LTXV-D012 still stands for clip prompts. Exact critical figures that must be byte-identical across many shots plus the evidence graphics and the verdict card are still built in post — a consistency choice, not a capability limit.",
+    "negative_prompt_note_2": "Reworked 2026-10-29 for the painterly-graphic-novel lock. Dropped 'cartoon', 'illustration', 'stylised rendering' — they fought the intended look. The list now suppresses what the painterly realism lock excludes (cel-shaded cartoon, caricature, flat vector, children's-book illustration, glossy 3D toy render) AND pushes the LTX render off its default photoreal (photorealistic photograph, DSLR photo), plus the unchanged safety/brand terms.",
+    "workflow": "LTX25_T2V_I2V_Two_Stage_Distilled.json",
+    "cfg": 1.2,
+    "cfg_note": "Render-validated on EP001 (2026-10-29), replacing the untested 1.0 default. At cfg 1.5 (SC01-SC12's original render) the base pass produced visible extra smoke off the practical table lamp in the hearing-room clips; owner judged those 12 acceptable as-is (the artifact was minor and lamp-localised) but dropped the setting for the remaining clips. 1.2 (SC13-SC29) rendered clean. Grade [B].",
+    "cfg_refine": 1.0,
+    "cfg_audio": 1.0,
+    "img_compression": 22,
+    "img_compression_note": "Raised from the untested default of 18 on EP001 (2026-10-29) — a deliberate tightening of the anti-invented-motion/anti-invented-character lever (LTXVPreprocess), giving the model less freedom to add unrequested movement to a still. Applied to the full 29-clip batch, no adverse effect observed. Grade [B], confirms the lever still behaves as documented on LTX-2.5 (see research doc open question 4).",
+    "max_prompt_words": 450,
+    "max_prompt_words_note": "RUNAWAY TRIPWIRE, not a ceiling (retired 2026-10-29). LTX-2.5 has no vendor word limit and the Gemma encoder is built for long prompts; the old 200 figure was LTX-2-era sibling guidance. LTXV-D004 warns past 450 to catch a repeated room inventory or duration filler only. Never trim a load-bearing identity, audio or camera anchor to fit. See pipeline/LTX_I2V_CONTRACT.md §Length.",
+    "negative_prompt_additions": [
+      "cel-shaded cartoon",
+      "comic-book caricature",
+      "flat vector art",
+      "children's-book illustration",
+      "glossy 3D toy render",
+      "photorealistic photograph",
+      "DSLR photo",
+      "exaggerated expression",
+      "visible brand logo",
+      "real company signage",
+      "surveillance overlay",
+      "found-footage grain",
+      "timecode burn-in"
+    ],
+    "negative_prompt_note": "Appended to pipeline/negative-prompt-base.txt at 04g, plus a 'second <Name>' term per cast member in the episode. This is the ONLY place suppression lives: the same terms in a positive prompt cause the artifact they name (LTXV-D010 rejects them)."
+  },
+  "youtube": {
+    "primary_keywords": [
+      "financial betrayal stories",
+      "financial infidelity story",
+      "corporate ethics drama",
+      "corporate fraud story",
+      "moral dilemma short film",
+      "AI ethics story",
+      "inheritance dispute story",
+      "financial drama"
+    ],
+    "required_hashtags": [
+      "#FinancialDrama",
+      "#MoralDilemma"
+    ],
+    "title_max_characters": 70,
+    "default_disclosure": "Fictional disclosure: This is an original fictional dramatization created using synthetic performers, voices and environments. No real person, company or event is depicted.",
+    "made_with_altered_or_synthetic_content": true
+  },
+  "hard_safety_floor": [
+    "No real, identifiable people, companies, brands or logos.",
+    "Never frame content as real, leaked, or found footage.",
+    "Fictional composites only."
+  ],
+  "metadata_validation": {
+    "required_disclosure_terms": [
+      "fictional disclosure",
+      "synthetic performers",
+      "no real person, company or event is depicted"
+    ],
+    "banned_description_terms": [
+      "true story",
+      "leaked footage",
+      "real company depicted"
+    ],
+    "title_max_chars": 70,
+    "banned_title_patterns": [
+      "shocking",
+      "insane",
+      "you won't believe",
+      "episode 1"
+    ]
+  },
+  "compliance": {
+    "fictional_composites_only_at_launch": true,
+    "real_names_and_logos_prohibited": true,
+    "synthetic_media_disclosure_required": true,
+    "human_editorial_review_required": true
+  }
+}

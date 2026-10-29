@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LTX prompt manifest",
+  "description": "episodes/<slug>/<EPID>/_context/ltx-prompt-manifest.json — written at 04f3 by tools/ltx_prompt_manifest.py, never by hand. Binds each final clip prompt to the exact still it was re-anchored against, by hash, so 04g can prove a package matches the prompts it was built from.",
+  "type": "object",
+  "required": ["schema_version", "episode_id", "channel_slug", "render", "clips"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "episode_id": { "type": "string", "pattern": "^EP[0-9]{3}" },
+    "channel_slug": { "type": "string" },
+    "generated_at_utc": { "type": "string", "format": "date-time" },
+
+    "render": {
+      "type": "object",
+      "description": "Copied from channel.json -> render at compile time, so a manifest records what it was authored against even if the profile later changes.",
+      "required": ["mode", "model", "generation_unit", "clip_duration_seconds", "fps", "aspect_ratio"],
+      "properties": {
+        "mode": { "const": "i2v" },
+        "model": { "type": "string" },
+        "generation_unit": { "const": "clip" },
+        "clip_duration_seconds": { "type": "number", "exclusiveMinimum": 0 },
+        "fps": { "type": "integer", "exclusiveMinimum": 0 },
+        "aspect_ratio": { "type": "string" },
+        "megapixels": { "type": "number" },
+        "spoken_word_band": {
+          "type": "array", "items": { "type": "integer" }, "minItems": 2, "maxItems": 2
+        },
+        "style_echo": { "type": "string" }
+      }
+    },
+
+    "clips": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "clip", "index", "prompt_path", "prompt_sha256",
+          "still_path", "still_sha256", "characters", "spoken_word_count",
+          "declared_cuts", "camera_movement", "frame0_requirements"
+        ],
+        "properties": {
+          "clip": { "type": "string", "pattern": "^SC[0-9]{2,3}$" },
+          "index": {
+            "type": "integer", "minimum": 1,
+            "description": "The integer used in the render package's @@ s{n} marker AND in the still's filename. app-vidgen-dist matches a still to its prompt by the scene number that PREFIXES the filename stem (SC07.png -> 7; a suffix like _v2 is ignored), so these must agree."
+          },
+          "prompt_path": {
+            "type": "string",
+            "description": "Always prompts/7-video-prompts.md — the single canonical clip-prompt file. There are no per-clip .txt files; the addressable unit is the `## SCnn` block."
+          },
+          "prompt_sha256": {
+            "type": "string", "pattern": "^[0-9a-f]{64}$",
+            "description": "SHA-256 of this clip's `## SCnn` block body (the prose the render receives, after the header and any `[[TAG]]` line are stripped)."
+          },
+          "still_path": { "type": "string" },
+          "still_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "still_gate_verdict": { "enum": ["PASS"] },
+          "still_generator": {
+            "type": "string",
+            "description": "The image model that produced this still (e.g. muse-image-1.0, or muse-image-1.0 via local_skills/muse-image). Provenance only; written by tools/ltx_prompt_manifest.py from --still-generator or channel.json models.image."
+          },
+          "characters": { "type": "array", "items": { "type": "string" } },
+          "spoken_word_count": { "type": "integer", "minimum": 0 },
+          "declared_cuts": {
+            "type": "integer", "minimum": 0, "default": 0,
+            "description": "0 for a single continuous take, which is the i2v default. A non-zero value means the prose names that many explicit cuts, each with a transition, a re-established shot, and stated audio continuity."
+          },
+          "camera_movement": {
+            "type": "string", "minLength": 1,
+            "description": "Taken from blocking.json's camera.movement — recorded here so 05a can check the render against the decision rather than against an impression."
+          },
+          "frame0_requirements": {
+            "type": "object",
+            "description": "The clip's block from frame0-requirements.json, embedded so this manifest is self-contained.",
+            "required": ["touched_objects", "first_action_performable"],
+            "properties": {
+              "touched_objects": { "type": "array", "items": { "type": "string" } },
+              "first_action_performable": { "const": true },
+              "continues_from": { "type": ["string", "null"] }
+            }
+          },
+          "is_pilot": {
+            "type": "boolean", "default": false,
+            "description": "Marked at 04g; watched by a human at 04h before the full batch renders."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

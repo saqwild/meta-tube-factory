@@ -1,0 +1,131 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "blocking spec",
+  "description": "episodes/<slug>/<EPID>/_context/blocking.json — the single geometry authority, authored at 04d. Both the clip prompt (04f/04f3) and the frame-0 still (04f2) are projections of this file and never re-decide its fields. Gates parse these fields rather than regexing prose.",
+  "type": "object",
+  "required": ["schema_version", "episode_id", "clips"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "episode_id": { "type": "string", "pattern": "^EP[0-9]{3}" },
+    "channel_slug": { "type": "string" },
+    "clips": {
+      "type": "object",
+      "description": "Keyed by clip id (SC01, SC02, ...). Clip ids are flat and sequential.",
+      "minProperties": 1,
+      "propertyNames": { "pattern": "^SC[0-9]{2,3}$" },
+      "additionalProperties": { "$ref": "#/$defs/clip" }
+    }
+  },
+  "additionalProperties": false,
+
+  "$defs": {
+    "clip": {
+      "type": "object",
+      "required": ["chars", "props", "camera", "anchors", "end_state", "frame0"],
+      "properties": {
+        "chars": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": { "$ref": "#/$defs/character" }
+        },
+        "props": { "type": "array", "items": { "$ref": "#/$defs/prop" } },
+        "camera": {
+          "type": "object",
+          "required": ["shot", "movement"],
+          "properties": {
+            "shot": { "type": "string", "minLength": 1 },
+            "movement": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Decided HERE, not at the prompt stage. A locked camera over a settled character reads as a dead freeze-frame; 'locked' is a deliberate choice that must be stated, not a default arrived at by omission."
+            }
+          },
+          "additionalProperties": false
+        },
+        "anchors": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 },
+          "description": "Ordered actions. The clip prompt walks these in order; 05a's beat-adherence check names them."
+        },
+        "end_state": {
+          "type": "object",
+          "description": "Feeds the NEXT clip's continuity check (LTXV-S004).",
+          "additionalProperties": {
+            "type": "object",
+            "required": ["pos", "pose", "hands"],
+            "properties": {
+              "pos": { "$ref": "#/$defs/pos" },
+              "pose": { "type": "string", "minLength": 1 },
+              "hands": { "type": "string", "minLength": 1 }
+            },
+            "additionalProperties": false
+          }
+        },
+        "frame0": {
+          "enum": ["rest", "peak"],
+          "description": "'rest' (pre-beat) is the default. 'peak' is a deliberate cold-open/reveal exception and pairs with a non-closed mouth state."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "character": {
+      "type": "object",
+      "required": ["pos", "facing", "gaze", "pose", "expression", "mouth", "hands", "visible"],
+      "properties": {
+        "pos": { "$ref": "#/$defs/pos" },
+        "facing": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Described relative to the CAMERA, never relative to another character. Camera-relative facing is what disqualifies bench/podium/head-of-table geometry that puts a speaker's back to the lens."
+        },
+        "gaze": { "type": "string", "minLength": 1 },
+        "pose": { "type": "string", "minLength": 1 },
+        "expression": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Its own field, never folded into pose — an emotional read buried in a posture string cannot be independently reviewed, and this is what the clip QA performance column checks against."
+        },
+        "mouth": {
+          "type": "string",
+          "minLength": 1,
+          "default": "closed",
+          "description": "Explicit for EVERY character, not just the speaker. Defaults to 'closed'; override only for a genuine frame0:peak scene."
+        },
+        "hands": {
+          "type": "string",
+          "minLength": 1,
+          "description": "An empty hand is stated as empty. A prop that will be 'placed' during the clip is already at its placed resting_state — a prop seeded mid-placement lingers or duplicates in the render."
+        },
+        "cue": { "type": "string", "description": "Wardrobe or identity tag carried into both prompts." },
+        "visible": {
+          "type": "boolean",
+          "description": "Only characters marked true are drawn in frame. An off-screen speaker is never rendered."
+        }
+      },
+      "additionalProperties": false
+    },
+
+    "prop": {
+      "type": "object",
+      "required": ["name", "detail", "resting_state"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Concrete and specific — 'a small stuffed toy rabbit', never 'a small toy'. Reused verbatim every time the object recurs."
+        },
+        "detail": {
+          "type": "string",
+          "minLength": 1,
+          "description": "The ONE permanent identifying visual mark, e.g. 'one flat dent beneath the handle'. Restated verbatim in every still and clip prompt for the whole episode — without it the model has nothing to be consistent with and the prop quietly becomes a different object scene to scene."
+        },
+        "resting_state": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+
+    "pos": { "enum": ["left", "center", "right"] }
+  }
+}

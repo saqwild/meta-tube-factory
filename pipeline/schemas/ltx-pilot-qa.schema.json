@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LTX pilot QA",
+  "description": "episodes/<slug>/<EPID>/qa/ltx-pilot-qa.json — written at 04h. A human must actually watch the pilot clips; an agent may prepare the scaffold but may not supply verdicts it did not watch for.",
+  "type": "object",
+  "required": ["schema_version", "episode_id", "watched_by", "watched_at_utc", "settings_profile", "status", "clips"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "episode_id": { "type": "string", "pattern": "^EP[0-9]{3}" },
+    "watched_by": {
+      "type": "string", "minLength": 1,
+      "description": "The human who actually watched. Not the agent that prepared the file."
+    },
+    "watched_at_utc": { "type": "string", "format": "date-time" },
+    "package_manifest_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "settings_profile": {
+      "type": "object",
+      "description": "One profile for the whole pilot batch, recorded once at the top level, never per clip.",
+      "required": ["workflow", "megapixels", "duration_seconds", "img_compression"],
+      "properties": {
+        "workflow": { "type": "string" },
+        "megapixels": { "type": "number" },
+        "duration_seconds": { "type": "number" },
+        "cfg": { "type": "number" },
+        "cfg_refine": { "type": "number" },
+        "cfg_audio": { "type": "number" },
+        "img_compression": { "type": "integer" },
+        "seed": { "type": ["integer", "string"] }
+      }
+    },
+    "status": { "enum": ["PASS", "FAIL"] },
+
+    "clips": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["clip", "render_path", "coverage", "checks", "verdict"],
+        "properties": {
+          "clip": { "type": "string", "pattern": "^SC[0-9]{2,3}$" },
+          "render_path": { "type": "string" },
+          "coverage": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "enum": ["opening", "dense_dialogue", "multi_character", "prop_interaction", "continuity", "warm_close"]
+            },
+            "description": "Which selection category this clip covers. The set across all pilot clips must cover every category."
+          },
+          "checks": {
+            "type": "object",
+            "required": [
+              "beat_adherence", "frame0_fidelity", "dialogue", "speaker_binding",
+              "identity_and_cast_count", "prop_interaction", "environment_and_camera",
+              "audio", "artifacts"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "beat_adherence": {
+                "$ref": "#/$defs/check",
+                "description": "The one that matters most and is most often fudged. Name the action from blocking.json's anchors and say whether it occurred. Aggregate motion, 'it looks alive' and file size are NOT evidence either way."
+              },
+              "frame0_fidelity": { "$ref": "#/$defs/check" },
+              "dialogue": { "$ref": "#/$defs/check" },
+              "speaker_binding": { "$ref": "#/$defs/check" },
+              "identity_and_cast_count": { "$ref": "#/$defs/check" },
+              "prop_interaction": { "$ref": "#/$defs/check" },
+              "environment_and_camera": { "$ref": "#/$defs/check" },
+              "audio": { "$ref": "#/$defs/check" },
+              "artifacts": { "$ref": "#/$defs/check" }
+            }
+          },
+          "verdict": { "enum": ["PASS", "FAIL"] }
+        },
+        "additionalProperties": false
+      }
+    },
+
+    "open_question_findings": {
+      "type": "array",
+      "description": "The pilot batch is this repo's FIRST LTX-2.5 render, so it is the cheapest chance to settle the open questions in pipeline/research/LTX25_PROMPTING_RESEARCH.md section 6. Only MEASURED findings are recorded here and promoted into LTX_I2V_CONTRACT.md with their grade raised from [C] to [B]. An impression is not a verdict.",
+      "items": {
+        "type": "object",
+        "required": ["question", "observation", "verdict"],
+        "properties": {
+          "question": {
+            "enum": [
+              "prompt_length_ceiling",
+              "dialogue_occupancy_at_20s",
+              "multi_speaker_mouth_binding",
+              "img_compression_18",
+              "frame0_adherence_strictness",
+              "destructive_event_split"
+            ]
+          },
+          "observation": { "type": "string", "minLength": 1 },
+          "verdict": { "enum": ["confirmed_still_true", "confirmed_eased", "inconclusive"] },
+          "evidence_clips": { "type": "array", "items": { "type": "string" } }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+
+  "$defs": {
+    "check": {
+      "type": "object",
+      "required": ["result", "note"],
+      "properties": {
+        "result": { "enum": ["PASS", "FAIL"] },
+        "note": {
+          "type": "string", "minLength": 1,
+          "description": "Specific. 'Feels off' is not a finding — name the action, the anchor, or the artifact."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

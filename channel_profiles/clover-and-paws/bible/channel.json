@@ -1,0 +1,171 @@
+{
+  "schema_version": "2.0",
+  "channel": {
+    "name": "Clover & Bruno Stories",
+    "handle": "@cloverandbruno",
+    "country": "United Arab Emirates",
+    "language": "English",
+    "category": "Pets & Animals",
+    "status": "live_merged",
+    "spine": "Polite kitten Clover always with Mama Rosa + Papa Fin meets 70-year-old retired grumpy dog Bruno who never says yes first time, mostly with Pip — 70% both families together.",
+    "tagline": "Every day starts with Clover. Every legend starts grumpy.",
+    "description": "Welcome to Clover & Bruno Stories — original photoreal stories about a cat and dog family living like humans on Paw Street.\n\nClover is a polite, gentle kitten who always comes with Mama Rosa and Papa Fin. Next door is Bruno, a 70-year-old retired dog — arrogant outside, soft inside, who never says yes in one attempt — mostly with his sidekick Pip.\n\n70% of our stories bring both families together — polite Clover meets grumpy Bruno. 15% are Clover family only, 15% are Bruno & Co only.\n\nEvery episode is a complete slice of life — chores, small mistakes, wishes coming true, money troubles, trips, and kindness. Warm humor, dry wit, and an earned emotional turn.\n\nAI-generated original stories. Not real footage. Photoreal anthropomorphic cat and dog family stories — Kitten Clover and Grumpy Dog Bruno.\n\nCat and dog stories weekly — Shorts and Longs.",
+    "keywords": "cat and dog stories, Clover and Bruno, polite kitten and grumpy dog, anthropomorphic cat and dog, cat family stories, dog stories",
+    "made_for_kids": false
+  },
+  "positioning": {
+    "niche": "Photoreal anthropomorphic cat and dog family neighborhood stories",
+    "flagship_series": "Paw Street Stories",
+    "value_proposition": "Polite young kitten vs 70-year-old grumpy retired dog who never says yes first time — cat and dog family stories about ordinary human life on one street.",
+    "tagline": "Every day starts with Clover. Every legend starts grumpy.",
+    "banner_line": "Polite kitten meets grumpy 70-year-old dog.",
+    "content_mix_percent": {
+      "duo_both_families": 70,
+      "clover_family_only": 15,
+      "bruno_and_co_only": 15
+    },
+    "reconstruction_policy": {
+      "role": "not_applicable_cozy_family",
+      "standalone_pillar": false
+    }
+  },
+  "brand_assets": {
+    "scope_note": "Avatar, banner, and signature mark are YouTube channel-display assets only. They are set once in Studio and never gate, block, or feed any episode-production stage (00-preflight through 07-final-package-qa) - unlike the CAST-001..007 character reference packs in characters/, which stage 04b onward do depend on.",
+    "prompt_source": "BRAND_ASSET_PROMPTS.md",
+    "avatar_master": "assets/clover_bruno_avatar_800.png",
+    "avatar_small": "assets/clover_bruno_avatar_98.png",
+    "signature_mark": "assets/paw_street_mark.png",
+    "banner_candidates": [
+      "assets/clover_bruno_banner_2560.png"
+    ],
+    "recommended_banner": "assets/clover_bruno_banner_2560.png",
+    "banner_master_resolution": "2560x1440",
+    "banner_text_note": "YouTube renders the channel name as its own UI text on the channel page regardless of the banner image, so title/tagline text baked into the banner art is decorative only, not load-bearing. It only needs to look right in the desktop/TV crop - it is not required to sit inside the mobile 'viewable on all devices' safe zone.",
+    "thumbnail_master_resolution": "3840x2160"
+  },
+  "cast_system": {
+    "registry": "CAST.md",
+    "identity_contract": "CHARACTER_BIBLE.md",
+    "prompt_compiler": "KEY_CHARACTER_PROMPTS.md",
+    "master_card_directory": "characters",
+    "episode_selection_template": "characters/EPISODE_CAST_TEMPLATE.md",
+    "registry_version": "2.0.0",
+    "master_cast_count": 7,
+    "anchor_ids": [
+      "CAST-001",
+      "CAST-004"
+    ],
+    "family_anchor_ids": [
+      "CAST-002",
+      "CAST-003",
+      "CAST-005"
+    ],
+    "street_recurring_ids": [
+      "CAST-006",
+      "CAST-007"
+    ],
+    "same_episode_multi_role_allowed": false,
+    "bruno_never_yes_first_rule": "Every Bruno appearance must have first answer = No with attitude, second = reluctant soft yes + helps",
+    "max_characters_shorts": 3,
+    "max_characters_long": 6,
+    "episode_snapshot_required": true,
+    "new_performer_default_scope": "episode_local",
+    "co_appearance_defaults": "Clover usually appears with at least one parent; Bruno usually appears with Pip. DEFAULTS, not laws (revised 2026-10-29, owner decision) - depart from them when the story is better for it, and declare the departure in the episode's cast snapshot. See CAST.md section 4."
+  },
+  "youtube": {
+    "primary_keywords": [
+      "cat and dog stories",
+      "cat and dog family",
+      "Clover and Bruno",
+      "polite kitten and grumpy dog",
+      "anthropomorphic cat and dog stories",
+      "cat family stories",
+      "dog stories",
+      "photoreal cat and dog"
+    ],
+    "required_hashtags": [
+      "#catanddog",
+      "#cloverandbruno"
+    ],
+    "title_max_characters": 90,
+    "thumbnail_text_max_words": 4,
+    "default_disclosure": "AI-generated original stories. Not real footage. Photoreal anthropomorphic cat and dog family stories — Kitten Clover and Grumpy Dog Bruno.",
+    "made_with_altered_or_synthetic_content": true,
+    "shorts_related_video_required": true,
+    "shorts_reversal_prohibited": false,
+    "pinned_comment_template": "Did Bruno say no first and then help anyway? What would you do if you were Clover?"
+  },
+  "metadata_validation": {
+    "required_opening_terms": [],
+    "required_disclosure_terms": [
+      "AI-generated",
+      "Not real footage"
+    ],
+    "required_hashtags": [
+      "#catanddog"
+    ],
+    "banned_description_terms": [
+      "real cat and dog footage",
+      "true story of real animals",
+      "leaked footage"
+    ],
+    "thumbnail_overlay_words_min": 2,
+    "thumbnail_overlay_words_max": 4,
+    "title_max_chars": 90,
+    "title_must_contain_cat_or_dog_or_names": true
+  },
+  "playlists": {
+    "master_long_form": "Paw Street Stories - Longs",
+    "subseries": [
+      "Clover & Bruno Duo - 70%",
+      "Clover Family Only - 15%",
+      "Bruno & Co Only - 15%"
+    ],
+    "shorts": "Paw Street Stories - Shorts",
+    "long_form_membership_rule": "Add every long-form to Paw Street Stories - Longs and exactly one subseries."
+  },
+  "visual_identity": {
+    "warm_cream": "#FFF6E3",
+    "soft_wood": "#D8B589",
+    "finn_orange": "#FF9F6B",
+    "bruno_cardigan": "#C97B4A",
+    "gentle_green": "#A8C8A0",
+    "display_typeface": "Rounded Sans / Warm Serif friendly",
+    "data_typeface": "Soft sans for small text"
+  },
+  "episode": {
+    "short_target_runtime_seconds": 170,
+    "short_minimum_seconds": 15,
+    "short_maximum_seconds": 180,
+    "long_target_runtime_seconds": 570,
+    "long_minimum_seconds": 540,
+    "long_maximum_seconds": 900,
+    "target_spoken_words_per_minute": 140,
+    "maximum_speaking_characters_shorts": 3,
+    "maximum_speaking_characters_long": 6,
+    "distribution": "70% Duo both families / 15% Clover family only / 15% Bruno & Co only"
+  },
+  "script": {
+    "bruno_first_line_must_be_no": true,
+    "clover_always_polite": true,
+    "spoken_words_per_minute": 140,
+    "maximum_speaking_characters_shorts": 3,
+    "maximum_speaking_characters_long": 6
+  },
+  "production": {
+    "core_mode": "Photoreal Anthropomorphic Family",
+    "visual_engine": "Unified photoreal - all characters same engine",
+    "character_reference_mode": true,
+    "aspect_ratio_shorts": "16:9 rendered, 9:16 reframed in post",
+    "aspect_ratio_longs": "16:9",
+    "frame_rate": 24,
+    "_engine_note": "The old per-character engine split is abandoned. LTX-2.5 image-to-video is the single unified engine for all 7 performers.",
+    "clip_duration_seconds": 20
+  },
+  "compliance": {
+    "fictional_only": true,
+    "real_names_and_logos_prohibited": true,
+    "synthetic_media_disclosure_required": true,
+    "no_real_animal_footage_claim": true
+  }
+}

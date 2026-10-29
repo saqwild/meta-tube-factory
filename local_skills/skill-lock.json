@@ -1,0 +1,92 @@
+{
+  "_note": "Provenance for every local skill and vendored tool in this repo: where it came from, what was adapted, and what is not yet proven.",
+  "ltx-production-writer": {
+    "source": [
+      "C:\\pycode\\codex-grumpy\\skills\\video-prompts\\SKILL.md",
+      "C:\\pycode\\codex-grumpy\\rules\\prompt\\channel_prompt_constraints.md (sections 3, 3b-3e, 4b, 7c, 7d, 9, 9a-9d, PROSE GRAMMAR)"
+    ],
+    "created_at_utc": "2026-10-29T00:00:00Z",
+    "created_by": "Claude, on the owner's instruction, as the sole writer for stages 04f and 04f3",
+    "adaptation": [
+      "De-channelised: every number (clip duration, spoken-word band, aspect, cast rules, style echo) is read from channel_profiles/<slug>/channel.json rather than hardcoded, so one skill serves both channels.",
+      "Split into a two-pass shape (04f draft -> 04f2 stills -> 04f3 final) to resolve the circular i2v dependency the source repo leaves unresolved: its channel_prompt_constraints.md section 0 declares a video-first loop, while its skills run image prompts at stage 7 before video prompts at stage 8, and the stage-8 skill then instructs the author to write the opening clause 'AFTER the still is approved'. Both cannot be true in a single linear pass.",
+      "Added the frame-0 requirement block as an explicit, validated artifact (LTXV-S001/S002) rather than an implicit expectation.",
+      "Dropped the 'Continue from the still:' prompt opener: it is a relay-era habit that reads as meta-instruction, and the vendor guidance for i2v is to open on shot scale and subject.",
+      "Every inherited rule is graded [A] vendor-confirmed / [B] sibling-render-validated / [C] retest-required in pipeline/LTX_I2V_CONTRACT.md, because the source file warns in its own header that its 'render-validated' claims come from a sibling channel rather than from itself."
+    ],
+    "upstream_vendor_sources": [
+      "https://docs.ltx.io/open-source-model/usage-guides/prompting-guide (retrieved 2026-10-29)",
+      "https://huggingface.co/Lightricks/LTX-2.5 (retrieved 2026-10-29)"
+    ],
+    "not_render_validated": "EP001 (signed-anyway) rendered a full 29-clip LTX-2.5 batch on 2026-10-29, settling research section 6 question 4 (img_compression) and the cfg/artifact tradeoff. This writer's prompt-density, dialogue-occupancy and multi-speaker rules remain unproven -- see pipeline/research/LTX25_PROMPTING_RESEARCH.md section 6 for what the next pilot batch must still settle."
+  },
+  "frame0-still-writer": {
+    "source": [
+      "C:\\pycode\\codex-grumpy\\skills\\image-prompts-muse\\SKILL.md",
+      "C:\\pycode\\codex-grumpy\\rules\\prompt\\muse_image_still_constraints.md"
+    ],
+    "created_at_utc": "2026-10-29T00:00:00Z",
+    "created_by": "Claude, on the owner's instruction, as the sole writer for stage 04f2",
+    "adaptation": [
+      "Input inverted: the still prompt is derived from the clip prompt's frame-0 requirement block (04f), not authored independently ahead of it.",
+      "De-channelised: reads style tokens, safety floor and cast rules from channel.json.",
+      "Generation path left model-agnostic rather than hardcoding the source repo's Meta Model API browser-automation route (--ref-asset / --skip-ref-tags / --project-id), which is that repo's own tooling and is not vendored here.",
+      "Output filenames are the clip id SC<NN>.png; the render app's app/batch.py (C:\\pycode\\app-vidgen-dist) matches a still to its clip by the scene number PREFIXING the filename stem (SC07 -> clip 7). Corrected 2026-10-29: this entry previously said 'LAST digit run', an earlier matcher the app no longer uses."
+    ],
+    "upstream_vendor_source": "Meta Muse Image prompting guide (dev.meta.ai/docs/image-generation), via the source repo's muse_image_still_constraints.md authority hierarchy"
+  },
+  "ltx_prompt_validator": {
+    "source": "written for this repo, 2026-10-29",
+    "rule_catalog": "pipeline/ltx_prompt_validator.md",
+    "tests": "tests/test_ltx_prompt_validator.py",
+    "design_note": "LTX-2.5 native prose has no sections, no subject labels and no timing syntax, so the validator checks prose-level and state-level rules rather than a field structure. Two rules (LTXV-D024, LTXV-D041) shipped with false positives on ordinary prose that only the negative test cases exposed; a negative case is now required for any fuzzy rule."
+  },
+  "image_agent_packet": {
+    "source": [
+      "C:\\pycode\\codex-grumpy\\scripts\\image_prompt_checklist.py",
+      "C:\\pycode\\codex-grumpy\\scripts\\lib\\still_claims.py"
+    ],
+    "created_at_utc": "2026-10-29T00:00:00Z",
+    "adaptation": "Ported as tools/image_agent_packet.py, with two upstream defects fixed and one addition. FIXED 1: the position extractor matched LEFT/RIGHT/CENTER case-insensitively, so an environment string containing 'frame-left' claimed the LEFT slot and every scene in the reference episode reported 'LEFT = warm late-afternoon sunlight' instead of a character. Position markers are now matched case-sensitively against the documented caps convention and must follow 'on the'/'at'/'is'. FIXED 2: only the FIRST match per slot was kept, which silently hid a real second claim. ADDED: a frame-0-forward check line per clip, listing that clip's touched_objects, which the upstream could not produce because its image stage ran before any video prompt existed.",
+    "tests": "tests/test_image_agent_packet.py"
+  },
+  "storyboard": {
+    "source": "C:\\pycode\\codex-grumpy\\scripts\\storyboard.py",
+    "created_at_utc": "2026-10-29T00:00:00Z",
+    "adaptation": "Ported as tools/storyboard.py, deliberately simplified: one self-contained HTML file, a responsive card grid, stills embedded as data URIs, per-clip prompt and dialogue. Reads this repo's prompts/ and renders/ artifacts rather than the source repo's episode layout.",
+    "tests": "tests/test_storyboard.py"
+  },
+  "ltx25-prompting": {
+    "source": "global skill, invoked via the Skill tool",
+    "role": "Read-only conformance check AFTER compilation, never a drafter.",
+    "note": "Not vendored locally. If it disagrees with pipeline/LTX_I2V_CONTRACT.md, the contract wins — it is a generic vendor-syntax guide and does not carry this pipeline's render-validated findings."
+  },
+  "youtube-scriptwriting": {
+    "source": "C:\\pycode\\sibling-repo\\local_skills\\youtube-scriptwriting",
+    "copied_to_vidgen_ltx_at_utc": "2026-10-29T00:00:00Z",
+    "scope": "General script craft, retention, hook, structure, editing and template library. The copied package is consumed only through the explained-from-within-story-writer adapter for the inside-the-process channel, same restriction as its origin repo.",
+    "note": "Copied verbatim, no adaptation. Not factual authority and does not write LTX prompt prose. sibling-repo's own skill-lock.json records this package's further-upstream origin (~/.codex/skills/youtube-scriptwriting)."
+  },
+  "explained-from-within-story-writer": {
+    "source": "C:\\pycode\\sibling-repo\\local_skills\\explained-from-within-story-writer",
+    "ported_to_vidgen_ltx_at_utc": "2026-10-29T00:00:00Z",
+    "ported_by": "Claude (this session), porting the inside-the-process channel profile from sibling-repo (LTX-2.5) onto this repo's LTX-2.5 pipeline, on the owner's instruction",
+    "scope": "Stage 03a only, for channel_profiles/inside-the-process. Writes the cast snapshot and source-backed story package; LTX-2.5 prompt writing remains delegated to local_skills/ltx-production-writer (04f/04f3) and local_skills/frame0-still-writer (04f2).",
+    "adaptation": [
+      "References retargeted from the source's LTX writer (local_skills/ltx-production-writer) to this repo's ltx-production-writer/frame0-still-writer split.",
+      "Clip duration corrected from the source's 15-second fixed LTX-2.5 unit to this repo's universal 20-second fixed LTX unit; 'native LTX-2.5 dialogue windows' reworded to 'native LTX-2.5 dialogue windows'.",
+      "Added an explicit hard boundary against reusing the sibling LTX profile's already-produced episode (premise, script, dialogue) as source material — this repo's inside-the-process starts its own episode numbering independently.",
+      "Everything else (foundation/beats/causal-outline/table/self-audit workflow, hard boundaries on evidence and originality) is unchanged from the source skill.",
+      "2026-10-29 (owner-directed, story-completeness work): step 2 no longer keeps only beats that are 'both causally necessary and likely to change understanding' -- that AND dropped EP001's raw materials. Every in-scope MUST item of the owner-approved story/coverage-map.json (pipeline/process_coverage.md) now gets a beat; surprise ranking only allocates time. Outline step 3 generalised from raw origin to composition/anatomy; beat table gains '#' and 'Coverage IDs' columns; self-audit and handoff require tools/coverage_validator.py to pass. Diverges from the sibling-repo source from here on.",
+      "2026-10-29 (owner-approved 03a reopen of inside-the-process EP001): self-audit gains a 'Clip cuts' check -- each row's dialogue must divide into its 20-second clips at sentence ends or speaker changes with every clip inside spoken_word_band, enforced by tools/clip_split_check.py inside the 03a coverage check. EP001 revision 9 was in band on average yet 9 of 15 rows could only be cut mid-phrase.",
+      "2026-10-29 (owner-approved): added the Explorer helmet-radio voice rule (from VISUAL_STYLE_CONTRACT.md) and a pointer to bible/STORY_ENGINE.md (story engine adopted from sibling-repo's channel profile, rewritten for 20 s clips). Stage contracts 01/03a/03b gained matching inside-the-process story-engine sections."
+    ]
+  },
+  "meta-image-generator": {
+    "source": "tools/meta_models.py (Meta Model API, muse-image-1.0)",
+    "recorded_at_utc": "2026-10-29T00:00:00Z",
+    "role": "Sole still GENERATOR (not a prompt writer): Muse Image via Meta Model API. Prompts come from local_skills/frame0-still-writer (04f2) and the 04b/04c reference-sheet contracts; this tool only executes them.",
+    "provenance_rule": "Every still records still_generator=muse-image-1.0 in _context/ltx-prompt-manifest.json (tools/ltx_prompt_manifest.py --still-generator). channel.json models.image is muse-image-1.0.",
+    "not_render_validated": "Muse Image identity lock on inside-the-process EP001 has not rendered yet; pilot at 04h before a full batch."
+  }
+}

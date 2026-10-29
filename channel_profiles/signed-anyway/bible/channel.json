@@ -1,0 +1,226 @@
+{
+  "schema_version": "2.0",
+  "channel": {
+    "name": "Signed Anyway",
+    "handle": "@signedanyway",
+    "country": "United Arab Emirates",
+    "language": "English",
+    "category": "Film & Animation",
+    "status": "pre_launch",
+    "spine": "A hidden financial decision destroys trust; both sides argue the case and the viewer decides who crossed the line.",
+    "tagline": "They knew the cost. They signed anyway.",
+    "description": "They knew the cost. They signed anyway.\n\nSigned Anyway creates original financial dramas and moral dilemma short films about financial betrayal, financial infidelity, inheritance disputes, corporate ethics, corporate fraud and near-future AI ethics. Each dialogue-driven fictional story reconstructs the evidence behind a hidden financial decision—then asks you to decide who crossed the line.\n\nThe Moral Ledger — every long-form financial and ethical case.\nMoney Between Us — marriage, family and inheritance.\nCorporate Reckonings — boardrooms, fraud and executive choices.\nFuture Verdicts — AI ethics and near-future dilemmas.\nThe Evidence — Shorts that reveal one clue from the full case.\n\nNew 8–11 minute stories; target runtime 9:30.\n\nFictional disclosure: This is an original fictional dramatization created using synthetic performers, voices and environments. No real person, company or event is depicted.",
+    "keywords": "financial drama, moral dilemma short film, corporate ethics, financial betrayal story",
+    "made_for_kids": false
+  },
+  "positioning": {
+    "niche": "Financial & Ethics Tribunal drama",
+    "flagship_series": "The Moral Ledger",
+    "value_proposition": "Cinematic financial dilemmas where a hidden decision destroys trust, both sides argue their case, and the viewer decides who crossed the line.",
+    "tagline": "They knew the cost. They signed anyway.",
+    "banner_line": "Money. Power. Betrayal. You decide.",
+    "content_mix_percent": {
+      "personal_financial_betrayal": 40,
+      "corporate_fraud_and_ethics": 40,
+      "future_verdicts": 20
+    },
+    "reconstruction_policy": {
+      "role": "cross_pillar_visual_device",
+      "corporate_label": "Corporate Reckonings — Event Special",
+      "standalone_pillar": false,
+      "standalone_playlist": false
+    }
+  },
+  "brand_assets": {
+    "prompt_source": "BRAND_ASSET_PROMPTS.md",
+    "avatar_master": "assets/signed_anyway_avatar_800.png",
+    "avatar_small": "assets/signed_anyway_avatar_98.png",
+    "signature_mark": "assets/signed_anyway_continuous_signature.webp",
+    "banner_candidates": [
+      "assets/b1.webp",
+      "assets/b2.webp"
+    ],
+    "recommended_banner": "assets/b1.webp",
+    "banner_master_resolution": "2560x1440",
+    "thumbnail_master_resolution": "3840x2160"
+  },
+  "cast_system": {
+    "registry": "CAST.md",
+    "identity_contract": "CHARACTER_BIBLE.md",
+    "prompt_compiler": "KEY_CHARACTER_PROMPTS.md",
+    "master_card_directory": "characters",
+    "episode_selection_template": "characters/EPISODE_CAST_TEMPLATE.md",
+    "registry_version": "1.0.0",
+    "master_cast_count": 10,
+    "anchor_ids": [
+      "CAST-001",
+      "CAST-002"
+    ],
+    "repertory_ids": [
+      "CAST-003",
+      "CAST-004",
+      "CAST-005",
+      "CAST-006",
+      "CAST-007",
+      "CAST-008",
+      "CAST-009",
+      "CAST-010"
+    ],
+    "same_episode_multi_role_allowed": false,
+    "lead_reuse_cooldown_episodes": 2,
+    "intimate_pair_role_change_cooldown_episodes": 5,
+    "maximum_familiar_repertory_faces_per_episode": 2,
+    "episode_snapshot_required": true,
+    "new_performer_default_scope": "episode_local"
+  },
+  "youtube": {
+    "primary_keywords": [
+      "financial betrayal stories",
+      "financial infidelity story",
+      "corporate ethics drama",
+      "corporate fraud story",
+      "moral dilemma short film",
+      "AI ethics story",
+      "inheritance dispute story",
+      "financial drama"
+    ],
+    "required_hashtags": [
+      "#FinancialDrama",
+      "#MoralDilemma"
+    ],
+    "title_max_characters": 70,
+    "thumbnail_text_max_words": 3,
+    "default_disclosure": "Fictional disclosure: This is an original fictional dramatization created using synthetic performers, voices and environments. No real person, company or event is depicted.",
+    "made_with_altered_or_synthetic_content": true,
+    "shorts_related_video_required": true,
+    "shorts_reversal_prohibited": true,
+    "pinned_verdict_question": "Which duty matters most, and why?"
+  },
+  "metadata_validation": {
+    "required_opening_terms": [],
+    "required_disclosure_terms": [
+      "fictional disclosure",
+      "synthetic performers",
+      "no real person, company or event is depicted"
+    ],
+    "required_hashtags": [
+      "#FinancialDrama",
+      "#MoralDilemma"
+    ],
+    "banned_description_terms": [
+      "true story",
+      "leaked footage",
+      "real company depicted"
+    ],
+    "thumbnail_overlay_words_min": 0,
+    "thumbnail_overlay_words_max": 3,
+    "title_max_chars": 70,
+    "title_named_case_within_chars": 0,
+    "banned_title_patterns": [
+      "shocking",
+      "insane",
+      "you won't believe",
+      "episode 1",
+      "moral tribunal episode"
+    ]
+  },
+  "playlists": {
+    "master_long_form": "The Moral Ledger",
+    "subseries": [
+      "Money Between Us",
+      "Corporate Reckonings",
+      "Future Verdicts"
+    ],
+    "shorts": "The Evidence",
+    "long_form_membership_rule": "Add every long-form episode to The Moral Ledger and exactly one subseries playlist."
+  },
+  "visual_identity": {
+    "ink_navy": "#07131C",
+    "slate": "#24333D",
+    "aged_brass": "#C79A45",
+    "paper": "#E8E0D1",
+    "oxblood": "#7B2D26",
+    "oxblood_max_frame_percent": 3,
+    "display_typeface": "Source Serif 4",
+    "data_typeface": "IBM Plex Mono"
+  },
+  "episode": {
+    "target_runtime_seconds": 570,
+    "minimum_runtime_seconds": 480,
+    "maximum_runtime_seconds": 660,
+    "target_spoken_words_per_minute": 145,
+    "maximum_speaking_characters": 5,
+    "required_verdict_options": 2,
+    "reversal_window_seconds": [
+      315,
+      390
+    ],
+    "manual_midroll_window_seconds": [
+      315,
+      390
+    ],
+    "manual_midroll_requires_natural_break_after_completed_beat": true,
+    "story_out_offset_seconds": 20,
+    "end_screen_duration_seconds": 20,
+    "target_story_out_seconds": 550,
+    "cold_open_max_seconds": 20,
+    "consequence_visible_by_seconds": 10,
+    "episode_number_in_title": false
+  },
+  "script": {
+    "runtime_seconds_min": 480,
+    "runtime_seconds_max": 660,
+    "spoken_words_per_minute": 145,
+    "verbatim_ratio_min": 0.0,
+    "connective_ratio_max": 1.0,
+    "monologue_seconds_max": 20,
+    "but_therefore_min": 3,
+    "maximum_speaking_characters": 5,
+    "required_verdict_options": 2
+  },
+  "production": {
+    "core_mode": "i2v",
+    "core_model": "LTX-2.5",
+    "clip_duration_seconds": 20,
+    "draft_resolution_megapixels": 0.98,
+    "final_resolution_megapixels": 0.98,
+    "frame_rate": 24,
+    "aspect_ratio": "16:9",
+    "native_audio": true,
+    "character_reference_mode": true,
+    "_note": "Fixed 20-second clip, one approved frame-0 still per clip. Owner decision 2026-10-29. Licence gate CLEARED - LTX-2.5 is an open-weights release rendered locally."
+  },
+  "render": {
+    "mode": "i2v",
+    "model": "LTX-2.5",
+    "megapixels_dialogue": 0.98,
+    "megapixels_insert": 0.98,
+    "duration_seconds": 20.0,
+    "fps": 24,
+    "aspect_ratio": "16:9",
+    "max_reference_images": 9,
+    "max_characters_in_frame": 2,
+    "max_speaking_cast": 5,
+    "upscale_target": "1080p"
+  },
+  "audio": {
+    "integrated_loudness_lufs": -14,
+    "integrated_loudness_tolerance_lu": 1,
+    "true_peak_max_dbtp": -1,
+    "sample_rate_hz": 48000,
+    "channels": "stereo",
+    "phone_headphone_mono_qc_required": true,
+    "caption_format": "UTF-8 SRT",
+    "speaker_label_rule": "Use NAME: only when the speaker changes off-screen or is visually ambiguous; reserve brackets for meaningful non-speech cues."
+  },
+  "compliance": {
+    "fictional_composites_only_at_launch": true,
+    "real_names_and_logos_prohibited": true,
+    "financial_claim_review_required": true,
+    "synthetic_media_disclosure_required": true,
+    "h3_publication_gate_required": true,
+    "human_editorial_review_required": true,
+    "ypp_authorship_evidence_pack_required": true,
+    "rolling_five_episode_originality_matrix_required": true
+  }
+}

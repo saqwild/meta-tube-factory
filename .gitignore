@@ -1,0 +1,17 @@
+# Secrets and local session data - never publish
+.env
+.env.*
+!.env.example
+old-session.json
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Episode runtime state
+*.lock
+episode-state.json.bak
+
+# OS / editor
+Thumbs.db
+.DS_Store

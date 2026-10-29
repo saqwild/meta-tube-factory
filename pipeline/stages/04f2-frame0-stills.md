@@ -1,0 +1,128 @@
+# 04f2 — frame-0 stills (Muse Image)
+
+## Writer authority
+
+**`local_skills/frame0-still-writer/SKILL.md` is the sole writer for this stage**, under
+`pipeline/MUSE_FRAME0_CONTRACT.md`.
+
+## What this stage produces
+
+**One still per clip** — the literal first frame each LTX-2.5 clip is conditioned on. For an
+episode of N clips this is N stills, plus whatever variants the select loop generates and
+discards. This is the stage where the image count scales with the episode, which is the
+structural difference from the previous engine, where images were a handful of per-episode
+identity references.
+
+The reference sheets from `04b`/`04c` are **inputs** here, not outputs: they are the identity
+locks each still is generated against.
+
+## Inputs
+
+`_context/frame0-requirements.json` (from `04f` — **the authority for what each still must
+contain**), `_context/blocking.json`, `visual/references/manifest.md` (the `[[TAG]]` →
+asset-name mapping and the full locked environment strings), the channel's visual-style
+contract from its reference bible.
+
+## Task
+
+### 0. Bind each still to its clip, explicitly
+
+Every still prompt block is headed `## SC<NN> | pose: …`, where `SC<NN>` is the **clip id from
+`frame0-requirements.json`** (`SC01`…`SC08`), and the pose note echoes that block. This is not bookkeeping: a
+still authored against the wrong clip conditions the wrong generation, and the batch renders
+successfully and looks plausible. `LTXV-S006` checks the binding, that every `touched_objects`
+entry appears in the still prompt, that every character in the clip's `frame0_state` is
+described (a `[[TAG]]` binds identity but stages nothing, so a tag alone does not count), and
+that no motion verb has crept into what must be a settled state.
+
+For each clip, project its frame-0 requirement block into a Muse Image prompt and generate
+the still. The prompt anatomy — cast-count lock, setting with the environment string verbatim,
+characters with explicit mouth and expression per character, mood line, style token, positive
+anatomy line — is specified in `MUSE_FRAME0_CONTRACT.md` and the writer skill.
+
+**Frame-0 is a settled STATE, never mid-motion.** Anything the clip must *perform* is written
+as a state the still already shows. Props at their declared resting state; hands stated empty
+where empty.
+
+### Build the agent packet before generating anything
+
+```bash
+python tools/image_agent_packet.py --channel <slug> --episode EPxxx
+```
+
+This pairs each clip's **verbatim** still prompt with that clip's own validation rules — the
+staging claims the prompt already makes, turned into checks, plus its `touched_objects` and the
+performable-first-action question. Hand that one file to whoever generates the stills. They
+generate, self-check the *result* against the embedded conditions, correct or re-roll, finalise,
+and only then move to the next clip.
+
+The point is sequencing: without it, the first time anyone sees "here is exactly what this image
+must show" is *after* a render has been spent.
+
+### Generation path
+
+The writer skill produces prompt *text*; something has to render it. This stage does not
+mandate one tool, but it does require the choice to be **declared once per episode and held**,
+because mixing image generators inside an episode is the fastest route to cast drift.
+
+| driver | path |
+|---|---|
+| Muse Spark (agent) | `python tools/meta_models.py image`, one clip at a time, working down the agent packet |
+| batch | `python tools/meta_models.py image` per prompt in `6-image-prompts.md` |
+
+Record the chosen path, the model name and the variant count in `qa/still-gate.md`.
+
+### The generate-N-select loop
+
+1. Author the structured spec from the requirement block before any prose.
+2. Generate N variants (default 4) at 16:9.
+3. Binary-presence pass — cast count, props present, colours. The model is reliable here.
+4. **Final gate on the keep, before any clip render.**
+5. Do not delete the other variants until the keep passes step 4.
+
+### Running the gate without contaminating it
+
+**Never show the vision model the claim you want confirmed** — it will fabricate an observation
+matching any claim it can see. Use the three-step method: ask for **neutral dimensions** with
+no expected answer in the prompt; hand the **text answers only** to a separate judge alongside
+the checklist; **any FALSE fails** — no aggregate scoring.
+
+The gate's decisive question is:
+
+> **Is the clip's first action performable from this frozen instant?**
+
+If not, **re-roll the still. Do not reword the clip.** A false PASS costs a 20-second render
+plus everything downstream; a false FAIL costs one glance.
+
+Where a still is right except one detail, **edit rather than re-roll** — semantic masking,
+"keep everything exactly the same except \<the one detail\>".
+
+## Output
+
+- `episodes/<slug>/EPxxx/prompts/6-image-prompts.md` — one block per clip, `## SC<NN> | pose:`
+  header, tag line, prompt.
+- `episodes/<slug>/EPxxx/prompts/6-image-agent-packet.md` — **required**, generated by
+  `tools/image_agent_packet.py` and regenerated whenever a still prompt is amended.
+- `episodes/<slug>/EPxxx/renders/stills/SC01.png`, `SC02.png`, … — the approved keeps, named
+  for their clip id. **Filenames matter mechanically:** the render app matches a still to its
+  clip by the **scene number that prefixes the filename stem** (`SC07.png` → clip 7), so any
+  other name is skipped and a second file for the same number makes the clip ambiguous.
+  Name every keep exactly `SC<NN>.png` before anything leaves this stage.
+- `episodes/<slug>/EPxxx/renders/stills/_variants/` — the unselected variants, retained until the
+  episode closes.
+- `episodes/<slug>/EPxxx/qa/still-gate.md` — per still: its verifiable claims, the neutral
+  observations, the judge's verdict, and PASS/FAIL with the specific reason.
+
+## Forbidden
+
+Do not decide position, facing, gaze, pose, expression or prop state here — flag a wrong entry
+back to `04d`. Do not bake motion into a still. Do not omit an object listed in
+`touched_objects`. Do not auto-delete variants before the gate passes. Do not show the vision
+gate the claim it is verifying. Do not mix image generators inside one episode.
+
+## Stop condition
+
+Every clip has exactly one approved, correctly named still whose gate verdict is PASS, including
+an affirmative answer to the performable-first-action question; `6-image-agent-packet.md` exists,
+is non-empty, and its clip count matches `6-image-prompts.md`; and every still prompt passes
+`LTXV-S006`. Any FAIL re-rolls that still — it does not advance with a caveat.

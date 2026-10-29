@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "episode-state",
+  "description": "episodes/<slug>/<EPID>/episode-state.json",
+  "type": "object",
+  "required": ["episode_id", "channel_slug", "status", "stage_sequence", "next_stage", "completed_stages", "created_at", "updated_at"],
+  "properties": {
+    "episode_id": { "type": "string", "pattern": "^EP[0-9]{3}(-[a-z0-9-]+)?$" },
+    "channel_slug": { "type": "string" },
+    "status": { "enum": ["open", "closed", "blocked"] },
+    "stage_sequence": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "snapshot of this channel's pipeline_stages ids at episode creation time"
+    },
+    "next_stage": { "type": ["string", "null"] },
+    "completed_stages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["stage", "completed_at"],
+        "properties": {
+          "stage": { "type": "string" },
+          "completed_at": { "type": "string" },
+          "approved": { "type": "boolean" },
+          "note": { "type": "string" },
+          "deliverable_digest": {
+            "type": "object",
+            "description": "snapshot of the stage's stage-gates.json outputs at completion time, so a later edit to a deliverable is detectable",
+            "required": ["digest_sha256", "files"],
+            "properties": {
+              "digest_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+              "files": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["path", "sha256"],
+                  "properties": {
+                    "path": { "type": "string" },
+                    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "created_at": { "type": "string" },
+    "updated_at": { "type": "string" }
+  }
+}

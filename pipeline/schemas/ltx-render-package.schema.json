@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LTX render package manifest",
+  "description": "episodes/<slug>/<EPID>/exports/ltx-render-package/render-manifest.json — written at 04g by tools/build_render_package.py, never by hand. Describes a package that the vidgen-dist app's Batch tab (C:\\pycode\\app-vidgen-dist) ingests directly: a master-prompt.txt of @@ s{n} blocks plus a stills/ folder matched by the scene number prefixing each filename stem.",
+  "type": "object",
+  "required": ["schema_version", "episode_id", "channel_slug", "source_manifest_sha256", "settings", "clips"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "episode_id": { "type": "string", "pattern": "^EP[0-9]{3}" },
+    "channel_slug": { "type": "string" },
+    "built_at_utc": { "type": "string", "format": "date-time" },
+    "source_manifest_sha256": {
+      "type": "string", "pattern": "^[0-9a-f]{64}$",
+      "description": "Hash of _context/ltx-prompt-manifest.json, so a package can be proven to match the prompts it was built from."
+    },
+    "master_prompt_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "negative_prompt_sha256": {
+      "type": "string", "pattern": "^[0-9a-f]{64}$",
+      "description": "exports/ltx-render-package/negative-prompt.txt — the ONLY place suppression lives. A suppression clause in a positive prompt causes the artifact it names and is rejected upstream by LTXV-D010."
+    },
+
+    "settings": {
+      "type": "object",
+      "description": "Read from vidgen-dist's own app/config.py on 2026-10-29, not from its README, which still documents the retired LTX-2.3 relay app. Re-verify against source before changing.",
+      "required": ["workflow", "megapixels", "fps", "duration_seconds", "cfg", "cfg_refine", "cfg_audio", "img_compression"],
+      "properties": {
+        "workflow": { "const": "LTX25_T2V_I2V_Two_Stage_Distilled.json" },
+        "megapixels": { "type": "number", "description": "0.98 -> 1344x768, 16:9, 64-clean on both axes." },
+        "fps": { "type": "integer" },
+        "duration_seconds": {
+          "type": "number",
+          "description": "SECONDS, not frames — the graph derives 1 + floor(fps*duration/8)*8 internally, which is what satisfies LTX-2.5's num_frames%8==1 rule. Never hand-enter a frame count. Locked to 20 for every clip on both channels by owner decision 2026-10-29."
+        },
+        "cfg": { "type": "number" },
+        "cfg_refine": { "type": "number" },
+        "cfg_audio": { "type": "number" },
+        "img_compression": {
+          "type": "integer",
+          "description": "LTXVPreprocess. Validated as the causal anti-invented-character lever on LTX-2.3 and carried into the 2.5 graph unchanged — still unconfirmed on 2.5, see research section 6."
+        },
+        "seed": { "type": ["integer", "string"] }
+      }
+    },
+
+    "clips": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["index", "clip", "marker", "prompt_sha256", "still_file", "still_sha256", "is_pilot"],
+        "properties": {
+          "index": { "type": "integer", "minimum": 1 },
+          "clip": {
+            "type": "string", "pattern": "^SC[0-9]{2,3}$",
+            "description": "The internal clip id (SCnn), matching _context/ltx-prompt-manifest.json. The package's own lowercase form is carried by `marker` (@@ s{n}) and `still_file` (s{n}.png)."
+          },
+          "marker": {
+            "type": "string", "pattern": "^@@ s[0-9]+$",
+            "description": "The exact section marker written into master-prompt.txt. Must sit alone on its line."
+          },
+          "prompt_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "still_file": {
+            "type": "string", "pattern": "^SC[0-9]{2,3}\\.(png|jpg|jpeg|webp)$",
+            "description": "The still keeps its SCnn clip-id name from renders/stills/ (no rename). The app binds a still to a prompt by the scene number PREFIXING the stem (SC07 -> @@ s7; a suffix such as _v2 is ignored; two files for one number make that scene ambiguous). A mispaired batch renders successfully anyway — which is why tools/build_render_package.py re-reads the package with the app's own rules and the owner still eyeballs the pairing at the 04g gate."
+          },
+          "still_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "spoken_word_count": { "type": "integer", "minimum": 0 },
+          "declared_cuts": { "type": "integer", "minimum": 0 },
+          "is_pilot": {
+            "type": "boolean",
+            "description": "Pilot clips are human-watched at 04h before the full batch renders. Selection covers at minimum the opening clip, dense/multi-speaker dialogue, multi-character staging, a difficult prop interaction, and an environment/camera continuity pair."
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
