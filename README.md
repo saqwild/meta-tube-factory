@@ -1,174 +1,137 @@
-# vidgen-ltx — one flow, three channels
+# meta-tube-factory
 
-A single vendor-neutral production pipeline that drives **three YouTube channel profiles**
-through the same generation process:
+**A documentary-grade AI film factory for YouTube — end to end on Meta Muse models.**
 
-- **image gen:** Muse Image (muse-image-1.0) via Meta Model API - identity reference sheets, and one **frame-0 still per clip**
-- **video gen:** LTX-2.5 image-to-video, owner-locked PromptRelay-style beat prompts, native audio
-- **render app:** vidgen-dist at [`C:\pycode\app-vidgen-dist`](file:///C:/pycode/app-vidgen-dist)
-  (ComfyUI, two-stage distilled graph)
-- **orchestration:** any LLM agent (Claude, Codex, Kimi, etc.) or a human — the pipeline
-  contracts are plain instructions, not vendor-specific code.
+One flow. Unlimited channels. Add a channel by adding one channel profile;
+the factory does the rest. This is not a Shorts factory and not a one-off
+clip generator: it runs a full production pipeline — ideation, coverage,
+research, compliance, script, visual development, render package, QA, and
+distribution metadata — with a validator gating every stage before money is
+spent.
 
-No git, no commits, no change-control ledger.
+> Built for the Meta Global AI Developer Hackathon. See
+> [SUBMISSION.md](SUBMISSION.md) for the submission summary and
+> [META_MAPPING.md](META_MAPPING.md) for the model allocation.
 
-> **Full Muse mode (owner-directed 2026-10-29):** every model call uses Meta models -
-> see [META_MAPPING.md](/C:/pycode/vidgen-meta/META_MAPPING.md) and [SUBMISSION.md](/C:/pycode/vidgen-meta/SUBMISSION.md).
-> channel.json models.image is muse-image-1.0 on all channels; every still
-> records still_generator=muse-image-1.0. LTX-2.5 remains the external video renderer.
+## The Meta Muse stack
 
-> **LTX-2.5 renders so far: three full 29-clip batches** — signed-anyway EP001 (2026-10-29)
-> and EP002 (2026-10-29, live on YouTube), clover-and-paws EP001 (2026-10-29). They confirmed a
-> few numbers (`img_compression`, the cfg/artifact tradeoff — now Grade [B]); most rules are
-> still unproven on 2.5, and inside-the-process has never rendered. Every rule carries an
-> evidence grade — see [Evidence grades](#evidence-grades--read-before-trusting-a-number).
+Every model call goes through one client, `tools/meta_models.py`, to the
+Meta Model API (`https://api.meta.ai/v1`, key: `MODEL_API_KEY`).
 
-## Flow
+| Job | Model | Where it works |
+|---|---|---|
+| Reasoning / planning | Muse Spark (`muse-spark-1.3`) | Coverage, research, sourcing, compliance, shot plan, prompt compile, metadata |
+| Creative writing | Muse Wonder (`muse-wonder-1.0`) | Script (03a), visual brief (04a) |
+| Image generation | Muse Image (`muse-image-1.0`) | Reference sheets (04b/04c), storyboards (04e), frame-0 stills (04f2) |
+| Segmentation | SAM 3.1 (`sam-3.1`) | Pilot QA on approved stills (04h) |
+| Speech-to-text | Muse Voice Transcribe (`muse-voice-transcribe-1.0`) | Render dialogue QA (05a) |
+| Video (external) | LTX-2.5 i2v | Renders each 20 s clip from its frame-0 still; no Muse video model exists, so this stays an external owner-run renderer |
 
-```bash
-python tools/preflight.py
-```
+Muse Glimmer and Muse Spark Open are open-weight, self-hosted only — they
+have no Model API ID and are not called from this repo.
 
-runs preflight checks, asks which channel profile to use, then either resumes the most recent
-open episode for that channel or starts a new one, and prints the contract for whatever stage is
-next. An operator (human or LLM) reads that stage's file under `pipeline/stages/`, does the
-work, then runs:
+## One flow, multiple channels
 
-```bash
-python tools/preflight.py complete <channel_slug> <episode_id> <stage_id>
-```
+`channel_profiles/<slug>/channel.json` is the only place a channel's
+identity, cast, look, render numbers, compliance, and stage sequence live.
+Every tool and stage contract reads that file generically — **a new channel
+is a new `channel.json`, never a code change.**
 
-which validates the stage matches `next_stage`, checks the stage's declared deliverables and
-verdict (`pipeline/stage-gates.json`), records it, and advances the episode — stopping at any
-stage flagged `owner_gate` until a human runs `--approve`. A blocking verdict is never
-overridden by `--approve`.
+Three starter profiles ship as examples. The submission demos **one**
+channel end to end; the other two exist to prove the factory is generic.
 
-## The part worth understanding before touching anything
+| Starter profile | Format | Demo role |
+|---|---|---|
+| `inside-the-process` — Explained From Within | Source-backed journey inside a real process, 9–11 min | **Demo channel** |
+| `signed-anyway` | Dialogue-driven financial/ethics drama, 8–11 min | Example profile |
+| `clover-and-paws` — Clover & Bruno Stories | Anthropomorphic family stories | Example profile |
 
-In i2v the image is the **frame-0 contract**: exactly one still per clip, and the clip can only
-continue forward from it. That is not a detail — it shapes the whole middle of the pipeline. The
-image count scales with the episode (roughly 29–32 stills for a 10-minute episode at 20-second
-clips), and prompt authoring has to resolve a circular dependency:
+Every channel renders 16:9, fixed 20-second clips at 24 fps (481 frames).
+A Short is a post-production reframe of the same footage, never a separate
+still or clip batch.
 
-```
-04d   blocking.json — geometry decided ONCE, structured, machine-checkable
-       │
-04f   draft the motion, dialogue, audio, camera  ──►  frame-0 requirement block
-       │                                                    │
-04f2   generate N stills FROM that block, gate them  ◄──────┘
-       │  ("is the clip's first action performable from this frozen instant?")
-       │
-04f3   re-anchor the opening clause to the APPROVED PIXELS, validate, emit final prompts
-```
+## The pipeline
 
-The prompt must describe the still's real pixels, but the still must already contain every
-object the prompt's action touches — **i2v never invents objects.** Guessing in either
-direction produces one of the two classic failures: a prompt that contradicts the render, or a
-clip that reaches for a prop that was never drawn.
+One episode walks its channel's stage sequence, one stage at a time.
+Each stage has a plain-text contract under `pipeline/stages/`; an operator
+(human or agent) does only that stage's work, then completes it through
+`tools/preflight.py`, which checks deliverables and verdicts before
+advancing. Owner-gated stages stop until a human approves.
 
-**In i2v the image is the contract; the prompt is only the delta.** A failure gets fixed at the
-layer it lives in — the still, the conditioning, the render config, or the gate. Never by
-adding words to a prompt.
+**Phase 0 — Foundation:** `00-preflight`
 
-## Three channels, one engine, zero code branching
+**Phase 1 — Ideation / Research:** `01-ideation`, `01b-coverage-scan`,
+`02-research`, `02a-sourcing`, `02b-compliance`
 
-`channel_profiles/<slug>/channel.json` is the only place a channel's identity, render numbers
-and stage sequence live. `tools/preflight.py` and every stage contract read that file
-generically — another channel is "drop in a new `channel.json`", not a code change.
+**Phase 2 — Writing:** `03a-writer`, `03b-script-review`
 
-| | Signed Anyway | Clover & Bruno Stories | Explained From Within |
-|---|---|---|---|
-| slug | `signed-anyway` | `clover-and-paws` | `inside-the-process` |
-| format | dialogue-driven fictional financial/ethics drama, 8–11 min | photoreal anthropomorphic cat-and-dog family stories on Paw Street | source-backed "Micro-Journey" inside a real process, 9–11 min |
-| cast | 10-member registry, ≤5 speaking | 7 locked masters, ≤6 speaking; anchors Clover + Bruno | on-screen Explorer + audio-only Control, 1 figure in frame |
-| extra stages | `02a-sourcing` (fiction boundary), `02b-compliance` | `02b-compliance` | `01b-coverage-scan` (owner-approved coverage map + YouTube scan), `02a-sourcing` (claim + visualization ledgers), `02b-compliance` |
-| clip duration | 20 s, fixed | 20 s, fixed | 20 s, fixed |
-| spoken-word band | 32–36 (derived, unmeasured) | 31–34 (derived, unmeasured) | 32–36, split across two voices (unmeasured) |
+**Phase 3 — Visual Development:** `04a-visual-brief`, `04b-character-refs`,
+`04c-scene-refs`, `04d-shot-plan`, `04e-storyboard`, `04f-ltx-prompt-draft`,
+`04f2-frame0-stills`, `04f3-ltx-prompt-final`, `04g-ltx-render-package`,
+`04h-ltx-pilot-qa`
 
-Clover & Bruno arrived as a **verbatim import** of `C:\pycode\clover_and_paws\channel_profile`;
-what changed afterwards and why is in `channel_profiles/clover-and-paws/bible/IMPORT_NOTE.md`.
-Explained From Within was ported from the sibling `sibling-repo` repo on 2026-10-29 — its
-provenance is in `local_skills/skill-lock.json`.
+**Phase 4 — Render / QA:** `05-render-ingest`, `05a-render-qa`
 
-Every channel renders **16:9 only**. A Short survives as editorial intent and is produced as a
-post-production reframe of the same 16:9 footage, never a separate still or clip batch — the
-proven LTX-2.5 graph is fixed-aspect.
+**Phase 5 — Distribution:** `06-distribution-metadata`,
+`06a-postproduction-assembly`, `07-final-package-qa`
 
-**Every clip is a fixed 20 seconds on every channel** — an owner decision of 2026-10-29. Each
-channel profile and reference bible states that same figure. The thing to watch at pilot QA is
-whether performances pad or drift in the final third.
+Phase 3 is the differentiator. In image-to-video, **the image is the
+contract; the prompt is only the delta**: one approved frame-0 still
+conditions exactly one clip, the draft prompt declares what that still
+must contain, the still is generated and gated against it, and the final
+prompt is re-anchored to the approved pixels. A failure is fixed at the
+layer it lives in — still, conditioning, render config, or gate — never
+by adding words to a prompt. Every character is described facing the
+camera, never with a speaking character's back to the lens.
 
-## Evidence grades — read before trusting a number
+## What you actually have
 
-Every rule in `pipeline/LTX_I2V_CONTRACT.md` carries a grade:
+**`tools/` — 18 production tools**, including `meta_models.py` (the Meta
+Model API client), `preflight.py` (the stage state machine),
+`episode_state.py` (atomic, locked episode state), `episode_health.py`,
+`coverage_validator.py`, `youtube_benchmark_validator.py`,
+`ltx_prompt_validator.py`, `ltx_prompt_manifest.py`,
+`build_render_package.py`, `image_agent_packet.py`, `storyboard.py`,
+`render_audio_audit.py`, `metadata_validator.py`, `clip_split_check.py`,
+`check_reference_assets.py`, `check_download_freshness.py`,
+`still_claims.py`, and `project_paths.py`.
 
-- **[A]** vendor-confirmed — docs.ltx.io and the LTX-2.5 model card, retrieved 2026-10-29
-- **[B]** render-validated, on this repo's own renders or a sibling pipeline
-- **[C]** `[2.3-RETEST]` — an LTX-2.3-era number kept as the safe default, **unproven on 2.5**
+**`tests/` — 15 test modules** (307 tests) covering every validator, the
+state machine and its owner gates, derived-artifact freshness, and the
+Meta model client. One known pre-existing failure expects a signed-anyway
+EP001 metadata package that does not exist in this repo.
 
-The old ~200-word prompt ceiling was **retired 2026-10-29** — it was LTX-2-era sibling
-guidance, and both vendor sources say LTX-2.5 has no word limit. `LTXV-D004` is now only a
-450-word runaway tripwire against prompt bloat. `pipeline/research/LTX25_PROMPTING_RESEARCH.md`
-§6 lists the remaining open questions in priority order and §7 keeps the render findings of the
-removed Cut Plane test profile; `04h`'s pilot batch is the cheapest place to settle the rest.
+**Derived artifacts are generated, never hand-written:** the storyboard,
+the per-clip image agent packet, the hash-bound prompt manifest, and the
+render package. Builders refuse to run on a stale review or a prompt/still
+that changed after it was hashed.
 
-## Derived artifacts — generated, never hand-written
+## Run it
 
 ```bash
-python tools/storyboard.py         --channel <slug> --episode EPxxx   # 04e
-python tools/image_agent_packet.py --channel <slug> --episode EPxxx   # 04f2
-python tools/ltx_prompt_manifest.py --channel <slug> --episode EPxxx --still-gate-pass   # 04f3
-python tools/build_render_package.py --channel <slug> --episode EPxxx \
-    --pilot SC01,SC08,... --cast "Name,..."                             # 04g
+pip install -r requirements.txt
+python tools/meta_models.py config   # key present? models wired?
+python tools/meta_models.py smoke    # one live Muse Spark call
+python tools/preflight.py            # resume or start an episode
+python -m unittest discover -s tests
 ```
 
-- **`exports/storyboard.html`** — one self-contained page, a card per clip with its still,
-  dialogue, camera move and beats, for a human to scan an episode before any render spend.
-- **`prompts/6-image-agent-packet.md`** — each clip's verbatim still prompt paired with that
-  clip's own validation rules, handed as one file to whoever generates the stills.
-- **`_context/ltx-prompt-manifest.json`** — binds every final clip prompt to the exact still it
-  was re-anchored against, by hash.
-- **`exports/ltx-render-package/`** — the vidgen-dist batch package. The builder refuses on a
-  stale review, a `PROVISIONAL` prompts file, or a prompt/still that changed after the manifest
-  hashed it, then re-reads its own output with the render app's parser to prove every
-  `@@ s{n}` pairs with the right prompt and still. Its byte layout reproduces signed-anyway
-  EP002's shipped package exactly.
-
-Provenance for the ported tools and skills is in `local_skills/skill-lock.json`.
-
-## Checking an episode
-
-```bash
-python tools/preflight.py health <channel_slug> <episode_id>
-```
-
-A read-only end-to-end pass: required deliverables for every completed stage, JSON artifacts
-against `pipeline/schemas/`, one clip-id set across every manifest, every recorded SHA-256
-(including each clip's prompt and still in the 04f3 manifest) against disk, review freshness,
-and the final MP4s via `ffprobe`.
+Set `MODEL_API_KEY` in your environment or a local `.env` (never commit
+it; see `.env.example`).
 
 ## Repo map
 
 ```
-pipeline/             stage contracts, contracts of record, stage-gates.json, JSON schemas — the source of truth
-pipeline/research/    sourced evidence behind the doctrine, with provenance and dates
-local_skills/         prompt/story writers, the muse-image generator, skill-lock.json provenance
-adapters/             optional per-LLM launch notes — all point back to pipeline/
-channel_profiles/     channel identity + render config as data, one folder per channel
-custom_stories/       owner-supplied story briefs
-tools/                preflight.py (state machine), episode_state.py, episode_health.py,
-                      ltx_prompt_validator.py, ltx_prompt_manifest.py, build_render_package.py,
-                      render_audio_audit.py, metadata_validator.py, check_reference_assets.py,
-                      still_claims.py, image_agent_packet.py, storyboard.py,
-                      youtube_benchmark_validator.py, coverage_validator.py, check_download_freshness.py
-episodes/             per-channel episode working directories
-tests/                state-machine and gate tests, the validator regression suite, tool tests
+channel_profiles/  channel identity + render config as data, one folder per channel
+pipeline/          stage contracts, contracts of record, stage gates, JSON schemas
+tools/             the 18 production tools above
+tests/             validator and state-machine test suites
+local_skills/      prompt/story writer skills and provenance (skill-lock.json)
+adapters/          optional per-agent launch notes, all pointing back to pipeline/
+custom_stories/    owner-supplied story briefs
+episodes/          per-channel episode working directories (empty until you start one)
 ```
 
-```bash
-pip install -r requirements.txt
-python -m unittest discover -s tests
-```
+See [AGENTS.md](AGENTS.md) for operating rules and
+[pipeline/PIPELINE.md](pipeline/PIPELINE.md) for the full stage table.
 
-See [AGENTS.md](AGENTS.md) for operating rules and [pipeline/PIPELINE.md](pipeline/PIPELINE.md)
-for the stage table.
