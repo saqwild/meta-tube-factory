@@ -1,0 +1,37 @@
+{
+  "archetype": "manufactured_product",
+  "items": {
+    "COV01": {
+      "priority": "MUST",
+      "scope": "in"
+    },
+    "COV02": {
+      "priority": "MUST",
+      "scope": "in"
+    },
+    "COV03": {
+      "priority": "MUST",
+      "scope": "in"
+    },
+    "COV04": {
+      "priority": "MUST",
+      "scope": "in"
+    },
+    "COV05": {
+      "priority": "MUST",
+      "scope": "in"
+    },
+    "COV06": {
+      "priority": "MUST",
+      "scope": "in"
+    },
+    "COV07": {
+      "priority": "MUST",
+      "scope": "in"
+    },
+    "COV08": {
+      "priority": "MUST",
+      "scope": "out"
+    }
+  }
+}
