@@ -27,7 +27,7 @@
     "06a-postproduction-assembly",
     "07-final-package-qa"
   ],
-  "next_stage": "04g-ltx-render-package",
+  "next_stage": "04h-ltx-pilot-qa",
   "completed_stages": [
     {
       "stage": "00-preflight",
@@ -424,10 +424,85 @@
           }
         ]
       }
+    },
+    {
+      "stage": "04g-ltx-render-package",
+      "completed_at": "2026-10-30T14:12:49+00:00",
+      "approved": true,
+      "note": "",
+      "deliverable_digest": {
+        "digest_sha256": "fc5e9512f7f293368b8d6621e36b90b2d8ee343d20f73c2468c059642aa4e3d2",
+        "files": [
+          {
+            "path": "exports/ltx-render-package/master-prompt.txt",
+            "sha256": "0ee35835aab3f1517164d6be5d37892f8f0a49760d5d53e3fe45a1680ab7a440"
+          },
+          {
+            "path": "exports/ltx-render-package/negative-prompt.txt",
+            "sha256": "1fbf3af8d272dad579562f70631d23df10ce8c77f323201f860d6df4ce507c9b"
+          },
+          {
+            "path": "exports/ltx-render-package/render-manifest.json",
+            "sha256": "fec7ac47612a551cf5b62e73ca41a6b9d02c40a6bcb4cea7f0b14e9515db8371"
+          },
+          {
+            "path": "exports/ltx-render-package/render-settings.json",
+            "sha256": "500e6fce04a5e50d254ba9933b540b79335755237232e54118b8d5c1a1f06b43"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC01.png",
+            "sha256": "04712eb609cfb9123ded16f5c601341518da6169e72285ad92fa36e205cf2ba1"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC02.png",
+            "sha256": "4cd97cf03d43d7ba03e9b16dd5c8f81d109f952c49d343cdd9623168530a1578"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC03.png",
+            "sha256": "b38cc34e2e59935ca54b7d4de6c961ea8394605c7b6de8f9f53a9835284a7aae"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC04.png",
+            "sha256": "26b7b72e5f9b1e0938c95a332240eafdc40f022fdc8176227731a37034c8534f"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC05.png",
+            "sha256": "0a9dc5e4d2362a8cdbc123089947f7d07d7cac39617d47b0b73c845bb2b71ba4"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC06.png",
+            "sha256": "ab119c9d8fdd0212107aa9f9dec4409a96d65ba5a0a99743c78eee790e3fad4c"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC07.png",
+            "sha256": "164f8cf9686db06b5765a33870a6ffae1bb182720a8e51f9906f19bd51381ce2"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC08.png",
+            "sha256": "c49d9ab75279dccda77666b92c182032e385b225d381f8b80b36b7c84b80c3cd"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC09.png",
+            "sha256": "b6c6ed0893e41fb5012e8bc30bcaa10b9dd0b6e455fde7d615f684b787c12d7e"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC10.png",
+            "sha256": "0b34c369c8d86db1c927ddac10d8da6a9b6c4bcd373acfe7d1b7912ac30b8574"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC11.png",
+            "sha256": "a21acc52fc6e5cf3eef7777bf5165c6c9a0bbab727b493aab337a9cce0b5328f"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC12.png",
+            "sha256": "305932c3392a933cf9abb2fb6314c4cc40222e59c5430861b6997f81f9f7e8ac"
+          }
+        ]
+      }
     }
   ],
   "created_at": "2026-10-30T10:54:35+00:00",
-  "updated_at": "2026-10-30T14:10:25+00:00",
+  "updated_at": "2026-10-30T14:12:49+00:00",
   "revisions": [
     {
       "reopened_at": "2026-10-30T14:03:39+00:00",
