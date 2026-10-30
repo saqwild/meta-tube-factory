@@ -22,3 +22,4 @@ was lost; identical scope and content, restored from Git history.
 | 04c-scene-refs | First live Muse Image plates (5), ENV004 viewed PASS, PNG converted, environment locks written | visual/references/scenes/*.png, _context/environment-locks.json |
 | 04d-shot-plan | blocking.json for 12 clips (camera-relative facing, end states chained), shot-plan.md | visual/shot-plan.md, _context/blocking.json |
 | 04e-storyboard | Derived storyboard.html built (12 clips, placeholders pending stills) | exports/storyboard.html |
+| 04f-ltx-prompt-draft | 12 draft prompts + frame0 requirements, validator PASS 12/12 (draft) after 3 fix rounds | prompts/7-video-prompts.md, _context/frame0-requirements.json |

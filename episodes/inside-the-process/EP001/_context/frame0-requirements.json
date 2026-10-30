@@ -1,0 +1,355 @@
+{
+  "clips": [
+    {
+      "clip": "SC01",
+      "touched_objects": [
+        "the linen cloth",
+        "the dough ball"
+      ],
+      "characters": [
+        "YOU"
+      ],
+      "frame0_state": {
+        "YOU": {
+          "pos": "center",
+          "facing": "camera three-quarter",
+          "gaze": "at the risen dough",
+          "pose": "standing at the counter, cloth in one hand",
+          "expression": "surprised",
+          "mouth": "closed",
+          "hands": "one holds the linen cloth"
+        }
+      },
+      "props_at_rest": {
+        "the dough ball": "in the glass bowl on the counter",
+        "the linen cloth": "held in one hand at the counter"
+      },
+      "first_action_performable": true,
+      "continues_from": null,
+      "end_state": {
+        "YOU": {
+          "pos": "center",
+          "pose": "standing at the counter",
+          "hands": "one holds the linen cloth"
+        }
+      }
+    },
+    {
+      "clip": "SC02",
+      "touched_objects": [
+        "the capsule"
+      ],
+      "characters": [
+        "EXPLORER"
+      ],
+      "frame0_state": {
+        "EXPLORER": {
+          "pos": "center-left",
+          "facing": "camera three-quarter",
+          "gaze": "at the wet mass around him",
+          "pose": "standing inside the mixing dough, capsule behind",
+          "expression": "curious",
+          "mouth": "closed",
+          "hands": "empty"
+        }
+      },
+      "props_at_rest": {
+        "the capsule": "landed in the dough behind the Explorer"
+      },
+      "first_action_performable": true,
+      "continues_from": null,
+      "end_state": {
+        "EXPLORER": {
+          "pos": "center-left",
+          "pose": "standing inside the dough",
+          "hands": "empty"
+        }
+      }
+    },
+    {
+      "clip": "SC03",
+      "touched_objects": [],
+      "characters": [
+        "EXPLORER"
+      ],
+      "frame0_state": {
+        "EXPLORER": {
+          "pos": "center",
+          "facing": "camera",
+          "gaze": "at the forming strands",
+          "pose": "standing among aligning gluten strands",
+          "expression": "focused",
+          "mouth": "closed",
+          "hands": "empty"
+        }
+      },
+      "props_at_rest": {},
+      "first_action_performable": true,
+      "continues_from": null,
+      "end_state": {
+        "EXPLORER": {
+          "pos": "center",
+          "pose": "standing among the net",
+          "hands": "empty"
+        }
+      }
+    },
+    {
+      "clip": "SC04",
+      "touched_objects": [],
+      "characters": [
+        "EXPLORER"
+      ],
+      "frame0_state": {
+        "EXPLORER": {
+          "pos": "center-right",
+          "facing": "camera three-quarter",
+          "gaze": "at the first bubbles",
+          "pose": "standing in the foam city as bubbles form",
+          "expression": "amazed",
+          "mouth": "closed",
+          "hands": "empty"
+        }
+      },
+      "props_at_rest": {},
+      "first_action_performable": true,
+      "continues_from": null,
+      "end_state": {
+        "EXPLORER": {
+          "pos": "center-right",
+          "pose": "standing in the foam city",
+          "hands": "empty"
+        }
+      }
+    },
+    {
+      "clip": "SC05",
+      "touched_objects": [],
+      "characters": [
+        "EXPLORER"
+      ],
+      "frame0_state": {
+        "EXPLORER": {
+          "pos": "center",
+          "facing": "camera",
+          "gaze": "up at the inflating bubbles",
+          "pose": "rising with the stretching mass",
+          "expression": "delighted",
+          "mouth": "closed",
+          "hands": "empty"
+        }
+      },
+      "props_at_rest": {},
+      "first_action_performable": true,
+      "continues_from": null,
+      "end_state": {
+        "EXPLORER": {
+          "pos": "center",
+          "pose": "risen with the mass",
+          "hands": "empty"
+        }
+      }
+    },
+    {
+      "clip": "SC06",
+      "touched_objects": [],
+      "characters": [
+        "EXPLORER"
+      ],
+      "frame0_state": {
+        "EXPLORER": {
+          "pos": "center-left",
+          "facing": "camera three-quarter",
+          "gaze": "at the redistributed bubbles",
+          "pose": "braced as the mass is shaped",
+          "expression": "steady",
+          "mouth": "closed",
+          "hands": "empty"
+        }
+      },
+      "props_at_rest": {},
+      "first_action_performable": true,
+      "continues_from": null,
+      "end_state": {
+        "EXPLORER": {
+          "pos": "center-left",
+          "pose": "inside the shaped loaf",
+          "hands": "empty"
+        }
+      }
+    },
+    {
+      "clip": "SC07",
+      "touched_objects": [],
+      "characters": [
+        "EXPLORER"
+      ],
+      "frame0_state": {
+        "EXPLORER": {
+          "pos": "center",
+          "facing": "camera",
+          "gaze": "at the re-inflating bubbles",
+          "pose": "inside the doming shaped loaf",
+          "expression": "patient",
+          "mouth": "closed",
+          "hands": "empty"
+        }
+      },
+      "props_at_rest": {},
+      "first_action_performable": true,
+      "continues_from": null,
+      "end_state": {
+        "EXPLORER": {
+          "pos": "center",
+          "pose": "inside the domed loaf",
+          "hands": "empty"
+        }
+      }
+    },
+    {
+      "clip": "SC08",
+      "touched_objects": [],
+      "characters": [
+        "EXPLORER"
+      ],
+      "frame0_state": {
+        "EXPLORER": {
+          "pos": "center",
+          "facing": "camera three-quarter",
+          "gaze": "up at the expanding bubbles",
+          "pose": "braced in the foam city during oven spring",
+          "expression": "awed",
+          "mouth": "closed",
+          "hands": "empty"
+        }
+      },
+      "props_at_rest": {},
+      "first_action_performable": true,
+      "continues_from": null,
+      "end_state": {
+        "EXPLORER": {
+          "pos": "center",
+          "pose": "braced in the set foam",
+          "hands": "empty"
+        }
+      }
+    },
+    {
+      "clip": "SC09",
+      "touched_objects": [],
+      "characters": [
+        "EXPLORER"
+      ],
+      "frame0_state": {
+        "EXPLORER": {
+          "pos": "center-right",
+          "facing": "camera",
+          "gaze": "at the firming walls",
+          "pose": "standing in the setting crumb",
+          "expression": "satisfied",
+          "mouth": "closed",
+          "hands": "empty"
+        }
+      },
+      "props_at_rest": {},
+      "first_action_performable": true,
+      "continues_from": null,
+      "end_state": {
+        "EXPLORER": {
+          "pos": "center-right",
+          "pose": "standing in the set crumb",
+          "hands": "empty"
+        }
+      }
+    },
+    {
+      "clip": "SC10",
+      "touched_objects": [],
+      "characters": [
+        "EXPLORER"
+      ],
+      "frame0_state": {
+        "EXPLORER": {
+          "pos": "center",
+          "facing": "camera three-quarter",
+          "gaze": "at the still bubble walls",
+          "pose": "standing calmly in the finished crumb",
+          "expression": "thoughtful",
+          "mouth": "closed",
+          "hands": "empty"
+        }
+      },
+      "props_at_rest": {},
+      "first_action_performable": true,
+      "continues_from": null,
+      "end_state": {
+        "EXPLORER": {
+          "pos": "center",
+          "pose": "standing in the finished crumb",
+          "hands": "empty"
+        }
+      }
+    },
+    {
+      "clip": "SC11",
+      "touched_objects": [],
+      "characters": [
+        "EXPLORER"
+      ],
+      "frame0_state": {
+        "EXPLORER": {
+          "pos": "center-left",
+          "facing": "camera",
+          "gaze": "at the cooling crumb",
+          "pose": "inside the cooling loaf as steam drifts",
+          "expression": "content",
+          "mouth": "closed",
+          "hands": "empty"
+        }
+      },
+      "props_at_rest": {},
+      "first_action_performable": true,
+      "continues_from": null,
+      "end_state": {
+        "EXPLORER": {
+          "pos": "center-left",
+          "pose": "inside the cooled loaf",
+          "hands": "empty"
+        }
+      }
+    },
+    {
+      "clip": "SC12",
+      "touched_objects": [
+        "the cooled loaf"
+      ],
+      "characters": [
+        "YOU"
+      ],
+      "frame0_state": {
+        "YOU": {
+          "pos": "center",
+          "facing": "camera three-quarter",
+          "gaze": "at the sliced crumb face",
+          "pose": "slicing the cooled loaf at the counter",
+          "expression": "pleased",
+          "mouth": "closed",
+          "hands": "one holds the loaf steady"
+        }
+      },
+      "props_at_rest": {
+        "the sliced loaf": "on the wooden board, one slice cut",
+        "the cooled loaf": "on the wooden board, one slice cut"
+      },
+      "first_action_performable": true,
+      "continues_from": null,
+      "end_state": {
+        "YOU": {
+          "pos": "center",
+          "pose": "holding the slice",
+          "hands": "one holds the slice"
+        }
+      }
+    }
+  ]
+}
