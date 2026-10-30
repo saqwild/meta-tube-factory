@@ -18,3 +18,4 @@ was lost; identical scope and content, restored from Git history.
 | 03a-writer | Live Muse Wonder call; 12-row script restored final revision, clip split PASS 12/12, coverage PASS | story/characters.md, story/script.md |
 | 03b-script-review | Independent spawned reviewer PASS; owner approved, script locked | story/script-review.md |
 | 04a-visual-brief | Live Muse Wonder call; 8 scenes, 12 clips = 12 stills budgeted | visual/scene-list.md |
+| 04b-character-refs | Locked masters copied byte-identical (SHA-256 verified), zero generation spend | visual/references/manifest.md, visual/references/characters/*.png |

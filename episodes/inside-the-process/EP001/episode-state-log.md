@@ -10,3 +10,4 @@
 - 2026-10-30T13:13:18+00:00 -- completed 03a-writer; digest 63be8e16; next: 03b-script-review
 - 2026-10-30T13:17:03+00:00 -- completed 03b-script-review (owner-approved); digest c4b80fcc; next: 04a-visual-brief
 - 2026-10-30T13:18:36+00:00 -- completed 04a-visual-brief; digest 261fd6e9; next: 04b-character-refs
+- 2026-10-30T13:20:16+00:00 -- completed 04b-character-refs; next: 04c-scene-refs
