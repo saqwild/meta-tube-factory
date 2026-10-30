@@ -1,0 +1,98 @@
+{
+  "SC01": {
+    "chars": {"YOU": {"pos": "center", "facing": "camera three-quarter", "gaze": "at the risen dough", "pose": "standing at the counter, cloth in one hand", "expression": "surprised", "mouth": "closed", "hands": "one holds the linen cloth", "cue": "plain home clothes, no logos", "visible": true}},
+    "props": [{"name": "the dough ball", "detail": "pale, smooth, doubled in size under the cloth", "resting_state": "in the glass bowl on the counter"}],
+    "camera": {"shot": "medium wide", "movement": "slow push in"},
+    "anchors": ["cloth lifts", "risen dough revealed"],
+    "end_state": {"YOU": {"pos": "center", "pose": "standing at the counter", "hands": "one holds the linen cloth"}},
+    "frame0": "rest"
+  },
+  "SC02": {
+    "chars": {"EXPLORER": {"pos": "center-left", "facing": "camera three-quarter", "gaze": "at the wet mass around him", "pose": "standing inside the mixing dough, capsule behind", "expression": "curious", "mouth": "closed", "hands": "empty", "cue": "ivory helmet, opaque visor, orange coveralls", "visible": true}},
+    "props": [{"name": "the capsule", "detail": "small ivory-and-orange capsule, cyan light ring", "resting_state": "landed in the dough behind the Explorer"}],
+    "camera": {"shot": "medium", "movement": "slow dolly in"},
+    "anchors": ["ingredients distinct", "mass turns wet and shaggy"],
+    "end_state": {"EXPLORER": {"pos": "center-left", "pose": "standing inside the dough", "hands": "empty"}},
+    "frame0": "rest"
+  },
+  "SC03": {
+    "chars": {"EXPLORER": {"pos": "center", "facing": "camera", "gaze": "at the forming strands", "pose": "standing among aligning gluten strands", "expression": "focused", "mouth": "closed", "hands": "empty", "cue": "ivory helmet, opaque visor, orange coveralls", "visible": true}},
+    "props": [],
+    "camera": {"shot": "medium close", "movement": "locked with slight drift"},
+    "anchors": ["strands align", "net links"],
+    "end_state": {"EXPLORER": {"pos": "center", "pose": "standing among the net", "hands": "empty"}},
+    "frame0": "rest"
+  },
+  "SC04": {
+    "chars": {"EXPLORER": {"pos": "center-right", "facing": "camera three-quarter", "gaze": "at the first bubbles", "pose": "standing in the foam city as bubbles form", "expression": "amazed", "mouth": "closed", "hands": "empty", "cue": "ivory helmet, opaque visor, orange coveralls", "visible": true}},
+    "props": [],
+    "camera": {"shot": "medium wide", "movement": "slow dolly in"},
+    "anchors": ["first bubbles appear", "net catches them"],
+    "end_state": {"EXPLORER": {"pos": "center-right", "pose": "standing in the foam city", "hands": "empty"}},
+    "frame0": "rest"
+  },
+  "SC05": {
+    "chars": {"EXPLORER": {"pos": "center", "facing": "camera", "gaze": "up at the inflating bubbles", "pose": "rising with the stretching mass", "expression": "delighted", "mouth": "closed", "hands": "empty", "cue": "ivory helmet, opaque visor, orange coveralls", "visible": true}},
+    "props": [],
+    "camera": {"shot": "wide", "movement": "slow tilt up"},
+    "anchors": ["bubbles inflate", "whole mass lifts"],
+    "end_state": {"EXPLORER": {"pos": "center", "pose": "risen with the mass", "hands": "empty"}},
+    "frame0": "rest"
+  },
+  "SC06": {
+    "chars": {"EXPLORER": {"pos": "center-left", "facing": "camera three-quarter", "gaze": "at the redistributed bubbles", "pose": "braced as the mass is shaped", "expression": "steady", "mouth": "closed", "hands": "empty", "cue": "ivory helmet, opaque visor, orange coveralls", "visible": true}},
+    "props": [],
+    "camera": {"shot": "medium", "movement": "slow push in"},
+    "anchors": ["large bubbles pressed out", "loaf shape forms"],
+    "end_state": {"EXPLORER": {"pos": "center-left", "pose": "inside the shaped loaf", "hands": "empty"}},
+    "frame0": "rest"
+  },
+  "SC07": {
+    "chars": {"EXPLORER": {"pos": "center", "facing": "camera", "gaze": "at the re-inflating bubbles", "pose": "inside the doming shaped loaf", "expression": "patient", "mouth": "closed", "hands": "empty", "cue": "ivory helmet, opaque visor, orange coveralls", "visible": true}},
+    "props": [],
+    "camera": {"shot": "medium wide", "movement": "locked with slight drift"},
+    "anchors": ["second rise", "loaf domes"],
+    "end_state": {"EXPLORER": {"pos": "center", "pose": "inside the domed loaf", "hands": "empty"}},
+    "frame0": "rest"
+  },
+  "SC08": {
+    "chars": {"EXPLORER": {"pos": "center", "facing": "camera three-quarter", "gaze": "up at the expanding bubbles", "pose": "braced in the foam city during oven spring", "expression": "awed", "mouth": "closed", "hands": "empty", "cue": "ivory helmet, opaque visor, orange coveralls", "visible": true}},
+    "props": [],
+    "camera": {"shot": "wide", "movement": "slow dolly in"},
+    "anchors": ["bubbles expand fast", "loaf springs upward"],
+    "end_state": {"EXPLORER": {"pos": "center", "pose": "braced in the set foam", "hands": "empty"}},
+    "frame0": "rest"
+  },
+  "SC09": {
+    "chars": {"EXPLORER": {"pos": "center-right", "facing": "camera", "gaze": "at the firming walls", "pose": "standing in the setting crumb", "expression": "satisfied", "mouth": "closed", "hands": "empty", "cue": "ivory helmet, opaque visor, orange coveralls", "visible": true}},
+    "props": [],
+    "camera": {"shot": "medium close", "movement": "slow push in"},
+    "anchors": ["walls set firm", "crust browns above"],
+    "end_state": {"EXPLORER": {"pos": "center-right", "pose": "standing in the set crumb", "hands": "empty"}},
+    "frame0": "rest"
+  },
+  "SC10": {
+    "chars": {"EXPLORER": {"pos": "center", "facing": "camera three-quarter", "gaze": "at the still bubble walls", "pose": "standing calmly in the finished crumb", "expression": "thoughtful", "mouth": "closed", "hands": "empty", "cue": "ivory helmet, opaque visor, orange coveralls", "visible": true}},
+    "props": [],
+    "camera": {"shot": "medium", "movement": "locked with slight drift"},
+    "anchors": ["no movement in the walls", "finished city calm"],
+    "end_state": {"EXPLORER": {"pos": "center", "pose": "standing in the finished crumb", "hands": "empty"}},
+    "frame0": "rest"
+  },
+  "SC11": {
+    "chars": {"EXPLORER": {"pos": "center-left", "facing": "camera", "gaze": "at the cooling crumb", "pose": "inside the cooling loaf as steam drifts", "expression": "content", "mouth": "closed", "hands": "empty", "cue": "ivory helmet, opaque visor, orange coveralls", "visible": true}},
+    "props": [],
+    "camera": {"shot": "medium", "movement": "slow dolly out"},
+    "anchors": ["steam drifts", "crumb firms"],
+    "end_state": {"EXPLORER": {"pos": "center-left", "pose": "inside the cooled loaf", "hands": "empty"}},
+    "frame0": "rest"
+  },
+  "SC12": {
+    "chars": {"YOU": {"pos": "center", "facing": "camera three-quarter", "gaze": "at the sliced crumb face", "pose": "slicing the cooled loaf at the counter", "expression": "pleased", "mouth": "closed", "hands": "one holds the loaf steady", "cue": "plain home clothes, no logos", "visible": true}},
+    "props": [{"name": "the sliced loaf", "detail": "golden crust, soft airy crumb with visible bubbles", "resting_state": "on the wooden board, one slice cut"}],
+    "camera": {"shot": "close-up", "movement": "slow push in on the crumb face"},
+    "anchors": ["knife cuts", "crumb face revealed", "first bite"],
+    "end_state": {"YOU": {"pos": "center", "pose": "holding the slice", "hands": "one holds the slice"}},
+    "frame0": "rest"
+  }
+}

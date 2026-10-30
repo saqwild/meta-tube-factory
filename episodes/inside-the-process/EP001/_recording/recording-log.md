@@ -20,3 +20,4 @@ was lost; identical scope and content, restored from Git history.
 | 04a-visual-brief | Live Muse Wonder call; 8 scenes, 12 clips = 12 stills budgeted | visual/scene-list.md |
 | 04b-character-refs | Locked masters copied byte-identical (SHA-256 verified), zero generation spend | visual/references/manifest.md, visual/references/characters/*.png |
 | 04c-scene-refs | First live Muse Image plates (5), ENV004 viewed PASS, PNG converted, environment locks written | visual/references/scenes/*.png, _context/environment-locks.json |
+| 04d-shot-plan | blocking.json for 12 clips (camera-relative facing, end states chained), shot-plan.md | visual/shot-plan.md, _context/blocking.json |
