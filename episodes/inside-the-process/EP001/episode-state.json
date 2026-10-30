@@ -27,7 +27,7 @@
     "06a-postproduction-assembly",
     "07-final-package-qa"
   ],
-  "next_stage": "03b-script-review",
+  "next_stage": "04a-visual-brief",
   "completed_stages": [
     {
       "stage": "00-preflight",
@@ -136,8 +136,27 @@
           }
         ]
       }
+    },
+    {
+      "stage": "03b-script-review",
+      "completed_at": "2026-10-30T13:17:03+00:00",
+      "approved": true,
+      "note": "",
+      "deliverable_digest": {
+        "digest_sha256": "c4b80fcc0eaa4885c23c5c54f5bf586024159df71a219fc67599dce4b250ba80",
+        "files": [
+          {
+            "path": "story/coverage-review.json",
+            "sha256": "331037268ff1edf89d0863e62b054eecc597e96e1695721ba62f8a7e0d1fcdbc"
+          },
+          {
+            "path": "story/script-review.md",
+            "sha256": "57733a7e2414339149b9219e55d7285da848edda58df73df67ffed5fcb44d3a9"
+          }
+        ]
+      }
     }
   ],
   "created_at": "2026-10-30T10:54:35+00:00",
-  "updated_at": "2026-10-30T13:13:18+00:00"
+  "updated_at": "2026-10-30T13:17:03+00:00"
 }
