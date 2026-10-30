@@ -15,3 +15,4 @@ was lost; identical scope and content, restored from Git history.
 | 02-research | Live Muse Spark call; sources per COV01-COV07; validator PASS | story/research-notes.md |
 | 02a-sourcing | Claim ledger CLM-1 to CLM-12 + visualization ledger VIS-01 to VIS-08; claims bound in coverage-map; validator PASS, verdict CLEARED | story/sources.md |
 | 02b-compliance | 14-gate compliance prepared, all PASS, verdict CLEARED, awaiting owner approval | story/compliance.md |
+| 03a-writer | Live Muse Wonder call; 12-row script restored final revision, clip split PASS 12/12, coverage PASS | story/characters.md, story/script.md |

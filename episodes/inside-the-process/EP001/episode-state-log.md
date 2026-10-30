@@ -7,3 +7,4 @@
 - 2026-10-30T13:08:51+00:00 -- completed 02-research; digest 6d3e3fab; next: 02a-sourcing
 - 2026-10-30T13:10:44+00:00 -- completed 02a-sourcing (owner-approved); digest ac36b047; next: 02b-compliance
 - 2026-10-30T13:11:51+00:00 -- completed 02b-compliance (owner-approved); digest 6043f2c0; next: 03a-writer
+- 2026-10-30T13:13:18+00:00 -- completed 03a-writer; digest 63be8e16; next: 03b-script-review
