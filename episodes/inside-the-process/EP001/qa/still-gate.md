@@ -31,3 +31,7 @@ environment matches the locked ENV string), then identity against the
 
 All 12 stills approved for 04f3 re-anchoring. Visor tint deviation is
 the single recorded still-vs-prompt override (LTXV-D055 guard armed).
+
+## Owner QA revision (2026-10-29)
+
+Owner rejected first corrected set: SC01/SC12 used a wrong human face instead of the CAST-002 master, SC06 showed the Explorer face. All 12 stills regenerated with CAST-002 identity text (short curly dark hair, navy hoodie) and opaque black full-face visor wording. SC01 and SC06 viewed after regeneration: PASS. Verdict remains PASS for 04f3.

@@ -26,3 +26,5 @@ was lost; identical scope and content, restored from Git history.
 | 04f2-frame0-stills | 12 Muse Image stills generated; Explorer set regenerated adult proportions; gate PASS with visor deviation logged | renders/stills/SC01-SC12.png, qa/still-gate.md |
 | 04f3-ltx-prompt-final | GLOBAL re-anchored (gold visor), strict validator PASS 12/12, manifest built | _context/ltx-prompt-manifest.json |
 | 04g-ltx-render-package | Render package built, pilots SC01,SC02,SC05,SC08,SC12 | exports/ltx-render-package/ |
+| 04f2 owner QA revision | SC01/SC12 CAST-002 face fix + Explorer opaque visor fix, all 12 regenerated, SC01/SC06 viewed PASS | renders/stills/*.png, qa/still-gate.md |
+| 04f3/04g rebuild | Strict PASS 12/12, manifest + render package rebuilt with new hashes | _context/ltx-prompt-manifest.json, exports/ltx-render-package/ |

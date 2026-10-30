@@ -17,3 +17,6 @@
 - 2026-10-30T13:39:37+00:00 -- completed 04f-ltx-prompt-draft; digest 6a8cb826; next: 04f2-frame0-stills
 - 2026-10-30T13:57:33+00:00 -- completed 04f2-frame0-stills; digest ab73d03c; next: 04f3-ltx-prompt-final
 - 2026-10-30T13:58:25+00:00 -- completed 04f3-ltx-prompt-final; digest 623e6499; next: 04g-ltx-render-package
+- 2026-10-30T14:03:39+00:00 -- owner-approved revision reopened from 04g-ltx-render-package to 04f2-frame0-stills -- Owner QA: SC01/SC12 wrong face vs CAST002 master; SC06 Explorer face visible
+- 2026-10-30T14:09:56+00:00 -- completed 04f2-frame0-stills; digest 258365f3; next: 04f3-ltx-prompt-final
+- 2026-10-30T14:10:25+00:00 -- completed 04f3-ltx-prompt-final; digest 3baf082d; next: 04g-ltx-render-package
