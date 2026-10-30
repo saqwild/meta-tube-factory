@@ -12,3 +12,4 @@ artifacts in this episode folder. Raw captures stay outside the repo.
 
 Notes: this is the recorded re-run after the first session's OBS take
 was lost; identical scope and content, restored from Git history.
+| 02-research | Live Muse Spark call; sources per COV01-COV07; validator PASS | story/research-notes.md |
