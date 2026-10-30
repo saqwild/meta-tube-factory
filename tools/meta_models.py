@@ -236,6 +236,7 @@ def main(argv=None) -> int:
     img.add_argument("--prompt", required=True)
     img.add_argument("--size", default=None)
     img.add_argument("--n", type=int, default=1)
+    img.add_argument("--out", default=None)
     seg = sub.add_parser("segment", help="one sam-3.1 segmentation")
     seg.add_argument("--prompt", required=True)
     seg.add_argument("--image-url", required=True)
@@ -262,7 +263,17 @@ def main(argv=None) -> int:
             return 0
         if args.cmd == "image":
             result = image_generate(args.prompt, size=args.size, n=args.n)
-            print(json.dumps({"model": resolve_role("image"), "response": result}, indent=2)[:4000])
+            if args.out:
+                import base64 as _b64
+                import pathlib
+
+                data = (result.get("data") or [{}])[0]
+                raw = _b64.b64decode(data["b64_json"]) if data.get("b64_json") else b""
+                pathlib.Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+                pathlib.Path(args.out).write_bytes(raw)
+                print(json.dumps({"model": resolve_role("image"), "saved": args.out, "bytes": len(raw)}))
+            else:
+                print(json.dumps({"model": resolve_role("image"), "response": result}, indent=2)[:4000])
             return 0
         if args.cmd == "segment":
             result = segment(args.image_url, args.prompt)

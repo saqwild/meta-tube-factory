@@ -19,3 +19,15 @@ no insignia, no glasses. Matches channel.json hard_safety_floor and
 bible/CAST.md anchors.
 
 Generation record: none. PROP-001 capsule is a prop, handled at 04c.
+
+## Scene plates (04c, Muse Image muse-image-1.0)
+
+| Plate | Locked environment string | Generator |
+|---|---|---|
+| EP001-ENV001-kitchen.png | warm home kitchen counter, pale dough ball under a linen cloth beside a glass mixing bowl, soft daylight, polished home realism | muse-image-1.0 |
+| EP001-ENV002-dough-mixed.png | macro interior inside just-mixed bread dough, wet shaggy flour mass, pale golden tones, magnified scale | muse-image-1.0 |
+| EP001-ENV004-foam-city.png | macro interior inside bread dough, foam city of pale golden bubbles in a translucent elastic gluten network, ivory/orange, cyan accent | muse-image-1.0 |
+| EP001-ENV006-oven.png | macro interior in hot oven, expanding golden bubbles, heat glow, crust forming, steam | muse-image-1.0 |
+| EP001-ENV008-sliced-loaf.png | sliced loaf close-up, soft airy crumb with visible bubbles, golden crust | muse-image-1.0 |
+
+Machine-readable copies: _context/environment-locks.json. First live Muse Image generations of this demo (plus one test call); plates viewed: ENV004 PASS (bubbles + gluten net, warm/ivory, cyan, no people, no text).
