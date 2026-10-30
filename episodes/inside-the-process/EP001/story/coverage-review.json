@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "episode_id": "EP001",
-  "stage": "03a-writer",
+  "stage": "03b-script-review",
   "status": "PASS",
-  "reviewed_at_utc": "2026-10-30T13:13:18Z",
+  "reviewed_at_utc": "2026-10-30T13:14:56Z",
   "validator_sha256": "582c5604ff2a1bcfb75e906ce544e0f178e3176b411a1d57a9ffcf3f473d614a",
   "input_sha256": {
     "story/coverage-map.json": "975160726528ebe1b488e4b0e863410762784114b3b714323900b2f62d745863",
