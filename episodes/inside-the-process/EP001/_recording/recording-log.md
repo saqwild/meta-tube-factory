@@ -14,3 +14,4 @@ Notes: this is the recorded re-run after the first session's OBS take
 was lost; identical scope and content, restored from Git history.
 | 02-research | Live Muse Spark call; sources per COV01-COV07; validator PASS | story/research-notes.md |
 | 02a-sourcing | Claim ledger CLM-1 to CLM-12 + visualization ledger VIS-01 to VIS-08; claims bound in coverage-map; validator PASS, verdict CLEARED | story/sources.md |
+| 02b-compliance | 14-gate compliance prepared, all PASS, verdict CLEARED, awaiting owner approval | story/compliance.md |
