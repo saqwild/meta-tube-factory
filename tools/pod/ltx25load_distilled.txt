@@ -1,0 +1,232 @@
+# LTX-2.5 distilled: standalone base-model downloader for Linux x86_64 pods.
+# Rebuilt 2026-09-08 from the verified base-model manifest; not a byte-for-byte
+# recovery of the original file. The separate MSR downloader remains unchanged.
+# Paste/run this entire file on the pod; Python 3.10+ with venv is required.
+# Optional environment: COMFY_ROOT=/workspace/ComfyUI, HF_TOKEN (read token),
+# HF_HOME=/workspace/hf_cache, LTX_PYTHON=python3.
+# Accept any required Hugging Face repository terms before downloading.
+#
+# Five pinned BF16 artifacts (~71.11 GB / 66.23 GiB total):
+# distilled transformer, Gemma4 12B encoder, video VAE, audio VAE,
+# and native spatial x2 latent upscaler (for two-stage workflows).
+# No MSR LoRA or MSR/PromptRelay custom nodes are downloaded or installed.
+# Valid existing models are reused after full SHA-256 verification.
+# Existing extra models/custom nodes are left in place.
+# Allow another 2 GiB free per destination filesystem for staging overhead.
+# ComfyUI must already be installed with native LTX-2.5 support.
+# This model setup does not modify workflows, restart ComfyUI or render a video.
+# Source: https://huggingface.co/Lightricks/LTX-2.5
+# The temporary downloader environment is version/hash locked and isolated
+# from ComfyUI's Python. Keep the child-shell wrapper so failure does not close SSH.
+bash <<'LTX25_SETUP'
+set -euo pipefail
+export COMFY_ROOT="${COMFY_ROOT:-/workspace/ComfyUI}"
+export HF_HOME="${HF_HOME:-/workspace/hf_cache}"
+LTX_PYTHON="${LTX_PYTHON:-python3}"
+"$LTX_PYTHON" -c 'import sys,platform; assert sys.version_info >= (3,10), "Python 3.10+ required"; assert sys.platform == "linux" and platform.machine() == "x86_64", "This downloader lock targets Linux x86_64 pods"'
+
+TOOLS_DIR="$(mktemp -d /tmp/ltx25-loader.XXXXXXXX)"
+trap 'rm -rf -- "$TOOLS_DIR"' EXIT
+cat > "$TOOLS_DIR/loader.py" <<'LTX25_PY'
+import hashlib
+import os
+from pathlib import Path
+import shutil
+import sys
+import tempfile
+
+models = Path(os.environ.get("COMFY_ROOT", "/workspace/ComfyUI")) / "models"
+# Entries: repository, filename, destination directory, bytes, SHA-256, revision.
+FILES = [
+    (
+        "Lightricks/LTX-2.5",
+        "diffusion_models/ltx-2.5-22b-distilled-transformer-bf16.safetensors",
+        models / "diffusion_models",
+        42018190584,
+        "31eb3cad89b9e54e99dd3baf286f70825ac4f6c660a70d9184d895be76d7bff4",
+        "5e6e71018ee1756ed329b697a7b4aedc934dfce9",
+    ),
+    (
+        "Lightricks/LTX-2.5",
+        "text_encoders/gemma4-12b-with-proj-ltx-2.5-bf16.safetensors",
+        models / "text_encoders",
+        26263858182,
+        "ef7243612fdae7a75cb4d5cee9433e81380675fb6c213bd98ae74a9cd16561d1",
+        "5e6e71018ee1756ed329b697a7b4aedc934dfce9",
+    ),
+    (
+        "Lightricks/LTX-2.5",
+        "vae/ltx-2.5-video-vae-bf16.safetensors",
+        models / "vae",
+        1472223346,
+        "847e14ca7f3355debca0cea4eaa24ac0fbcdf0061da054ac89ca638a869ddba3",
+        "5e6e71018ee1756ed329b697a7b4aedc934dfce9",
+    ),
+    (
+        "Lightricks/LTX-2.5",
+        "vae/ltx-2.5-audio-vae-bf16.safetensors",
+        models / "vae",
+        364866540,
+        "c52733d37f6a7fb7949c3dc0fb468c6cb2169e4d836983a73babb9f0d54837a5",
+        "5e6e71018ee1756ed329b697a7b4aedc934dfce9",
+    ),
+    (
+        "Lightricks/LTX-2.5",
+        "latent_upscale_models/ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors",
+        models / "latent_upscale_models",
+        995778752,
+        "eb5a71fe4068ee87ccdb1c3aa635e547ca76bd2d30ae20ae889f2c325c0677e8",
+        "5e6e71018ee1756ed329b697a7b4aedc934dfce9",
+    ),
+]
+
+def sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for block in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+def is_complete(path: Path, expected_size: int, expected_sha256: str) -> bool:
+    # A parseable header and byte count cannot detect corrupt tensor data.
+    # Hash the entire file against the pinned official artifact; no untrusted
+    # header length is used to allocate memory.
+    if not path.is_file() or path.stat().st_size != expected_size:
+        return False
+    return sha256(path) == expected_sha256
+
+def ensure_model(repo: str, remote: str, directory: Path, expected_size: int,
+                 expected_sha256: str, revision: str) -> Path:
+    directory.mkdir(parents=True, exist_ok=True)
+    destination = directory / Path(remote).name
+    if is_complete(destination, expected_size, expected_sha256):
+        print(f"OK (SHA-256 verified): {destination.name}")
+        return destination
+
+    # Stage on the destination filesystem. Leave any existing model untouched
+    # until the complete replacement passes its pinned checksum.
+    if destination.exists():
+        print(f"Does not match pinned artifact; retaining until replacement validates: {destination.name}")
+    staging = directory / ".ltx25-downloads" / revision
+
+    print(f"Downloading: {destination.name}")
+    downloaded = Path(
+        hf_hub_download(
+            repo_id=repo,
+            filename=remote,
+            revision=revision,
+            local_dir=str(staging),
+            token=token,
+        )
+    )
+    if not downloaded.resolve().is_relative_to(staging.resolve()):
+        raise RuntimeError(f"Unexpected download location; original model retained: {destination.name}")
+    if not is_complete(downloaded, expected_size, expected_sha256):
+        # Remove only the corrupt staged download, so a later retry cannot
+        # reuse it via the Hub's local-dir metadata. Never unlink destination.
+        downloaded.unlink()
+        raise RuntimeError(f"SHA-256/size validation failed; original model retained: {destination.name}")
+    downloaded.replace(destination)
+    return destination
+
+def check_environment() -> None:
+    root = models.parent
+    if not root.is_absolute() or not root.is_dir() or not (root / "main.py").is_file():
+        raise RuntimeError("COMFY_ROOT must be the absolute path of an existing ComfyUI installation containing main.py.")
+    print(f"Model destination: {models}")
+
+
+def pending_models() -> list:
+    return [entry for entry in FILES if not is_complete(entry[2] / Path(entry[1]).name, entry[3], entry[4])]
+
+
+def check_disk_space(pending: list) -> None:
+    # Group by filesystem, allow full staged replacements while originals remain,
+    # and reserve 2 GiB per filesystem. Do not count partial downloads as free space.
+    budgets = {}
+    for _, remote, directory, size, _, _ in pending:
+        directory.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryFile(dir=directory):
+            pass
+        device = directory.stat().st_dev
+        path, needed = budgets.get(device, (directory, 2 * 1024**3))
+        budgets[device] = (path, needed + size)
+    for path, needed in budgets.values():
+        free = shutil.disk_usage(path).free
+        if free < needed:
+            raise RuntimeError(f"Insufficient staging space on {path}: need {needed / 1024**3:.1f} GiB free, have {free / 1024**3:.1f} GiB.")
+
+
+def check_remote_access(pending: list) -> None:
+    # HEAD all required replacements before starting the first large transfer.
+    for repo, remote, _, size, digest, revision in pending:
+        try:
+            metadata = get_hf_file_metadata(hf_hub_url(repo, remote, revision=revision), token=token)
+        except Exception:
+            raise RuntimeError(f"Cannot access pinned {repo}/{remote}. Check HF_TOKEN and repository access; no new model transfer started.") from None
+        if metadata.size != size or metadata.etag != digest or metadata.commit_hash != revision:
+            raise RuntimeError(f"Remote metadata disagrees with the pinned manifest: {remote}. Review the loader before downloading.")
+
+
+def download_models() -> None:
+    # Keep every gate outside ensure_model's transfer loop.
+    check_environment()
+    pending = pending_models()
+    check_disk_space(pending)
+    check_remote_access(pending)
+    for entry in pending:
+        ensure_model(*entry)
+    for _, remote, directory, size, digest, _ in FILES:
+        if not is_complete(directory / Path(remote).name, size, digest):
+            raise RuntimeError(f"Final model validation failed: {remote}")
+    print("PASS: all five LTX-2.5 distilled model files match their pinned sizes and SHA-256 digests.")
+    print("Next: select these models in a native LTX-2.5 distilled workflow and run a test clip.")
+    print("No app integration, custom-node installation, or GPU render was performed.")
+
+
+if __name__ == "__main__":
+    try:
+        if "--preflight" in sys.argv:
+            check_environment()
+        else:
+            from huggingface_hub import hf_hub_download, get_hf_file_metadata, hf_hub_url
+            token = os.environ.get("HF_TOKEN") or None
+            download_models()
+    except Exception as error:
+        print(f"FAILED: {error}", file=sys.stderr)
+        raise SystemExit(1)
+LTX25_PY
+
+# Check the destination with stdlib only before installing downloader dependencies.
+"$LTX_PYTHON" "$TOOLS_DIR/loader.py" --preflight
+
+if [ -z "${HF_TOKEN:-}" ]; then
+  IFS= read -rsp "Hugging Face read token (not saved; Enter for anonymous): " HF_TOKEN </dev/tty
+  echo
+  export HF_TOKEN
+fi
+
+# Temporary venv, never ComfyUI's interpreter. No floating transitive packages.
+cat > "$TOOLS_DIR/downloader.lock" <<'LTX25_LOCK'
+PyYAML==6.0.3 --hash=sha256:00c4bdeba853cc34e7dd471f16b4114f4162dc03e6b7afcc2128711f0eca823c --hash=sha256:0150219816b6a1fa26fb4699fb7daa9caf09eb1999f3b70fb6e786805e80375a --hash=sha256:0f29edc409a6392443abf94b9cf89ce99889a1dd5376d94316ae5145dfedd5d6 --hash=sha256:22ba7cfcad58ef3ecddc7ed1db3409af68d023b7f940da23c6c2a1890976eda6 --hash=sha256:9c7708761fccb9397fe64bbc0395abcae8c4bf7b0eac081e12b809bf47700d0b --hash=sha256:b8bb0864c5a28024fac8a632c443c87c5aa6f215c0b126c449ae1a150412f31d --hash=sha256:ba1cc08a7ccde2d2ec775841541641e4548226580ab850948cbfda66a1befcdc --hash=sha256:c458b6d084f9b935061bc36216e8a69a7e293a2f1e68bf956dcd9e6cbcd143f5
+anyio==4.15.0 --hash=sha256:7ecd9937369ffce8bba0b5ccb9b3a9507b101b0ed50256aecfbab27e6c2acb99
+certifi==2026.7.22 --hash=sha256:62f22742b58a1a33014a2b6b706588a8d7e2a88ae7bd1a6ebe8c992928483775
+click==8.5.0 --hash=sha256:255bc9599cf7748b4b1a446ccc735421bd08a2ae529a8b88597d3de5664ee360
+exceptiongroup==1.3.1 --hash=sha256:a7a39a3bd276781e98394987d3a5701d0c4edffb633bb7a5144577f82c773598
+filelock==3.32.5 --hash=sha256:142cd9fa77a872c5e78c62329a0d15278fadc686eb89e760017968961a4fd6b2
+fsspec==2026.7.0 --hash=sha256:b57ddbafedfaef7018c1ecab32aa200a9d7ca26b77965f64e48b70061249d279
+h11==0.16.0 --hash=sha256:63cf8bbe7522de3bf65932fda1d9c2772064ffb3dae62d55932da54b31cb6c86
+hf-xet==1.6.0 --hash=sha256:d62671bb130879cef0ee4c9ebe47a14af6c66ec53e6d84dc15936e5ffdfac82f --hash=sha256:f2f7278c05c22fd60cb436cda1269649b3e81db65ecdc8496e5e164aa4143e7b
+httpcore==1.0.9 --hash=sha256:2d400746a40668fc9dec9810239072b40b4484b640a8c38fd654a024c7a1bf55
+httpx==0.28.1 --hash=sha256:d909fcccc110f8c7faf814ca82a9a4d816bc5a6dbfea25d6591d6985b8ba59ad
+huggingface_hub==1.30.0 --hash=sha256:96ae0a8e99a234374a6fe43e989ebd21c04640b91ab2927e7e5773ba1131ca59
+idna==3.19 --hash=sha256:815e7be7a7806d54abb586dc943addc79e8b2ee16915059658cbeff4b1b43bf4
+packaging==26.3 --hash=sha256:d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c
+tqdm==4.70.0 --hash=sha256:7f585706bfddbdebf89daac705b2dfcc16890130727d3197ca62c732b4310953
+typing_extensions==4.16.0 --hash=sha256:481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8
+LTX25_LOCK
+"$LTX_PYTHON" -m venv "$TOOLS_DIR/venv"
+"$TOOLS_DIR/venv/bin/python" -m pip --isolated install --disable-pip-version-check --only-binary=:all: --require-hashes --no-deps -r "$TOOLS_DIR/downloader.lock"
+"$TOOLS_DIR/venv/bin/python" -m pip check
+"$TOOLS_DIR/venv/bin/python" "$TOOLS_DIR/loader.py"
+LTX25_SETUP
