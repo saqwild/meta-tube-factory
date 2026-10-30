@@ -1,0 +1,84 @@
+{
+  "facts": [
+    {
+      "clip": "SC02",
+      "character": "EXPLORER",
+      "detail": "visor",
+      "confirmed_state_pattern": "gold reflective visor",
+      "contradicting_pattern": "opaque black visor",
+      "source": "04f2 still gate, viewed SC02 2026-10-29"
+    },
+    {
+      "clip": "SC03",
+      "character": "EXPLORER",
+      "detail": "visor",
+      "confirmed_state_pattern": "gold reflective visor",
+      "contradicting_pattern": "opaque black visor",
+      "source": "04f2 still gate, viewed SC02 2026-10-29"
+    },
+    {
+      "clip": "SC04",
+      "character": "EXPLORER",
+      "detail": "visor",
+      "confirmed_state_pattern": "gold reflective visor",
+      "contradicting_pattern": "opaque black visor",
+      "source": "04f2 still gate, viewed SC02 2026-10-29"
+    },
+    {
+      "clip": "SC05",
+      "character": "EXPLORER",
+      "detail": "visor",
+      "confirmed_state_pattern": "gold reflective visor",
+      "contradicting_pattern": "opaque black visor",
+      "source": "04f2 still gate, viewed SC02 2026-10-29"
+    },
+    {
+      "clip": "SC06",
+      "character": "EXPLORER",
+      "detail": "visor",
+      "confirmed_state_pattern": "gold reflective visor",
+      "contradicting_pattern": "opaque black visor",
+      "source": "04f2 still gate, viewed SC02 2026-10-29"
+    },
+    {
+      "clip": "SC07",
+      "character": "EXPLORER",
+      "detail": "visor",
+      "confirmed_state_pattern": "gold reflective visor",
+      "contradicting_pattern": "opaque black visor",
+      "source": "04f2 still gate, viewed SC02 2026-10-29"
+    },
+    {
+      "clip": "SC08",
+      "character": "EXPLORER",
+      "detail": "visor",
+      "confirmed_state_pattern": "gold reflective visor",
+      "contradicting_pattern": "opaque black visor",
+      "source": "04f2 still gate, viewed SC02 2026-10-29"
+    },
+    {
+      "clip": "SC09",
+      "character": "EXPLORER",
+      "detail": "visor",
+      "confirmed_state_pattern": "gold reflective visor",
+      "contradicting_pattern": "opaque black visor",
+      "source": "04f2 still gate, viewed SC02 2026-10-29"
+    },
+    {
+      "clip": "SC10",
+      "character": "EXPLORER",
+      "detail": "visor",
+      "confirmed_state_pattern": "gold reflective visor",
+      "contradicting_pattern": "opaque black visor",
+      "source": "04f2 still gate, viewed SC02 2026-10-29"
+    },
+    {
+      "clip": "SC11",
+      "character": "EXPLORER",
+      "detail": "visor",
+      "confirmed_state_pattern": "gold reflective visor",
+      "contradicting_pattern": "opaque black visor",
+      "source": "04f2 still gate, viewed SC02 2026-10-29"
+    }
+  ]
+}

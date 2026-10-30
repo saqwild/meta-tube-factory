@@ -23,3 +23,6 @@ was lost; identical scope and content, restored from Git history.
 | 04d-shot-plan | blocking.json for 12 clips (camera-relative facing, end states chained), shot-plan.md | visual/shot-plan.md, _context/blocking.json |
 | 04e-storyboard | Derived storyboard.html built (12 clips, placeholders pending stills) | exports/storyboard.html |
 | 04f-ltx-prompt-draft | 12 draft prompts + frame0 requirements, validator PASS 12/12 (draft) after 3 fix rounds | prompts/7-video-prompts.md, _context/frame0-requirements.json |
+| 04f2-frame0-stills | 12 Muse Image stills generated; Explorer set regenerated adult proportions; gate PASS with visor deviation logged | renders/stills/SC01-SC12.png, qa/still-gate.md |
+| 04f3-ltx-prompt-final | GLOBAL re-anchored (gold visor), strict validator PASS 12/12, manifest built | _context/ltx-prompt-manifest.json |
+| 04g-ltx-render-package | Render package built, pilots SC01,SC02,SC05,SC08,SC12 | exports/ltx-render-package/ |

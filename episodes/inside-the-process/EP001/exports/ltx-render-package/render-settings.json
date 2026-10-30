@@ -1,0 +1,11 @@
+{
+  "_note": "Built by tools/build_render_package.py from channel_profiles/inside-the-process/channel.json -> render. app-vidgen-dist derives the frame count from duration_seconds; never hand-enter a frame count.",
+  "workflow": "LTX25_T2V_I2V_Two_Stage_Distilled.json",
+  "megapixels": 0.98,
+  "fps": 24,
+  "duration_seconds": 20,
+  "cfg": 1.2,
+  "cfg_refine": 1.0,
+  "cfg_audio": 1.0,
+  "img_compression": 22
+}

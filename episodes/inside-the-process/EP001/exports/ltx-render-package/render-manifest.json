@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "episode_id": "EP001",
+  "channel_slug": "inside-the-process",
+  "built_at_utc": "2026-10-30T13:59:05Z",
+  "source_manifest_sha256": "1a4256dc3092abcc0731cf254ff378cd47235ae5cb1a3295af1b6601bb6c7542",
+  "master_prompt_sha256": "99537cada9c9f4250ecf834f844e1e65b36a7d18c3b914849ef0320b1e134a65",
+  "negative_prompt_sha256": "1fbf3af8d272dad579562f70631d23df10ce8c77f323201f860d6df4ce507c9b",
+  "settings": {
+    "workflow": "LTX25_T2V_I2V_Two_Stage_Distilled.json",
+    "megapixels": 0.98,
+    "fps": 24,
+    "duration_seconds": 20,
+    "cfg": 1.2,
+    "cfg_refine": 1.0,
+    "cfg_audio": 1.0,
+    "img_compression": 22
+  },
+  "clips": [
+    {
+      "index": 1,
+      "clip": "SC01",
+      "marker": "@@ s1",
+      "prompt_sha256": "bd8b0552bae33be5e05ee7cd5e29c37820ec79b1244bbc19db25d18a10728604",
+      "still_file": "SC01.png",
+      "still_sha256": "97615227e76fae74839b255c6ab837c0890af99791e5b48851eda52be4849d91",
+      "spoken_word_count": 40,
+      "declared_cuts": 0,
+      "is_pilot": true
+    },
+    {
+      "index": 2,
+      "clip": "SC02",
+      "marker": "@@ s2",
+      "prompt_sha256": "222758924c9dcd812c5fc651e6f77e52ab040b1b8b7ff85648b4ec25fa466728",
+      "still_file": "SC02.png",
+      "still_sha256": "95a8e8400b24c9ee18a3d9edcd6a61ca9bc0fce7890f6c61697023469abfbf24",
+      "spoken_word_count": 41,
+      "declared_cuts": 0,
+      "is_pilot": true
+    },
+    {
+      "index": 3,
+      "clip": "SC03",
+      "marker": "@@ s3",
+      "prompt_sha256": "68c9e08969d4d89bd221ba80b9b288e4e4421890e3ce5440cb2972f6635c5952",
+      "still_file": "SC03.png",
+      "still_sha256": "af112ed2f60cb92a7b1b428d9fe525abf1d02907c8bf85cdef5374c513e5f2c2",
+      "spoken_word_count": 42,
+      "declared_cuts": 0,
+      "is_pilot": false
+    },
+    {
+      "index": 4,
+      "clip": "SC04",
+      "marker": "@@ s4",
+      "prompt_sha256": "fc0c62f23866bc0dfef9b5784d0671a7330540e39d91c389c5d959c347c0deff",
+      "still_file": "SC04.png",
+      "still_sha256": "4b54e1e25fdadac10c1a096f63a272db10075147f6f6162b4daad2fd604fe807",
+      "spoken_word_count": 40,
+      "declared_cuts": 0,
+      "is_pilot": false
+    },
+    {
+      "index": 5,
+      "clip": "SC05",
+      "marker": "@@ s5",
+      "prompt_sha256": "a187068391252a79e0fcc6476becd278f5ab6df98b51923a821d05ed95c278c9",
+      "still_file": "SC05.png",
+      "still_sha256": "f873ba0dae657216b7fa4a237e2bc386ea0ae857b5542c2594cc5df92a36b02d",
+      "spoken_word_count": 41,
+      "declared_cuts": 0,
+      "is_pilot": true
+    },
+    {
+      "index": 6,
+      "clip": "SC06",
+      "marker": "@@ s6",
+      "prompt_sha256": "5c70ea7afd737e89d9240d98d121e91d6ff33289564c1805d55775213f06b068",
+      "still_file": "SC06.png",
+      "still_sha256": "26acff5e526361fb267cf2e63610dba9e97cf034a3ec430fc9d589bcb9f6f9dd",
+      "spoken_word_count": 41,
+      "declared_cuts": 0,
+      "is_pilot": false
+    },
+    {
+      "index": 7,
+      "clip": "SC07",
+      "marker": "@@ s7",
+      "prompt_sha256": "4f57ec5c9388b9f0ae8c7de6265828dd041724d7589a0f571d68607f9d282f04",
+      "still_file": "SC07.png",
+      "still_sha256": "51806f77c4fd1a9658658637281444a205124748ee60eaca8ece8f3c65b5a66f",
+      "spoken_word_count": 38,
+      "declared_cuts": 0,
+      "is_pilot": false
+    },
+    {
+      "index": 8,
+      "clip": "SC08",
+      "marker": "@@ s8",
+      "prompt_sha256": "126d33362ca29242f80214b192c25bd1378d7566e3c4f3e53a296eb9fe7d2644",
+      "still_file": "SC08.png",
+      "still_sha256": "be34c0dd7d8e426da9d3150c9732cc2d42d9d3aec3a7446db0669b40fde11121",
+      "spoken_word_count": 41,
+      "declared_cuts": 0,
+      "is_pilot": true
+    },
+    {
+      "index": 9,
+      "clip": "SC09",
+      "marker": "@@ s9",
+      "prompt_sha256": "02192dd93b6056513d0b3c59e7ccd1bcfd1a95d7eee04cfd842de05bd48a4451",
+      "still_file": "SC09.png",
+      "still_sha256": "a098787864c270399e1fc35892a63a7553780c47297b4bca492f8ba924c77f0e",
+      "spoken_word_count": 42,
+      "declared_cuts": 0,
+      "is_pilot": false
+    },
+    {
+      "index": 10,
+      "clip": "SC10",
+      "marker": "@@ s10",
+      "prompt_sha256": "e653f383486dc69c0ec14a4b04166a3436f46e595feaecf50d843e91fca31aed",
+      "still_file": "SC10.png",
+      "still_sha256": "46e8580b044bdbaf6c4477137a84d2b427098e003fcf9fd4342800f5de7276b1",
+      "spoken_word_count": 39,
+      "declared_cuts": 0,
+      "is_pilot": false
+    },
+    {
+      "index": 11,
+      "clip": "SC11",
+      "marker": "@@ s11",
+      "prompt_sha256": "4f45224b9cb899600eba3da3fe4469520bbc8810fcc2774aa6a4ef5d0e36725d",
+      "still_file": "SC11.png",
+      "still_sha256": "09832ad59ba83be9f204373bb693fd0fda02c08d237b3dbcaa5c8723293eae73",
+      "spoken_word_count": 40,
+      "declared_cuts": 0,
+      "is_pilot": false
+    },
+    {
+      "index": 12,
+      "clip": "SC12",
+      "marker": "@@ s12",
+      "prompt_sha256": "37ac49c7261ba4b030e0eed6938229d3547acc6d6f675d4df200945298ab36cd",
+      "still_file": "SC12.png",
+      "still_sha256": "b3c3bf733597e257d13c5b9bda164daed5761fadbf0b30f6b5c45c8b076eb6ed",
+      "spoken_word_count": 39,
+      "declared_cuts": 0,
+      "is_pilot": true
+    }
+  ]
+}

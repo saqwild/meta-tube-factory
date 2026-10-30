@@ -27,7 +27,7 @@
     "06a-postproduction-assembly",
     "07-final-package-qa"
   ],
-  "next_stage": "04f2-frame0-stills",
+  "next_stage": "04g-ltx-render-package",
   "completed_stages": [
     {
       "stage": "00-preflight",
@@ -236,8 +236,102 @@
           }
         ]
       }
+    },
+    {
+      "stage": "04f2-frame0-stills",
+      "completed_at": "2026-10-30T13:57:33+00:00",
+      "approved": false,
+      "note": "",
+      "deliverable_digest": {
+        "digest_sha256": "ab73d03cf82eedff0cba066f73b699d53b42be1a6d00b4d9f3b449de95a33ac3",
+        "files": [
+          {
+            "path": "prompts/6-image-agent-packet.md",
+            "sha256": "1185ce06706ceab1ff5ae823d4303caddbd700729e38b08555d127fd568edd76"
+          },
+          {
+            "path": "prompts/6-image-prompts.md",
+            "sha256": "64d6b1dded9e1001a5b8587622ceda49a9d066a56914c17d4d32cb7e1991198a"
+          },
+          {
+            "path": "qa/still-gate.md",
+            "sha256": "e88a3d1045e156f9b6a0f2db8c82ea8903cd9d35829828753a6807e0ea905423"
+          },
+          {
+            "path": "renders/stills/SC01.png",
+            "sha256": "97615227e76fae74839b255c6ab837c0890af99791e5b48851eda52be4849d91"
+          },
+          {
+            "path": "renders/stills/SC02.png",
+            "sha256": "95a8e8400b24c9ee18a3d9edcd6a61ca9bc0fce7890f6c61697023469abfbf24"
+          },
+          {
+            "path": "renders/stills/SC03.png",
+            "sha256": "af112ed2f60cb92a7b1b428d9fe525abf1d02907c8bf85cdef5374c513e5f2c2"
+          },
+          {
+            "path": "renders/stills/SC04.png",
+            "sha256": "4b54e1e25fdadac10c1a096f63a272db10075147f6f6162b4daad2fd604fe807"
+          },
+          {
+            "path": "renders/stills/SC05.png",
+            "sha256": "f873ba0dae657216b7fa4a237e2bc386ea0ae857b5542c2594cc5df92a36b02d"
+          },
+          {
+            "path": "renders/stills/SC06.png",
+            "sha256": "26acff5e526361fb267cf2e63610dba9e97cf034a3ec430fc9d589bcb9f6f9dd"
+          },
+          {
+            "path": "renders/stills/SC07.png",
+            "sha256": "51806f77c4fd1a9658658637281444a205124748ee60eaca8ece8f3c65b5a66f"
+          },
+          {
+            "path": "renders/stills/SC08.png",
+            "sha256": "be34c0dd7d8e426da9d3150c9732cc2d42d9d3aec3a7446db0669b40fde11121"
+          },
+          {
+            "path": "renders/stills/SC09.png",
+            "sha256": "a098787864c270399e1fc35892a63a7553780c47297b4bca492f8ba924c77f0e"
+          },
+          {
+            "path": "renders/stills/SC10.png",
+            "sha256": "46e8580b044bdbaf6c4477137a84d2b427098e003fcf9fd4342800f5de7276b1"
+          },
+          {
+            "path": "renders/stills/SC11.png",
+            "sha256": "09832ad59ba83be9f204373bb693fd0fda02c08d237b3dbcaa5c8723293eae73"
+          },
+          {
+            "path": "renders/stills/SC12.png",
+            "sha256": "b3c3bf733597e257d13c5b9bda164daed5761fadbf0b30f6b5c45c8b076eb6ed"
+          }
+        ]
+      }
+    },
+    {
+      "stage": "04f3-ltx-prompt-final",
+      "completed_at": "2026-10-30T13:58:25+00:00",
+      "approved": false,
+      "note": "",
+      "deliverable_digest": {
+        "digest_sha256": "623e64991cee90bb5a41274a2a98eac2359e672274622738fd9fc2152f572254",
+        "files": [
+          {
+            "path": "_context/ltx-prompt-manifest.json",
+            "sha256": "1a4256dc3092abcc0731cf254ff378cd47235ae5cb1a3295af1b6601bb6c7542"
+          },
+          {
+            "path": "_context/ltx-prompt-review.json",
+            "sha256": "94944479d5f3e82d964e05f11edcac2e072d525a29bcd775a3b938873eb64004"
+          },
+          {
+            "path": "prompts/7-video-prompts.md",
+            "sha256": "5676d2eda52460768a57bbe60e917659f1a4cea1ba25b11e1fa7fe1173679d03"
+          }
+        ]
+      }
     }
   ],
   "created_at": "2026-10-30T10:54:35+00:00",
-  "updated_at": "2026-10-30T13:39:37+00:00"
+  "updated_at": "2026-10-30T13:58:25+00:00"
 }

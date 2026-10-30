@@ -15,3 +15,5 @@
 - 2026-10-30T13:29:40+00:00 -- completed 04d-shot-plan; digest 16955e9a; next: 04e-storyboard
 - 2026-10-30T13:32:33+00:00 -- completed 04e-storyboard; digest 3eba2af5; next: 04f-ltx-prompt-draft
 - 2026-10-30T13:39:37+00:00 -- completed 04f-ltx-prompt-draft; digest 6a8cb826; next: 04f2-frame0-stills
+- 2026-10-30T13:57:33+00:00 -- completed 04f2-frame0-stills; digest ab73d03c; next: 04f3-ltx-prompt-final
+- 2026-10-30T13:58:25+00:00 -- completed 04f3-ltx-prompt-final; digest 623e6499; next: 04g-ltx-render-package
