@@ -49,3 +49,5 @@ SC02, SC05, SC08, SC12: awaiting owner viewing and verdicts.
 - All revised clips: final prompt beats now end on the process, not the Explorer. Stills regenerated, strict validator PASS, manifest/package rebuilt. Awaiting owner re-render of SC01, SC04-SC08, SC10-SC12.
 
 - SC12 still revision (owner flag): heavy wrist hair regenerated to a clean hand with short nails and minimal arm hair; viewed PASS. Package rebuilt with new SC12 hash.
+
+- SC01 still revision 2 (owner flag): face was cropped out of frame 0, so i2v had no identity to hold. Regenerated with CAST-002 face fully visible, capsule descending; viewed PASS. Package rebuilt.
