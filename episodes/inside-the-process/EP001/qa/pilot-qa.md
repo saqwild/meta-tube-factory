@@ -29,3 +29,5 @@ SC02, SC05, SC08, SC12: awaiting owner viewing and verdicts.
 - Post note for 06a assembly: trim dead-silence tails on rendered clips during postproduction. This is an assembly trim, not a re-render: keep each clip's dialogue and productive tail action, cut only trailing silent frames, and record per-clip trim ranges in the assembly notes at 06a.
 
 - SC05 (s05 render): owner viewed 2026-10-29 - PASS. Dead-silence tail trim at 06a if present, as with SC02-SC04.
+
+- SC06 (s06 render): owner viewed 2026-10-29 - PASS. Dead-silence tail trim at 06a if present.
