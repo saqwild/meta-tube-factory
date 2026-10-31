@@ -2,7 +2,7 @@
   "schema_version": 1,
   "episode_id": "EP001",
   "channel_slug": "inside-the-process",
-  "generated_at_utc": "2026-10-31T18:30:16Z",
+  "generated_at_utc": "2026-10-31T19:08:05Z",
   "render": {
     "mode": "i2v",
     "model": "LTX-2.5",
@@ -22,9 +22,9 @@
       "clip": "SC01",
       "index": 1,
       "prompt_path": "prompts/7-video-prompts.md",
-      "prompt_sha256": "640ae6c4173733e80e4641243328bca96a86a8e0d68988679c432c1a69581567",
+      "prompt_sha256": "353a3918b0001efb1cda4343dbfc940caa42984dd6cc93ed41599b3246ebab72",
       "still_path": "renders/stills/SC01.png",
-      "still_sha256": "04712eb609cfb9123ded16f5c601341518da6169e72285ad92fa36e205cf2ba1",
+      "still_sha256": "3e949e9d18110fa126f0f07336eb16e9d2d39122a4f52da0ccb372b26ebbc9f5",
       "still_gate_verdict": "PASS",
       "characters": [
         "YOU"
@@ -90,9 +90,9 @@
       "clip": "SC04",
       "index": 4,
       "prompt_path": "prompts/7-video-prompts.md",
-      "prompt_sha256": "ba81effacf2f80e83e8126cd9c8549ac6762610531bcc69a3e1097965f561b4c",
+      "prompt_sha256": "dda570477f16086f237e9e3e784f9030876eb41487693e55c420853ac2f54ab3",
       "still_path": "renders/stills/SC04.png",
-      "still_sha256": "26b7b72e5f9b1e0938c95a332240eafdc40f022fdc8176227731a37034c8534f",
+      "still_sha256": "1e975c6d8e979d56066d41802c90c0fd2f7eec92b9c6c576fc49a28ec0f738c5",
       "still_gate_verdict": "PASS",
       "characters": [
         "EXPLORER"
@@ -111,9 +111,9 @@
       "clip": "SC05",
       "index": 5,
       "prompt_path": "prompts/7-video-prompts.md",
-      "prompt_sha256": "d055bbb8d0fa6a6f20cd89af7dd911726c1ffc4aeab1b0d9b63a87549da08529",
+      "prompt_sha256": "f19b9dc665fdb87412385040d04539f2ae65dbc90ef877304ecce9b8bad38411",
       "still_path": "renders/stills/SC05.png",
-      "still_sha256": "0a9dc5e4d2362a8cdbc123089947f7d07d7cac39617d47b0b73c845bb2b71ba4",
+      "still_sha256": "22be4885b887aafe9a4e1e7fc0ddf1bfcb48e9097dfb45f0c92d157fed284bcc",
       "still_gate_verdict": "PASS",
       "characters": [
         "EXPLORER"
@@ -132,9 +132,9 @@
       "clip": "SC06",
       "index": 6,
       "prompt_path": "prompts/7-video-prompts.md",
-      "prompt_sha256": "5663a4e62d342f388fb5f110014236a44dd338cd22123b8638f55073b8693bb7",
+      "prompt_sha256": "b730ad3a13060223e698e85fb8ecf8a63eeda2495b2318f536d97ed7a34ef4c8",
       "still_path": "renders/stills/SC06.png",
-      "still_sha256": "ab119c9d8fdd0212107aa9f9dec4409a96d65ba5a0a99743c78eee790e3fad4c",
+      "still_sha256": "e9c8fa1a4f99d1914ded3c7132b33a95d7cbc36505fb165994d7aad277c5d0aa",
       "still_gate_verdict": "PASS",
       "characters": [
         "EXPLORER"
@@ -153,9 +153,9 @@
       "clip": "SC07",
       "index": 7,
       "prompt_path": "prompts/7-video-prompts.md",
-      "prompt_sha256": "b1b331955db002dfd7d4478e3eb6df6318eb56770dc077e0a8462a6e5556c78f",
+      "prompt_sha256": "c559360fb12665c9e46a2b99e91ed2afe8e82e73d863c3a9e20b97276884bbbb",
       "still_path": "renders/stills/SC07.png",
-      "still_sha256": "164f8cf9686db06b5765a33870a6ffae1bb182720a8e51f9906f19bd51381ce2",
+      "still_sha256": "9dc1bbbab79ae5f1311a8619672a58365e301f74b5757717d37914d85f93f389",
       "still_gate_verdict": "PASS",
       "characters": [
         "EXPLORER"
@@ -174,9 +174,9 @@
       "clip": "SC08",
       "index": 8,
       "prompt_path": "prompts/7-video-prompts.md",
-      "prompt_sha256": "c6faa5e75fc6cd5fe79546120be65a52281c184f9cdbb66f5c4ebb07b533d91d",
+      "prompt_sha256": "160f89f0bce7ae788723b1a047ba62a916b9645a4cc75485c644843920511daa",
       "still_path": "renders/stills/SC08.png",
-      "still_sha256": "c49d9ab75279dccda77666b92c182032e385b225d381f8b80b36b7c84b80c3cd",
+      "still_sha256": "e1a365d93c074fccee90e21537c95b44a980da526bde9449f005250cd6bbb118",
       "still_gate_verdict": "PASS",
       "characters": [
         "EXPLORER"
@@ -216,9 +216,9 @@
       "clip": "SC10",
       "index": 10,
       "prompt_path": "prompts/7-video-prompts.md",
-      "prompt_sha256": "b86290f20e7d9cb2a7198f9a846cd1b89953bf1736834f90af563c9f32f0957e",
+      "prompt_sha256": "3515e0e11d4fb67ea9b6e414c781060939eb037287c9f6ea5e2c157deb860324",
       "still_path": "renders/stills/SC10.png",
-      "still_sha256": "0b34c369c8d86db1c927ddac10d8da6a9b6c4bcd373acfe7d1b7912ac30b8574",
+      "still_sha256": "0d05e1eb886428ae99c929591adf4977a18870fb7acbb1694cee2552137a98d6",
       "still_gate_verdict": "PASS",
       "characters": [
         "EXPLORER"
@@ -237,9 +237,9 @@
       "clip": "SC11",
       "index": 11,
       "prompt_path": "prompts/7-video-prompts.md",
-      "prompt_sha256": "2090f873a0db5b95b27a50fd4d65120b91a4c6013784c7b0f1bd398c43ed88ec",
+      "prompt_sha256": "1249c0077d70d9f1b3dc4cc94dfb6935cac96214efbdc76287b42ab88f7e946f",
       "still_path": "renders/stills/SC11.png",
-      "still_sha256": "a21acc52fc6e5cf3eef7777bf5165c6c9a0bbab727b493aab337a9cce0b5328f",
+      "still_sha256": "ce36a25c5e2a65bc1ec37158fbca06b1499f59be561db02b9384355408bca6f7",
       "still_gate_verdict": "PASS",
       "characters": [
         "EXPLORER"
@@ -258,9 +258,9 @@
       "clip": "SC12",
       "index": 12,
       "prompt_path": "prompts/7-video-prompts.md",
-      "prompt_sha256": "37ac49c7261ba4b030e0eed6938229d3547acc6d6f675d4df200945298ab36cd",
+      "prompt_sha256": "56dc88b9a900ec4dad2b45eb09d95bd75702459c39de58afafd70ed7c1f5f328",
       "still_path": "renders/stills/SC12.png",
-      "still_sha256": "305932c3392a933cf9abb2fb6314c4cc40222e59c5430861b6997f81f9f7e8ac",
+      "still_sha256": "144214a54f389878d3ccde31e4b6a8b47acf9e490cc418c067722aca579a6675",
       "still_gate_verdict": "PASS",
       "characters": [
         "YOU"

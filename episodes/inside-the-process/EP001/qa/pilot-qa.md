@@ -31,3 +31,19 @@ SC02, SC05, SC08, SC12: awaiting owner viewing and verdicts.
 - SC05 (s05 render): owner viewed 2026-10-29 - PASS. Dead-silence tail trim at 06a if present, as with SC02-SC04.
 
 - SC06 (s06 render): owner viewed 2026-10-29 - PASS. Dead-silence tail trim at 06a if present.
+
+## Owner overall review (2026-10-29) - process-focus revision
+
+- Overall: dialogue feels short with dead tails (trim at 06a); too many clips end on the Explorer. Show the tech/process, not the presenter.
+- SC01 REVISE: capsule now descends into the risen dough (transition into the interior); cloth beat already fixed. Note: dough doubling is proofing warmth, not oven heat - oven spring stays SC08.
+- SC02 PASS, SC03 PASS (owner).
+- SC04 REVISE still: yeast/bubble macro, Explorer small at edge.
+- SC05 REVISE still: stretched net fills frame.
+- SC06 REVISE (agent review): Explorer hands were gripping strands - violates never-touch rule; regenerated hands empty at sides, process wide.
+- SC07 REVISE still: slow proofing bubbles wide, Explorer small.
+- SC08 REVISE still: expanding bubbles/dome fill frame.
+- SC09 PASS (owner); more dialogue requested - spoken band is capped 38-42 words/clip by channel format, so no added lines without a format change; perceived shortness is the dead tail, fixed by 06a trims.
+- SC10 REVISE still: crumb surroundings fill frame.
+- SC11 REVISE still: set cooling crumb per spoken content.
+- SC12 REVISE still: bread zoom, person cropped at edge.
+- All revised clips: final prompt beats now end on the process, not the Explorer. Stills regenerated, strict validator PASS, manifest/package rebuilt. Awaiting owner re-render of SC01, SC04-SC08, SC10-SC12.

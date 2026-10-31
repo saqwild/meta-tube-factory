@@ -6,7 +6,7 @@
 GLOBAL:: Continue from the still. You, an adult in plain home clothes, stand at a warm kitchen counter beside a glass bowl holding a pale dough ball under a linen cloth, soft daylight. Photoreal cinematic scientific visualization, warm polished home realism, ivory-and-orange equipment palette, cyan accent light. Low motion.
 BEAT:: 24 :: The adult lifts the linen cloth clear of the bowl, holds it aside in one hand, and the risen dough ends fully uncovered. Ambient (slow, subtle): daylight shifts across the counter and the linen settles in his hand.
 BEAT:: 337 :: The adult holds the cloth steady, head turned to the dough, while Control narrates in a calm adult English voice: "You left a heavy ball of dough, and came back to find it doubled. The flour began as wheat in a field long before it reached this bowl. Today we travel inside it, with a fictional guide, at magnified scale." The adult watches the dough, mouth closed.
-BEAT:: 120 :: The camera begins a slow push in toward the risen dough while the adult stays at the counter. Acoustic environment: a quiet kitchen room tone with a soft cloth rustle; clear close dialogue front and center. You hold your position at the counter.
+BEAT:: 120 :: The camera begins a slow push in toward the risen dough while the adult stays at the counter. The camera ends on the risen dough and the descending capsule. Acoustic environment: a quiet kitchen room tone with a soft cloth rustle; clear close dialogue front and center. You hold your position at the counter.
 
 
 ## SC02
@@ -33,7 +33,7 @@ GLOBAL:: Continue from the still. the Explorer in an ivory industrial helmet wit
 BEAT:: 24 :: Tiny bubbles swell slowly. Ambient (slow, subtle): bubble walls shimmer and the net flexes.
 BEAT:: 170 :: The Explorer turns toward camera, head raised, and says over helmet radio: "Something is breathing down here, Control." His mouth returns to rest.
 BEAT:: 167 :: The Explorer holds still, head tilted, while Control answers in a calm adult English voice: "Yeast. It feeds on sugars in the flour and breathes out carbon dioxide. Each breath becomes a bubble, and your net from the last step is what catches them all. That is our engine." The Explorer stays in place, mouth closed.
-BEAT:: 120 :: The camera begins a slow dolly in. Acoustic environment: faint bubbling and dough creaks; clear close dialogue front and center. The Explorer stays in frame, mouth closed.
+BEAT:: 120 :: The camera begins a slow dolly in. The camera ends on the yeast bubbles swelling in the net. Acoustic environment: faint bubbling and dough creaks; clear close dialogue front and center. The Explorer stays in frame, mouth closed.
 
 
 ## SC05
@@ -42,7 +42,7 @@ GLOBAL:: Continue from the still. the Explorer in an ivory industrial helmet wit
 BEAT:: 24 :: Bubbles inflate in a slow swell. Ambient (slow, subtle): walls stretch and light moves across the foam.
 BEAT:: 170 :: The Explorer looks up, head raised, and says over helmet radio: "The whole city is lifting, walls and all." His mouth returns to rest.
 BEAT:: 167 :: The Explorer holds still, head tilted, while Control answers in a calm adult English voice: "Millions of tiny bubbles are inflating at once, and the net stretches instead of tearing. That shared stretch, bubble after bubble, is the rise you saw from your counter. Together, they lift everything." The Explorer stays in place, mouth closed.
-BEAT:: 120 :: The camera begins a slow tilt up with the rise. Acoustic environment: slow stretching creaks; clear close dialogue front and center. The Explorer stays in frame, mouth closed.
+BEAT:: 120 :: The camera begins a slow tilt up with the rise. The camera ends on the stretched gluten net and inflated bubbles. Acoustic environment: slow stretching creaks; clear close dialogue front and center. The Explorer stays in frame, mouth closed.
 
 
 ## SC06
@@ -51,7 +51,7 @@ GLOBAL:: Continue from the still. the Explorer in an ivory industrial helmet wit
 BEAT:: 24 :: The mass compresses gently. Ambient (slow, subtle): air puffs through the foam and walls resettle.
 BEAT:: 170 :: The Explorer steadies himself, head raised, and says over helmet radio: "You are squashing the city flat again." His mouth returns to rest.
 BEAT:: 167 :: The Explorer holds still, head tilted, while Control answers in a calm adult English voice: "Only its biggest, weakest bubbles. Shaping evens the foam and tensions the surface, so the second rise builds a loaf shape instead of a spreading puddle on your tray. The shape now holds promise." The Explorer stays in place, mouth closed.
-BEAT:: 120 :: The camera begins a slow push in. Acoustic environment: soft dough pats and air puffs; clear close dialogue front and center. The Explorer stays in frame, mouth closed.
+BEAT:: 120 :: The camera begins a slow push in. The camera ends on the even bubbles of the shaped loaf. Acoustic environment: soft dough pats and air puffs; clear close dialogue front and center. The Explorer stays in frame, mouth closed.
 
 
 ## SC07
@@ -60,7 +60,7 @@ GLOBAL:: Continue from the still. the Explorer in an ivory industrial helmet wit
 BEAT:: 24 :: Bubbles re-inflate slowly. Ambient (slow, subtle): the dome swells and the cloth shadow moves.
 BEAT:: 170 :: The Explorer looks toward camera, head raised, and says over helmet radio: "The workers are at it again, slower now." His mouth returns to rest.
 BEAT:: 167 :: The Explorer holds still, head tilted, while Control answers in a calm adult English voice: "Warmth sets their pace; a cool corner would slow them further. Given time, the shaped loaf fills with gas again. This patience is where much of the flavour quietly builds." The Explorer stays in place, mouth closed.
-BEAT:: 120 :: The camera holds with a slight drift. Acoustic environment: soft returning bubbling; clear close dialogue front and center. The Explorer stays in frame, mouth closed.
+BEAT:: 120 :: The camera holds with a slight drift. The camera ends on the slowly doming loaf surface. Acoustic environment: soft returning bubbling; clear close dialogue front and center. The Explorer stays in frame, mouth closed.
 
 
 ## SC08
@@ -69,7 +69,7 @@ GLOBAL:: Continue from the still. the Explorer in an ivory industrial helmet wit
 BEAT:: 24 :: Heat shimmer rises. Ambient (slow, subtle): bubbles swell and steam wisps curl.
 BEAT:: 170 :: The Explorer braces, head raised, and says over helmet radio: "It is growing faster than ever in here." His mouth returns to rest.
 BEAT:: 167 :: The Explorer holds still, head tilted, while Control answers in a calm adult English voice: "Oven spring. Heat expands every trapped bubble at once, and the yeast works furiously for a few last minutes. Watch the walls: they are about to stop stretching forever. Hold on with me." The Explorer stays in place, mouth closed.
-BEAT:: 120 :: The camera begins a slow dolly in. Acoustic environment: a low oven roar and expansion creaks; clear close dialogue front and center. The Explorer stays in frame, mouth closed.
+BEAT:: 120 :: The camera begins a slow dolly in. The camera ends on the rapidly expanding bubbles and rising dome. Acoustic environment: a low oven roar and expansion creaks; clear close dialogue front and center. The Explorer stays in frame, mouth closed.
 
 
 ## SC09
@@ -87,7 +87,7 @@ GLOBAL:: Continue from the still. the Explorer in an ivory industrial helmet wit
 BEAT:: 24 :: The walls stay still. Ambient (slow, subtle): faint cooling ticks and settled air.
 BEAT:: 170 :: The Explorer looks around, head raised, and says over helmet radio: "Then nothing down here survived the oven?" His mouth returns to rest.
 BEAT:: 167 :: The Explorer holds still, head tilted, while Control answers in a calm adult English voice: "Nothing did, and that is fine. The heat killed the yeast as the loaf baked; its gas and structure are its gift to you. The crumb around us is the finished city." The Explorer stays in place, mouth closed.
-BEAT:: 120 :: The camera holds with a slight drift. Acoustic environment: quiet cooling room tone; clear close dialogue front and center. The Explorer stays in frame, mouth closed.
+BEAT:: 120 :: The camera holds with a slight drift. The camera ends on the still bubble walls of the finished crumb. Acoustic environment: quiet cooling room tone; clear close dialogue front and center. The Explorer stays in frame, mouth closed.
 
 
 ## SC11
@@ -96,7 +96,7 @@ GLOBAL:: Continue from the still. the Explorer in an ivory industrial helmet wit
 BEAT:: 24 :: Steam thins slowly. Ambient (slow, subtle): the crumb settles and light softens.
 BEAT:: 170 :: The Explorer looks toward camera, head raised, and says over helmet radio: "It smells finished. How can you be sure?" His mouth returns to rest.
 BEAT:: 167 :: The Explorer holds still, head tilted, while Control answers in a calm adult English voice: "Colour, a hollow sound, and a set crumb tell your baker it is done. Cooling finishes the work; slice too early and the soft middle turns gummy. Patience is an ingredient here." The Explorer stays in place, mouth closed.
-BEAT:: 120 :: The camera begins a slow dolly out. Acoustic environment: a tap on crust and quiet cooling; clear close dialogue front and center. The Explorer stays in frame, mouth closed.
+BEAT:: 120 :: The camera begins a slow dolly out. The camera ends on the firming crumb and thinning steam. Acoustic environment: a tap on crust and quiet cooling; clear close dialogue front and center. The Explorer stays in frame, mouth closed.
 
 
 ## SC12
@@ -104,5 +104,5 @@ BEAT:: 120 :: The camera begins a slow dolly out. Acoustic environment: a tap on
 GLOBAL:: Continue from the still. You, an adult in plain home clothes, slices the cooled loaf on a wooden board, golden crust and soft airy crumb with visible bubbles, warm kitchen light. Photoreal cinematic scientific visualization, warm polished home realism, ivory-and-orange equipment palette, cyan accent light. Low motion.
 BEAT:: 24 :: The knife starts through the crust. Ambient (slow, subtle): crumbs scatter and daylight rests on the board.
 BEAT:: 337 :: The adult slices the loaf and holds the slice toward camera, head raised, while Control narrates in a calm adult English voice: "Every bubble in that slice is a breath the yeast left behind: the soft crumb holds them, the firm crust protects them. Wrapped tonight, it firms slowly as it rests. Tell us below: what should we travel inside next?" The adult holds the slice steady, mouth closed.
-BEAT:: 120 :: The camera begins a slow push in on the crumb face while the adult holds the slice steady. Acoustic environment: knife through crust and a quiet kitchen tone; clear close dialogue front and center. You hold your position in frame.
+BEAT:: 120 :: The camera begins a slow push in on the crumb face while the adult holds the slice steady. The camera ends on the sliced crumb face and its bubbles. Acoustic environment: knife through crust and a quiet kitchen tone; clear close dialogue front and center. You hold your position in frame.
 
