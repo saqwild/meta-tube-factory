@@ -201,3 +201,9 @@ SC02, SC05, SC08, SC12: awaiting owner viewing and verdicts.
   04g render package advances on that approval; re-rendering of the
   seven fixed clips follows, and their verdicts are recorded here
   only after the owner watches them.
+
+## Re-render verdicts (owner watched, 2026-10-29)
+
+- SC01 PASS (owner watched the re-render). CAST-002 identity holds,
+  the single cloth stays in one hand at her side, and the dough stays
+  uncovered. No re-render needed; any dead-silence tail is a 06a trim.
