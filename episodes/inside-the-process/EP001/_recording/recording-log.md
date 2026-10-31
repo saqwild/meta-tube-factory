@@ -29,3 +29,4 @@ was lost; identical scope and content, restored from Git history.
 | 04f2 owner QA revision | SC01/SC12 CAST-002 face fix + Explorer opaque visor fix, all 12 regenerated, SC01/SC06 viewed PASS | renders/stills/*.png, qa/still-gate.md |
 | 04f3/04g rebuild | Strict PASS 12/12, manifest + render package rebuilt with new hashes | _context/ltx-prompt-manifest.json, exports/ltx-render-package/ |
 | 04h pilot QA (part) | SC01 rendered clip FAIL cloth inversion (frames checked); prompt fix at 04f3, package rebuilt | qa/pilot-qa.md, qa/frames-s01/ |
+| 04h pilot QA (owner) | SC02/SC03/SC04 viewed PASS; SC01 re-render pending; tail dead silence to trim at 06a | qa/pilot-qa.md |

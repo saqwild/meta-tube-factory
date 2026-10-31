@@ -22,3 +22,8 @@ replace, that viewing.
 ## Remaining pilots
 
 SC02, SC05, SC08, SC12: awaiting owner viewing and verdicts.
+
+## SC02, SC03, SC04 - owner viewed 2026-10-29
+
+- Verdict: PASS (owner watched; clips look fine).
+- Post note for 06a assembly: trim dead-silence tails on rendered clips during postproduction. This is an assembly trim, not a re-render: keep each clip's dialogue and productive tail action, cut only trailing silent frames, and record per-clip trim ranges in the assembly notes at 06a.
