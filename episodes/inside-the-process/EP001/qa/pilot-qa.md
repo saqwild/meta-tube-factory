@@ -209,3 +209,7 @@ SC02, SC05, SC08, SC12: awaiting owner viewing and verdicts.
   uncovered. No re-render needed; any dead-silence tail is a 06a trim.
 - SC04 PASS (owner watched the re-render). The Explorer voice is now
   male, consistent with the other clips. No re-render needed.
+- SC05 PASS (owner watched the re-render). The Explorer face stays
+  hidden behind the opaque visor for the whole clip. No re-render
+  needed; the still-layer fallback (larger visor figure) is not
+  required.
