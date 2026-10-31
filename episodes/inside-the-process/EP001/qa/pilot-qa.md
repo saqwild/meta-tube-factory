@@ -47,3 +47,5 @@ SC02, SC05, SC08, SC12: awaiting owner viewing and verdicts.
 - SC11 REVISE still: set cooling crumb per spoken content.
 - SC12 REVISE still: bread zoom, person cropped at edge.
 - All revised clips: final prompt beats now end on the process, not the Explorer. Stills regenerated, strict validator PASS, manifest/package rebuilt. Awaiting owner re-render of SC01, SC04-SC08, SC10-SC12.
+
+- SC12 still revision (owner flag): heavy wrist hair regenerated to a clean hand with short nails and minimal arm hair; viewed PASS. Package rebuilt with new SC12 hash.

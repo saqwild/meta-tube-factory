@@ -2,8 +2,8 @@
   "schema_version": 1,
   "episode_id": "EP001",
   "channel_slug": "inside-the-process",
-  "built_at_utc": "2026-10-31T19:08:05Z",
-  "source_manifest_sha256": "ace9559038a3d16671820e7f2eb7daccc700b5df47742e7b8c6b72d1ef30701b",
+  "built_at_utc": "2026-10-31T19:11:36Z",
+  "source_manifest_sha256": "159562a2740323bf7dee3355dcfc93bb2aae6ccb367036f8d013ea01fe998755",
   "master_prompt_sha256": "480ff28c979aac16236c28435d57bbf7639e70393904947c3f4972500f181c52",
   "negative_prompt_sha256": "1fbf3af8d272dad579562f70631d23df10ce8c77f323201f860d6df4ce507c9b",
   "settings": {
@@ -144,7 +144,7 @@
       "marker": "@@ s12",
       "prompt_sha256": "56dc88b9a900ec4dad2b45eb09d95bd75702459c39de58afafd70ed7c1f5f328",
       "still_file": "SC12.png",
-      "still_sha256": "144214a54f389878d3ccde31e4b6a8b47acf9e490cc418c067722aca579a6675",
+      "still_sha256": "e65a7247e8bd49936f93ca430998afae5c9e468201deb025386967b3ec46eb5d",
       "spoken_word_count": 39,
       "declared_cuts": 0,
       "is_pilot": true
