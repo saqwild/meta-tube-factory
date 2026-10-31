@@ -35,3 +35,7 @@ the single recorded still-vs-prompt override (LTXV-D055 guard armed).
 ## Owner QA revision (2026-10-29)
 
 Owner rejected first corrected set: SC01/SC12 used a wrong human face instead of the CAST-002 master, SC06 showed the Explorer face. All 12 stills regenerated with CAST-002 identity text (short curly dark hair, navy hoodie) and opaque black full-face visor wording. SC01 and SC06 viewed after regeneration: PASS. Verdict remains PASS for 04f3.
+
+## Owner QA revision 3 (2026-10-29) - SC01 CAST-002 reference-anchored
+
+Owner flagged that the packaged SC01 still showed a different adult, not the CAST-002 master, because text identity alone did not anchor the face. SC01 was regenerated with the actual EP001-CAST002-sheet.png attached as a reference image through the new Muse Image reference path (tools/meta_models.py image_edit, Responses API input_image). Candidates v1-v3 are kept in qa/candidates/; v3 was promoted to renders/stills/SC01.png at 2016x1152 true PNG by _scripts/2026-10-29-promote-sc01-cast002.py. Viewed after promotion: exactly one adult matching CAST-002 (short tight curly dark hair, medium-brown skin, round face, plain navy hoodie, grey trousers), linen cloth held clear of the bowl, risen dough fully uncovered, capsule descending above the bowl, clean hands. First action (cloth lift) performable. SC01 PASS. All other stills unchanged; verdict remains PASS for 04f3.

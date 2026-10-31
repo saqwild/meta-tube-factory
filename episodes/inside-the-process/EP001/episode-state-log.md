@@ -24,3 +24,6 @@
 - 2026-10-31T18:29:57+00:00 -- owner-approved revision reopened from 04h-ltx-pilot-qa to 04f3-ltx-prompt-final -- 04h pilot QA SC01 cloth action inversion prompt fix
 - 2026-10-31T18:30:17+00:00 -- completed 04f3-ltx-prompt-final; digest dfd2add3; next: 04g-ltx-render-package
 - 2026-10-31T18:30:17+00:00 -- completed 04g-ltx-render-package (owner-approved); digest 94957269; next: 04h-ltx-pilot-qa
+- 2026-10-31T19:44:36+00:00 -- owner-approved revision reopened from 04h-ltx-pilot-qa to 04f2-frame0-stills -- Owner review: SC01 person is not CAST-002 (face not anchored in frame 0); regenerate SC01 with CAST-002 sheet attached. SC05/SC06/SC04 clip faults queued at prompt layer.
+- 2026-10-31T20:06:41+00:00 -- completed 04f2-frame0-stills -- SC01 revision 3 promoted: CAST-002 sheet attached via Muse Image image_edit, viewed PASS; all 12 stills PASS per qa/still-gate.md; digest ca209dcf; next: 04f3-ltx-prompt-final
+- 2026-10-31T20:07:36+00:00 -- completed 04f3-ltx-prompt-final -- Owner review fixes: SC04 male Explorer voice; SC05 visor opaque + settled; SC06/SC07/SC10/SC11 single stationary Explorer; strict validator PASS 12/12; manifest rebuilt with SC01 revision 3 still; digest 08b02cb6; next: 04g-ltx-render-package

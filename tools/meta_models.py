@@ -21,6 +21,7 @@ they have no Model API model ID and are not callable from here.
 
 import json
 import os
+import pathlib
 import urllib.error
 import urllib.request
 
@@ -174,6 +175,34 @@ def image_generate(prompt: str, size: str | None = None, n: int = 1, timeout_s: 
     return _post_json("/images/generations", payload, timeout_s)
 
 
+def image_edit(prompt: str, image_paths: list[str], size: str | None = None,
+               timeout_s: int = 300) -> dict:
+    """Generate with muse-image-1.0 steered by local reference images.
+
+    Uses the Responses API: reference images ride as input_image data-URI
+    parts beside the text prompt (meta-model-cookbook 05_muse_image/01).
+    Returns a normalized {"data": [{"b64_json": ...}]} dict plus the
+    raw response id/status for provenance.
+    """
+    import base64
+
+    content = [{"type": "input_text", "text": prompt}]
+    for path in image_paths:
+        raw = pathlib.Path(path).read_bytes()
+        uri = "data:image/png;base64," + base64.b64encode(raw).decode("ascii")
+        content.append({"type": "input_image", "image_url": uri})
+    message = {"type": "message", "role": "user", "content": content}
+    resp = _post_json("/responses", {"model": resolve_role("image"), "input": [message]}, timeout_s)
+    b64 = None
+    for item in resp.get("output") or []:
+        if item.get("type") == "image_generation_call" and item.get("result"):
+            b64 = item["result"]
+            break
+    if not b64:
+        raise RuntimeError(f"image_edit: no image_generation_call result; status={resp.get('status')!r}")
+    return {"data": [{"b64_json": b64}], "id": resp.get("id"), "status": resp.get("status")}
+
+
 def segment(image_url: str, prompt: str, timeout_s: int = 300) -> dict:
     """POST /responses with sam-3.1 (docs: media-segmentation)."""
     message = {
@@ -237,6 +266,11 @@ def main(argv=None) -> int:
     img.add_argument("--size", default=None)
     img.add_argument("--n", type=int, default=1)
     img.add_argument("--out", default=None)
+    edt = sub.add_parser("image-edit", help="muse-image-1.0 edit/compose from reference images")
+    edt.add_argument("--prompt", required=True)
+    edt.add_argument("--image", action="append", required=True)
+    edt.add_argument("--size", default=None)
+    edt.add_argument("--out", default=None)
     seg = sub.add_parser("segment", help="one sam-3.1 segmentation")
     seg.add_argument("--prompt", required=True)
     seg.add_argument("--image-url", required=True)
@@ -271,6 +305,20 @@ def main(argv=None) -> int:
                 raw = _b64.b64decode(data["b64_json"]) if data.get("b64_json") else b""
                 pathlib.Path(args.out).parent.mkdir(parents=True, exist_ok=True)
                 pathlib.Path(args.out).write_bytes(raw)
+                print(json.dumps({"model": resolve_role("image"), "saved": args.out, "bytes": len(raw)}))
+            else:
+                print(json.dumps({"model": resolve_role("image"), "response": result}, indent=2)[:4000])
+            return 0
+        if args.cmd == "image-edit":
+            result = image_edit(args.prompt, args.image, size=args.size)
+            if args.out:
+                import base64 as _b64
+                import pathlib as _pl
+
+                data = (result.get("data") or [{}])[0]
+                raw = _b64.b64decode(data["b64_json"]) if data.get("b64_json") else b""
+                _pl.Path(args.out).parent.mkdir(parents=True, exist_ok=True)
+                _pl.Path(args.out).write_bytes(raw)
                 print(json.dumps({"model": resolve_role("image"), "saved": args.out, "bytes": len(raw)}))
             else:
                 print(json.dumps({"model": resolve_role("image"), "response": result}, indent=2)[:4000])

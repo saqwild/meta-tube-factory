@@ -2,8 +2,8 @@
   "schema_version": 2,
   "episode_id": "EP001",
   "mode": "strict",
-  "reviewed_at_utc": "2026-10-31T19:07:46Z",
-  "source_prompts_sha256": "e3e7509736222fc3d3d301387395482491d6e36aa34f9fd372432956cffcb24d",
+  "reviewed_at_utc": "2026-10-31T20:07:06Z",
+  "source_prompts_sha256": "ffeace3d7764fc2c82af858e5c2dbabfe3d48d43d6abae5aed532316f650b518",
   "validator_sha256": "7d6b40e010a0d1107e2ccb844044d1b9150ce2531eec8c2a323454991f8d73d2",
   "rule_catalog_sha256": "9d63a5c06e44a6bc6a9504dc4305fe9388b55e7d4f9bb8091e015a422b85b086",
   "status": "PASS",
@@ -243,7 +243,7 @@
       "errors": [],
       "warnings": [],
       "facts": {
-        "total_word_count": 198,
+        "total_word_count": 205,
         "spoken_word_count": 40,
         "sentence_count": 14,
         "has_dialogue": true,
@@ -304,7 +304,7 @@
       "errors": [],
       "warnings": [],
       "facts": {
-        "total_word_count": 198,
+        "total_word_count": 222,
         "spoken_word_count": 41,
         "sentence_count": 14,
         "has_dialogue": true,
@@ -365,7 +365,7 @@
       "errors": [],
       "warnings": [],
       "facts": {
-        "total_word_count": 198,
+        "total_word_count": 212,
         "spoken_word_count": 41,
         "sentence_count": 14,
         "has_dialogue": true,
@@ -426,7 +426,7 @@
       "errors": [],
       "warnings": [],
       "facts": {
-        "total_word_count": 186,
+        "total_word_count": 201,
         "spoken_word_count": 38,
         "sentence_count": 14,
         "has_dialogue": true,
@@ -609,7 +609,7 @@
       "errors": [],
       "warnings": [],
       "facts": {
-        "total_word_count": 186,
+        "total_word_count": 200,
         "spoken_word_count": 39,
         "sentence_count": 14,
         "has_dialogue": true,
@@ -670,7 +670,7 @@
       "errors": [],
       "warnings": [],
       "facts": {
-        "total_word_count": 190,
+        "total_word_count": 205,
         "spoken_word_count": 40,
         "sentence_count": 14,
         "has_dialogue": true,

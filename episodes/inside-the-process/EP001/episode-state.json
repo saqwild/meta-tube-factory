@@ -27,7 +27,7 @@
     "06a-postproduction-assembly",
     "07-final-package-qa"
   ],
-  "next_stage": "04h-ltx-pilot-qa",
+  "next_stage": "04g-ltx-render-package",
   "completed_stages": [
     {
       "stage": "00-preflight",
@@ -597,10 +597,104 @@
           }
         ]
       }
+    },
+    {
+      "stage": "04f2-frame0-stills",
+      "completed_at": "2026-10-31T20:06:41+00:00",
+      "approved": false,
+      "note": "SC01 revision 3 promoted: CAST-002 sheet attached via Muse Image image_edit, viewed PASS; all 12 stills PASS per qa/still-gate.md",
+      "deliverable_digest": {
+        "digest_sha256": "ca209dcf68b90f78bd04f569f32f09ed58551eadf2eca0ac627a76974ab05711",
+        "files": [
+          {
+            "path": "prompts/6-image-agent-packet.md",
+            "sha256": "1185ce06706ceab1ff5ae823d4303caddbd700729e38b08555d127fd568edd76"
+          },
+          {
+            "path": "prompts/6-image-prompts.md",
+            "sha256": "9f075ad000a2dbc9fd3827e6f4121be40425b793f15a9497014889eb72d69fe1"
+          },
+          {
+            "path": "qa/still-gate.md",
+            "sha256": "50410735b5f766c6e5ff7a84ca6e5f27321c9254ef20608e541fc8b97ceceaf5"
+          },
+          {
+            "path": "renders/stills/SC01.png",
+            "sha256": "c2f5bf2597aa5ce4af400c71eb3d990536efaa008d2971b8a50211bb9c2c7fcb"
+          },
+          {
+            "path": "renders/stills/SC02.png",
+            "sha256": "4cd97cf03d43d7ba03e9b16dd5c8f81d109f952c49d343cdd9623168530a1578"
+          },
+          {
+            "path": "renders/stills/SC03.png",
+            "sha256": "b38cc34e2e59935ca54b7d4de6c961ea8394605c7b6de8f9f53a9835284a7aae"
+          },
+          {
+            "path": "renders/stills/SC04.png",
+            "sha256": "1e975c6d8e979d56066d41802c90c0fd2f7eec92b9c6c576fc49a28ec0f738c5"
+          },
+          {
+            "path": "renders/stills/SC05.png",
+            "sha256": "22be4885b887aafe9a4e1e7fc0ddf1bfcb48e9097dfb45f0c92d157fed284bcc"
+          },
+          {
+            "path": "renders/stills/SC06.png",
+            "sha256": "e9c8fa1a4f99d1914ded3c7132b33a95d7cbc36505fb165994d7aad277c5d0aa"
+          },
+          {
+            "path": "renders/stills/SC07.png",
+            "sha256": "9dc1bbbab79ae5f1311a8619672a58365e301f74b5757717d37914d85f93f389"
+          },
+          {
+            "path": "renders/stills/SC08.png",
+            "sha256": "e1a365d93c074fccee90e21537c95b44a980da526bde9449f005250cd6bbb118"
+          },
+          {
+            "path": "renders/stills/SC09.png",
+            "sha256": "b6c6ed0893e41fb5012e8bc30bcaa10b9dd0b6e455fde7d615f684b787c12d7e"
+          },
+          {
+            "path": "renders/stills/SC10.png",
+            "sha256": "0d05e1eb886428ae99c929591adf4977a18870fb7acbb1694cee2552137a98d6"
+          },
+          {
+            "path": "renders/stills/SC11.png",
+            "sha256": "ce36a25c5e2a65bc1ec37158fbca06b1499f59be561db02b9384355408bca6f7"
+          },
+          {
+            "path": "renders/stills/SC12.png",
+            "sha256": "e65a7247e8bd49936f93ca430998afae5c9e468201deb025386967b3ec46eb5d"
+          }
+        ]
+      }
+    },
+    {
+      "stage": "04f3-ltx-prompt-final",
+      "completed_at": "2026-10-31T20:07:36+00:00",
+      "approved": false,
+      "note": "Owner review fixes: SC04 male Explorer voice; SC05 visor opaque + settled; SC06/SC07/SC10/SC11 single stationary Explorer; strict validator PASS 12/12; manifest rebuilt with SC01 revision 3 still",
+      "deliverable_digest": {
+        "digest_sha256": "08b02cb63711661dfbdb4e51594d8ff483288d88cd9e694710c2aba04f9d46a7",
+        "files": [
+          {
+            "path": "_context/ltx-prompt-manifest.json",
+            "sha256": "f8f44ff1906da72023bfe9b9abb5414d6b31631ee7614d9abad05185c7d09c3a"
+          },
+          {
+            "path": "_context/ltx-prompt-review.json",
+            "sha256": "3f734a3118a489e2a41e2a3cab41ce164f181884b9197f8efd76355043aa2b79"
+          },
+          {
+            "path": "prompts/7-video-prompts.md",
+            "sha256": "ffeace3d7764fc2c82af858e5c2dbabfe3d48d43d6abae5aed532316f650b518"
+          }
+        ]
+      }
     }
   ],
   "created_at": "2026-10-30T10:54:35+00:00",
-  "updated_at": "2026-10-31T18:30:17+00:00",
+  "updated_at": "2026-10-31T20:07:36+00:00",
   "revisions": [
     {
       "reopened_at": "2026-10-30T14:03:39+00:00",
@@ -615,6 +709,13 @@
       "to_stage": "04f3-ltx-prompt-final",
       "approved": true,
       "note": "04h pilot QA SC01 cloth action inversion prompt fix"
+    },
+    {
+      "reopened_at": "2026-10-31T19:44:36+00:00",
+      "from_next_stage": "04h-ltx-pilot-qa",
+      "to_stage": "04f2-frame0-stills",
+      "approved": true,
+      "note": "Owner review: SC01 person is not CAST-002 (face not anchored in frame 0); regenerate SC01 with CAST-002 sheet attached. SC05/SC06/SC04 clip faults queued at prompt layer."
     }
   ]
 }
