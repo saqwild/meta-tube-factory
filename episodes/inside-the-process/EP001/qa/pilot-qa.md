@@ -174,3 +174,26 @@ SC02, SC05, SC08, SC12: awaiting owner viewing and verdicts.
   SC11. Leave SC02, SC03, SC08, SC09, SC12 renders untouched.
 - 04h stays open: no verdict is recorded for the re-rendered clips
   until the owner has watched them.
+
+## SC01 cloth check (owner re-check, 2026-10-29)
+
+- Owner: the still read as two cloths held in two hands; re-check
+  that the cloth staging is correct and the prompt is not leaking.
+- Finding: leak at both layers. Still: one cloth held in both hands
+  plus a second folded cloth on the counter, against the spec (one
+  cloth, one hand). Video prompt: SC01 GLOBAL described the dough as
+  "under a linen cloth" while the still shows it uncovered - the
+  wording that invites LTX to drape the cloth back over the bowl.
+- Still fix: image_edit with CAST-002 sheet + current still; exactly
+  one cloth in one hand at the adult's side, other hand empty on the
+  counter, counter bare, dough uncovered. Viewed PASS, promoted,
+  still gate revision 4 recorded, 04f2 completed again.
+- Prompt fix (04f3): GLOBAL now states the risen dough fully
+  uncovered with one linen cloth held in one hand at the adult's
+  side; beat 1 settles that cloth at the side and the dough stays
+  uncovered. The wrong-gender "his hand" token in beat 1 is also
+  gone. Strict validator PASS 12/12, manifest and render package
+  rebuilt; packaged SC01 hash verified against the new still.
+- Net SC01 story is now consistent at every layer: she comes back to
+  the already-uncovered risen dough, cloth in hand; the cloth never
+  covers the dough at frame 0 or in any beat.

@@ -3,8 +3,8 @@
 
 ## SC01
 
-GLOBAL:: Continue from the still. You, an adult in plain home clothes, stand at a warm kitchen counter beside a glass bowl holding a pale dough ball under a linen cloth, soft daylight. Photoreal cinematic scientific visualization, warm polished home realism, ivory-and-orange equipment palette, cyan accent light. Low motion.
-BEAT:: 24 :: The adult lifts the linen cloth clear of the bowl, holds it aside in one hand, and the risen dough ends fully uncovered. Ambient (slow, subtle): daylight shifts across the counter and the linen settles in his hand.
+GLOBAL:: Continue from the still. You, an adult in plain home clothes, stand at a warm kitchen counter beside a glass bowl holding a pale risen dough ball, fully uncovered, with one linen cloth held in one hand at the adult's side, soft daylight. Photoreal cinematic scientific visualization, warm polished home realism, ivory-and-orange equipment palette, cyan accent light. Low motion.
+BEAT:: 24 :: The adult settles the one linen cloth in one hand down at the adult's side, clear of the bowl, and the risen dough stays fully uncovered in the glass bowl. Ambient (slow, subtle): daylight shifts across the counter and the linen settles in the adult's hand.
 BEAT:: 337 :: The adult holds the cloth steady, head turned to the dough, while Control narrates in a calm adult English voice: "You left a heavy ball of dough, and came back to find it doubled. The flour began as wheat in a field long before it reached this bowl. Today we travel inside it, with a fictional guide, at magnified scale." The adult watches the dough, mouth closed.
 BEAT:: 120 :: The camera begins a slow push in toward the risen dough while the adult stays at the counter. The camera ends on the risen dough and the descending capsule. Acoustic environment: a quiet kitchen room tone with a soft cloth rustle; clear close dialogue front and center. You hold your position at the counter.
 
