@@ -207,3 +207,5 @@ SC02, SC05, SC08, SC12: awaiting owner viewing and verdicts.
 - SC01 PASS (owner watched the re-render). CAST-002 identity holds,
   the single cloth stays in one hand at her side, and the dough stays
   uncovered. No re-render needed; any dead-silence tail is a 06a trim.
+- SC04 PASS (owner watched the re-render). The Explorer voice is now
+  male, consistent with the other clips. No re-render needed.
