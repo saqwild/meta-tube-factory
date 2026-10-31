@@ -21,3 +21,6 @@
 - 2026-10-30T14:09:56+00:00 -- completed 04f2-frame0-stills; digest 258365f3; next: 04f3-ltx-prompt-final
 - 2026-10-30T14:10:25+00:00 -- completed 04f3-ltx-prompt-final; digest 3baf082d; next: 04g-ltx-render-package
 - 2026-10-30T14:12:49+00:00 -- completed 04g-ltx-render-package (owner-approved); digest fc5e9512; next: 04h-ltx-pilot-qa
+- 2026-10-31T18:29:57+00:00 -- owner-approved revision reopened from 04h-ltx-pilot-qa to 04f3-ltx-prompt-final -- 04h pilot QA SC01 cloth action inversion prompt fix
+- 2026-10-31T18:30:17+00:00 -- completed 04f3-ltx-prompt-final; digest dfd2add3; next: 04g-ltx-render-package
+- 2026-10-31T18:30:17+00:00 -- completed 04g-ltx-render-package (owner-approved); digest 94957269; next: 04h-ltx-pilot-qa

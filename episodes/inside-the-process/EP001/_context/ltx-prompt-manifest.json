@@ -2,7 +2,7 @@
   "schema_version": 1,
   "episode_id": "EP001",
   "channel_slug": "inside-the-process",
-  "generated_at_utc": "2026-10-30T14:10:25Z",
+  "generated_at_utc": "2026-10-31T18:30:16Z",
   "render": {
     "mode": "i2v",
     "model": "LTX-2.5",
@@ -22,7 +22,7 @@
       "clip": "SC01",
       "index": 1,
       "prompt_path": "prompts/7-video-prompts.md",
-      "prompt_sha256": "bd8b0552bae33be5e05ee7cd5e29c37820ec79b1244bbc19db25d18a10728604",
+      "prompt_sha256": "640ae6c4173733e80e4641243328bca96a86a8e0d68988679c432c1a69581567",
       "still_path": "renders/stills/SC01.png",
       "still_sha256": "04712eb609cfb9123ded16f5c601341518da6169e72285ad92fa36e205cf2ba1",
       "still_gate_verdict": "PASS",
