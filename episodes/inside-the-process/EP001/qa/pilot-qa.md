@@ -197,3 +197,7 @@ SC02, SC05, SC08, SC12: awaiting owner viewing and verdicts.
 - Net SC01 story is now consistent at every layer: she comes back to
   the already-uncovered risen dough, cloth in hand; the cloth never
   covers the dough at frame 0 or in any beat.
+- Owner confirmation (2026-10-29): SC01 confirmed and approved. The
+  04g render package advances on that approval; re-rendering of the
+  seven fixed clips follows, and their verdicts are recorded here
+  only after the owner watches them.
