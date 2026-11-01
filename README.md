@@ -64,18 +64,25 @@ default; the SAM seat in the pipeline is unchanged.
 
 Video is LTX-2.5 i2v. Frame-0s are Muse Image validated by SAM 3.1
 on independent runs (owner-review exception for the sample, above).
-Glimmer and Spark Open run locally for free preflight/compliance gates via
-Modal; paid Muse Spark/Wonder calls run only after free gates pass.
+Glimmer and Spark Open are open weights: each operator runs them
+wherever they choose (below); paid Muse Spark/Wonder calls run only
+after the free gates pass.
 
 ### Free gate before the paid gate
 
 The open-weight models never duplicate the API models. They guard them.
+Being open weights, **where they run is the operator's choice**:
+downloaded onto a local GPU, served with SGLang, run inside a ComfyUI
+host, or on a serverless GPU provider. For this hackathon submission
+we used Modal, because the event offered participants credit for
+exactly that; nothing in the pipeline depends on Modal, and an
+operator with their own GPU pays nothing and needs no account.
 
-- **Muse Glimmer (local, $0 API cost)** — ultra-fast preflight gate:
+- **Muse Glimmer (open weights, $0 API cost)** — ultra-fast preflight gate:
   `tools/preflight.py`, `tools/check_download_freshness.py`,
   `tools/project_paths.py`. Does the file exist? Is the hash stale? Is the
   owner gate approved? If Glimmer says no, paid Spark is never called.
-- **Muse Spark Open (local, $0 API cost)** — local compliance gate:
+- **Muse Spark Open (open weights, $0 API cost)** — local compliance gate:
   `tools/metadata_validator.py`, `tools/episode_state.py`, and durability
   checks. Privacy-sensitive checks stay offline, and the 307-test suite
   runs without spending API credit.
