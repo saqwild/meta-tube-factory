@@ -76,8 +76,8 @@ def main():
         lines += [str(i), f"{ts(a)} --> {ts(b)}", wrap(text), ""]
     SRT.write_text("\n".join(lines), encoding="utf-8")
 
-    style = ("FontName=Arial,FontSize=22,PrimaryColour=&H00F5EEE6,"
-             "BackColour=&HA8000000,BorderStyle=4,Alignment=2,MarginV=36")
+    style = ("FontName=Arial,FontSize=16,PrimaryColour=&H00F5EEE6,"
+             "BackColour=&HA8000000,BorderStyle=4,Alignment=2,MarginV=20")
     srt_arg = str(SRT).replace("\\", "/").replace(":", "\\:")
     subprocess.run(
         ["ffmpeg", "-y", "-v", "error", "-i", str(MASTER),

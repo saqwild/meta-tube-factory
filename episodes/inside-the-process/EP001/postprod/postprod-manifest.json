@@ -33,5 +33,11 @@
     "slides": "PASS - intro/outro text verbatim from assembly/assembly-notes.md (outro SAM line corrected to the audit actually run)",
     "package_times": "Chapters and Problems re-measured from this master and updated in metadata/package.md; metadata validator PASS after update"
   },
+  "hd_variant": {
+    "path": "exports/final/EP001_HowBreadRisesInsideTheDough_Captioned_HD.mp4",
+    "sha256": "3b167ef8991dd0f86e8fa624b1a555510fbb710d4b0eef4e5d9a8dff750c13df",
+    "resolution": "1920x1080",
+    "note": "Post-close variant (owner: upload showed SD). Lanczos upscale of the clean master with captions applied after scaling; 8.1 Mbps. Too large for GitHub, local only. YouTube cannot swap a video file, so using it means a fresh unlisted upload and a new link."
+  },
   "owner_gate": "06a completes only when the owner watches the master and approves"
 }
