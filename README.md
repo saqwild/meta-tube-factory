@@ -52,9 +52,18 @@ transcription at render QA (05a).
 
 `sam-3.1`. Finds and separates each item in a photo or video.
 Segmentation, character consistency checks, and background isolation at
-pilot QA (04h).
+pilot QA (04h). On an independent run this is the standard validation
+path for frame-0 stills and pilot clips: SAM checks the cast and props
+the still claims, before any render money is spent.
 
-Video is LTX-2.5 i2v. Frame-0s are Muse Image validated by SAM 3.1.
+*Sample note:* for this EP001 hackathon sample the owner chose to
+validate pilot stills and clips by direct watched review instead
+(owner gates at 04f2/04h, plus the Muse Voice Transcribe audit at
+05a). That was a sample-submission exception, not the factory's
+default; the SAM seat in the pipeline is unchanged.
+
+Video is LTX-2.5 i2v. Frame-0s are Muse Image validated by SAM 3.1
+on independent runs (owner-review exception for the sample, above).
 Glimmer and Spark Open run locally for free preflight/compliance gates via
 Modal; paid Muse Spark/Wonder calls run only after free gates pass.
 
@@ -244,6 +253,34 @@ A channel is data, not code — one folder under `channel_profiles/`.
 
 3. Start an episode on the new channel with the same natural prompt
    as above, naming your channel.
+
+### Changing the video engine
+
+The video generation process is **locked to LTX-2.5 image-to-video
+through a ComfyUI host** (this repo drives it through the vidgen-dist
+batch app: approved frame-0 still in, PromptRelay-style beat prompt
+in, 20-second native-audio clip out). That lock is deliberate — the
+prompt validator, the frame-0 contract, and every QA gate in Phase
+3–4 are tuned to what LTX-2.5 i2v actually does.
+
+Different operators will want different engines, and the factory is
+built so that choice is a prompt, not a fork. If you want MiniMax,
+a fal-hosted model, an ElevenLabs audio flow, or any other provider,
+ask the model in plain language, for example:
+
+> Replace the video generation process (LTX-2.5 via ComfyUI) with
+> MiniMax on fal. Keep the script, stills, QA, and metadata stages
+> unchanged; adapt only the render-package stage, re-tune the prompt
+> contract and validator for the new engine, and tell me what
+> changes before you edit.
+
+Expect the agent to change the render-package builder, the prompt
+format for that channel, and the ingest checks — and to flag anything
+the new engine cannot do (native dialogue, 20-second fixed clips,
+frame-0 conditioning) before spending anything. The rest of the
+factory — ideation, coverage, compliance, script, stills, human
+gates, captions, metadata — carries over untouched. A swap can also
+be scoped to one channel profile, leaving the others on LTX-2.5.
 
 ### Under the hood (optional checks)
 
