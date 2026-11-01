@@ -2,6 +2,8 @@
 
 **▶ Watch the sample film: [How Bread Rises: Inside the Dough (EP001, unlisted)](https://youtu.be/p8IiJnMMeQ4)** — produced end to end by this factory: script, stills, QA, captions and metadata all generated through the pipeline below and approved at human gates.
 
+[![How Bread Rises: Inside the Dough - EP001 sample film](https://img.youtube.com/vi/p8IiJnMMeQ4/hqdefault.jpg)](https://youtu.be/p8IiJnMMeQ4)
+
 **A documentary-grade AI film factory for YouTube — end to end on Meta Muse models.**
 
 One flow. Unlimited channels. Add a channel by adding one channel profile;
