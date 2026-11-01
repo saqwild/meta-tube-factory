@@ -1,0 +1,66 @@
+{
+  "episode_id": "EP001",
+  "channel": "Explained From Within (inside-the-process)",
+  "title": "How Bread Rises: Inside the Dough",
+  "description": "How bread rises is a gas story: yeast breathes out carbon dioxide, and a stretched gluten net catches every bubble. We travel inside the dough - from the bowl on the counter to the finished crumb - to watch mixing, rising, shaping, oven spring and cooling do their work.\n\nCHAPTERS\n0:00 The Dough That Doubled\n0:23 Inside the Mix\n0:57 The Yeast Engine\n1:37 Shaping and the Second Rise\n2:17 Oven Spring\n2:54 The Finished Crumb\n\nYeast fermentation, the gluten network and oven spring are explained at magnified scale, with hours of rising time-compressed into seconds. The Explorer and the capsule are fictional guides; the process they show - how bread rises, why the net stretches instead of tearing, and why cooling finishes the loaf - follows the sources below.\n\nAI-generated scientific visualization. The explorer and capsule are fictional storytelling devices. The process explanation is based on the sources below; scale, timing, color and visibility may be simplified. This is not real microscopic or factory footage.\n\nVISUALIZATION CONVENTIONS\nMagnified interior scale; hours of fermentation shown in seconds; bubbles and the gluten network enlarged as an explanatory picture; interior cutaway in the oven; fictional Explorer and capsule as guides.\n\nSOURCES\nHow Bread Works - https://science.howstuffworks.com/innovation/edible-innovations/bread.htm\nGluten complex chemistry - https://phys.org/news/2023-11-gluten-complex-chemistry-fluffy-goods.html\nDough baking processes - https://www.pizzablab.com/learning-and-resources/baking/dough-baking-processes/\nThermal profiling - https://dev.bakerpedia.com/processes/thermal-profiling/\nBread science 101 - https://www.sustainweb.org/realbread/articles/jul21-bread-science-101/\n\nExplained From Within shows the hidden process inside familiar things, one mechanism at a time.\n\n#ExplainedFromWithin #HowThingsWork #BreadScience",
+  "tags": [
+    "how bread rises",
+    "how does bread rise",
+    "bread rising explained",
+    "yeast fermentation in dough",
+    "gluten network explained",
+    "why does dough rise",
+    "bread proofing explained",
+    "oven spring explained",
+    "how bread is made",
+    "inside the dough",
+    "scientific visualization",
+    "process explained",
+    "how things work",
+    "Explained From Within"
+  ],
+  "hashtags": [
+    "#ExplainedFromWithin",
+    "#HowThingsWork",
+    "#BreadScience"
+  ],
+  "category": "Education",
+  "made_for_kids": false,
+  "altered_or_synthetic_content": true,
+  "visibility_at_upload": "unlisted (hackathon sample)",
+  "problems_field": [
+    "0:40 Why does dough need a stretchy gluten network?",
+    "0:57 How does yeast make bread rise?",
+    "1:37 Why is the loaf shaped before its second rise?",
+    "1:57 Why does the second rise run slower?",
+    "2:17 What is oven spring?",
+    "3:11 How do you know bread is done, and why cool it before slicing?"
+  ],
+  "files": {
+    "video_captioned": {
+      "path": "exports/final/EP001_HowBreadRisesInsideTheDough_Captioned.mp4",
+      "sha256": "4576f16fffff82885bacdb976df193eb2e2f8ecca92c9a4e593e379a8b88a84b",
+      "bytes": 61798355
+    },
+    "video_clean": {
+      "path": "exports/final/EP001_HowBreadRisesInsideTheDough_Full.mp4",
+      "sha256": "0ef156144e0c96c70e795f69309156f20daa9d7dc5e8fb636ac8069db839e4cd",
+      "bytes": 109321607
+    },
+    "caption_track": {
+      "path": "exports/final/EP001_HowBreadRisesInsideTheDough_Full.srt",
+      "sha256": "3af6534dacb97f7aa4b288eb0ee8bef01053b34cdf1ac3e747780d4675736c0a",
+      "bytes": 4269
+    },
+    "thumbnail_primary": {
+      "path": "metadata/thumbnail-concept1.png",
+      "sha256": "cb430fe1f0b5b6d1b80428a34a46d0a014f9fefd987983917659d8c9339d2b93",
+      "bytes": 1132261
+    },
+    "thumbnail_alternate": {
+      "path": "metadata/thumbnail-alternate.png",
+      "sha256": "6074dda425f4be2f8ac95d7b18da37a562f02457fcd0429e1b0e924dcf418e65",
+      "bytes": 1436658
+    }
+  }
+}

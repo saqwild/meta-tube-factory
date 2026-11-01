@@ -33,8 +33,8 @@ post-produced cards inserted in assembly, never baked into a clip.
 - Exact text:
   Line 1: Produced end to end with Meta Muse models
   Line 2: Muse Spark - reasoning and verdicts | Muse Wonder - script
-  Line 3: Muse Image - stills | SAM 3.1 - pilot QA
-  Line 4: Muse Voice Transcribe - dialogue audit
+  Line 3: Muse Image - stills | Muse Voice Transcribe - dialogue audit
+  Line 4: Human gates at every stage - owner watched and approved
   Line 5 (small): Video rendered with LTX-2.5 image-to-video.
   Line 6 (small): Full pipeline, prompts and QA:
   Line 7 (small): github.com/saqwild/meta-tube-factory
@@ -49,6 +49,19 @@ Record each clip's chosen trim range here when 06a runs.
 | Clip | Source duration | Trim range kept | Note |
 |---|---|---|---|
 | SC01-SC12 | 20 s each (render) | TBD at 06a viewing | trailing silence only |
+| SC02 | 20.04 s | 0.00-17.04 | owner 06a cut list: trim last 3 s |
+| SC03 | 20.04 s | 0.00-17.04 | owner 06a cut list: trim last 3 s |
+| SC09 | 20.04 s | 0.00-17.04 | owner 06a cut list: trim last 3 s |
+| SC10 | 20.04 s | 0.00-17.04 | owner 06a cut list: trim last 3 s |
+| SC01, SC04, SC05, SC06, SC07, SC08, SC11, SC12 | 20.04 s | full clip | owner 06a cut list: no cut - fine after the updated prompts |
+
+Owner assembly decision (2026-10-29): cuts are made locally with
+ffmpeg from the exact list above; askyt_editor is not used for
+cutting this episode. One honest correction to the outro text
+below, made at assembly: the credit line that read "SAM 3.1 - pilot
+QA" is replaced, because pilot QA was the owner's watched review
+plus the Muse Voice Transcribe audit - SAM 3.1 was not run on these
+clips, and the slide must not claim it was.
 
 ## Disclosure cards carried from earlier stages
 

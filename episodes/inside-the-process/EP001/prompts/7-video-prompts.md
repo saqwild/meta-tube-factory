@@ -58,9 +58,9 @@ BEAT:: 120 :: The camera begins a slow push in. The camera ends on the even bubb
 
 GLOBAL:: Continue from the still. the Explorer in an ivory industrial helmet with an opaque black full-face visor and cyan side-light rings, orange technical coveralls, chest instrument and grey boots stands inside a doming shaped loaf as bubbles re-inflate for the second rise, warm quiet light. Photoreal cinematic scientific visualization, warm polished home realism, ivory-and-orange equipment palette, cyan accent light. Low motion.
 BEAT:: 24 :: Bubbles re-inflate slowly. Ambient (slow, subtle): the dome swells and the cloth shadow moves.
-BEAT:: 170 :: The single Explorer stays planted at the left edge, feet still, head raised toward camera, and says over helmet radio in a calm adult male English voice: "The workers are at it again, slower now." His mouth returns to rest.
+BEAT:: 170 :: The camera stays wide on the re-inflating bubbles of the doming loaf while the single Explorer stays planted at the left edge, feet still, head raised toward camera, and says over helmet radio in a calm adult male English voice: "The workers are at it again, slower now." His mouth returns to rest.
 BEAT:: 167 :: The Explorer holds still, head tilted, while Control answers in a calm adult English voice: "Warmth sets their pace; a cool corner would slow them further. Given time, the shaped loaf fills with gas again. This patience is where much of the flavour quietly builds." The Explorer stays in place, mouth closed.
-BEAT:: 120 :: The camera holds with a slight drift. The camera ends on the slowly doming loaf surface. Acoustic environment: soft returning bubbling; clear close dialogue front and center. The Explorer stays in frame, mouth closed.
+BEAT:: 120 :: The camera holds wide with a slight drift across the re-inflating bubbles. The camera ends on the re-inflating bubbles and the slowly doming loaf surface, with the single Explorer still small at the left edge. Acoustic environment: soft returning bubbling; clear close dialogue front and center. The Explorer stays in place at the left edge, mouth closed.
 
 
 ## SC08

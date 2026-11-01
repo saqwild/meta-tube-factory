@@ -1,0 +1,139 @@
+{
+  "sessionId": "vidgen-meta",
+  "transcript": "You left a heavy ball of dough and came back to find it doubled. The flour began as wheat in a field long before it reached this bowl. Today we travel inside it with a fictional guide at magnified scale. Control, what exactly are we standing in here? here? Flour from milled grain, water, living yeast from its dry packet, and mined salt. Water wakes the dormant yeast, flour feeds it and salt slows it slightly while tightening the net to come. It feels like a net being woven around us. It is. Kneading pulls the flour proteins into proteins into long and elastic strands. This net is the scaffolding of your loaf. Without it every bubble we meet would simply escape. Watch it hold its shape. Something is breathing down here control. Yeast. It feeds on sugars in the flour and breathes out carbon dioxide. Each breath becomes a bubble and your net from the last step is what catches them all. all. That is our engine. The whole city is lifting, walls and all. Millions of tiny bubbles are inflating at once and the net stretches stretches instead of tearing. That shared stretch bubble after bubble is the rise rise you saw from your counter. Together they lift everything you are squashing the city flat again. Only its biggest weakest bubbles shaping evens the foam and tensions the surface so the second rise builds a loaf shape instead of a spreading puddle on your tray. The shape now holds promise. The workers are at it again. slower now. Warmth sets their pace. A cool corner would slow them them further. Given time, the shaped loaf fills with gas again, this patience is where much of the flavor quietly builds. It is growing faster than ever in here. Oven spring. Heat expands every trapped bubble at once and the yeast works furiously for a few last minutes. Watch the walls, they are about to stop stretching forever. Hold on with me. The The city has stopped moving. It feels solid, it it is sedating. The starch has swelled and locked the foam in place while the crust browns and crispens above us. From here on this is bread not dough the color is the receipt then nothing down here survived the oven nothing did and that is fine the heat killed the yeast as the loaf baked its gas and structure are its gift to you the crumb around us is the finished city It smells finished. How can you be sure? Color, a hollow sound, and a set crumb tell your baker it it is done. Cooling finishes the work slice too early and the the soft middle turns gummy. Patience is an ingredient here. Every bubble in that slice is a breath the yeast left behind the soft soft crumb holds them the firm crust protects them wrapped tonight it firms slowly as it rests tell us below what should we travel inside next",
+  "audioDurationMs": 236560,
+  "turns": [
+    {
+      "turnId": 0,
+      "startMs": 3580,
+      "endMs": 19020,
+      "transcript": "You left a heavy ball of dough and came back to find it doubled. The flour began as wheat in a field long before it reached this bowl. Today we travel inside it with a fictional guide at magnified scale.",
+      "speaker": "A"
+    },
+    {
+      "turnId": 1,
+      "startMs": 23500,
+      "endMs": 38700,
+      "transcript": "Control, what exactly are we standing in here? here? Flour from milled grain, water, living yeast from its dry packet, and mined salt. Water wakes the dormant yeast, flour feeds it and salt slows it slightly while tightening the net to come.",
+      "speaker": "B"
+    },
+    {
+      "turnId": 2,
+      "startMs": 40220,
+      "endMs": 43420,
+      "transcript": "It feels like a net being woven around us.",
+      "speaker": "C"
+    },
+    {
+      "turnId": 3,
+      "startMs": 43580,
+      "endMs": 58380,
+      "transcript": "It is. Kneading pulls the flour proteins into proteins into long and elastic strands. This net is the scaffolding of your loaf. Without it every bubble we meet would simply escape. Watch it hold its shape.",
+      "speaker": "D"
+    },
+    {
+      "turnId": 4,
+      "startMs": 59420,
+      "endMs": 75100,
+      "transcript": "Something is breathing down here control. Yeast. It feeds on sugars in the flour and breathes out carbon dioxide. Each breath becomes a bubble and your net from the last step is what catches them all. all. That is our engine.",
+      "speaker": "E"
+    },
+    {
+      "turnId": 5,
+      "startMs": 78140,
+      "endMs": 95260,
+      "transcript": "The whole city is lifting, walls and all. Millions of tiny bubbles are inflating at once and the net stretches stretches instead of tearing. That shared stretch bubble after bubble is the rise rise you saw from your counter. Together they lift everything",
+      "speaker": "D"
+    },
+    {
+      "turnId": 6,
+      "startMs": 98620,
+      "endMs": 113420,
+      "transcript": "you are squashing the city flat again. Only its biggest weakest bubbles shaping evens the foam and tensions the surface so the second rise builds a loaf shape instead of a spreading puddle on your tray. The shape now holds promise.",
+      "speaker": "D"
+    },
+    {
+      "turnId": 7,
+      "startMs": 118860,
+      "endMs": 121980,
+      "transcript": "The workers are at it again. slower now.",
+      "speaker": "F"
+    },
+    {
+      "turnId": 8,
+      "startMs": 122060,
+      "endMs": 135580,
+      "transcript": "Warmth sets their pace. A cool corner would slow them them further. Given time, the shaped loaf fills with gas again, this patience is where much of the flavor quietly builds.",
+      "speaker": "D"
+    },
+    {
+      "turnId": 9,
+      "startMs": 137980,
+      "endMs": 152460,
+      "transcript": "It is growing faster than ever in here. Oven spring. Heat expands every trapped bubble at once and the yeast works furiously for a few last minutes. Watch the walls, they are about to stop stretching forever.",
+      "speaker": "D"
+    },
+    {
+      "turnId": 10,
+      "startMs": 152540,
+      "endMs": 155500,
+      "transcript": "Hold on with me.",
+      "speaker": "D"
+    },
+    {
+      "turnId": 11,
+      "startMs": 157980,
+      "endMs": 161980,
+      "transcript": "The The city has stopped moving. It feels solid,",
+      "speaker": "C"
+    },
+    {
+      "turnId": 12,
+      "startMs": 162220,
+      "endMs": 162300,
+      "transcript": "it"
+    },
+    {
+      "turnId": 13,
+      "startMs": 162300,
+      "endMs": 173820,
+      "transcript": "it is sedating. The starch has swelled and locked the foam in place while the crust browns and crispens above us. From here on this is bread not dough the color is the receipt",
+      "speaker": "D"
+    },
+    {
+      "turnId": 14,
+      "startMs": 176220,
+      "endMs": 179980,
+      "transcript": "then nothing down here survived the oven",
+      "speaker": "F"
+    },
+    {
+      "turnId": 15,
+      "startMs": 180460,
+      "endMs": 191260,
+      "transcript": "nothing did and that is fine the heat killed the yeast as the loaf baked its gas and structure are its gift to you the crumb around us is the finished city",
+      "speaker": "D"
+    },
+    {
+      "turnId": 16,
+      "startMs": 192780,
+      "endMs": 196140,
+      "transcript": "It smells finished. How can you be sure?",
+      "speaker": "G"
+    },
+    {
+      "turnId": 17,
+      "startMs": 196460,
+      "endMs": 209820,
+      "transcript": "Color, a hollow sound, and a set crumb tell your baker it it is done. Cooling finishes the work slice too early and the the soft middle turns gummy. Patience is an ingredient here.",
+      "speaker": "E"
+    },
+    {
+      "turnId": 18,
+      "startMs": 211740,
+      "endMs": 229580,
+      "transcript": "Every bubble in that slice is a breath the yeast left behind the soft soft crumb holds them the firm crust protects them wrapped tonight it firms slowly as it rests tell us below what should we travel inside next",
+      "speaker": "E"
+    }
+  ]
+}

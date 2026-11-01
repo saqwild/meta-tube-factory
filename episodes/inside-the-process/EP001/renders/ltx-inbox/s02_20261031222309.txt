@@ -1,0 +1,73 @@
+==============================================================================
+  vidgen-dist render log   ·   s02_20261031222309.mp4
+==============================================================================
+  Rendered              2026-10-31 22:23:09
+  Render time           2m 51s
+  Queued at             2026-10-31 22:20:19
+  Queue → complete      2m 47s
+  Post-complete         1s
+  ComfyUI prompt id     ab9e9c10-4e56-4a2d-ad65-0f24d3918892
+
+--- RESULT --------------------------------------------------------------------
+  Output size           1344 x 768
+  Base pass             672 x 384
+  Geometry from         16:9 (Widescreen), 0.98 MP
+  Frames                481   (20s @ 24 fps)
+
+--- MODE ----------------------------------------------------------------------
+  Two pass              always on (fixed two-stage workflow — no toggle in this graph)
+  Audio refined         YES (through pass 2)
+  Text to video         off
+  Resize input image    ON
+
+--- GUIDANCE ------------------------------------------------------------------
+  CFG pass 1 (base)     1.2
+  CFG pass 2 (refine)   1.0   <- reaches the output
+  Negative              ACTIVE
+      "duplicate character, cloned character, extra character beyond those described, merged faces, identity drift, deformed hands, deformed paws, extra limb..."
+
+--- SAMPLING ------------------------------------------------------------------
+  Pass 1 sigmas         1.0, 0.99375, 0.9875, 0.98125, 0.975, 0.909375, 0.725, 0.421875, 0.0
+  Pass 2 sigmas         0.85, 0.7250, 0.4219, 0.0
+  Seed pass 1           123456789
+  Seed pass 2           123456790
+  img_compression       22
+
+--- MODELS --------------------------------------------------------------------
+  Diffusion             ltx-2.5-22b-distilled-transformer-bf16.safetensors
+  VAE                   ltx-2.5-audio-vae-bf16.safetensors
+                        ltx-2.5-video-vae-bf16.safetensors
+  Text encoder          gemma4-12b-with-proj-ltx-2.5-bf16.safetensors
+  Upscaler              ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors
+
+--- SOURCE IMAGE --------------------------------------------------------------
+  File                  C:\pycode\vidgen-meta\episodes\inside-the-process\EP001\exports\ltx-render-package\stills\SC02.png
+  Size                  2016 x 1152
+
+--- PROMPT (native prose — no GLOBAL::/BEAT:: segments) -----------------------
+  Words / quoted words  333 / 41
+  Est. speech length    18.2s (target clip: 20s)
+  Prompt enhancer       off
+  TEXT (as authored):
+      Continue from the still. the Explorer in an ivory industrial helmet with an opaque black full-face visor and cyan side-light rings, orange technical coveralls, chest instrument and grey boots stands inside a wet shaggy dough mass with dry flour pockets, a small ivory-and-orange capsule with a cyan light ring landed behind him, pale golden magnified interior. Photoreal cinematic scientific visualization, warm polished home realism, ivory-and-orange equipment palette, cyan accent light. Low motion.
+
+At the opening of the shot, Water sheen glistens on the mass. Ambient (slow, subtle): flour dust drifts and droplets merge.
+
+Then, The Explorer turns toward camera, head raised, and asks over helmet radio in a curious adult English voice: "Control, what exactly are we standing in here?" His mouth returns to rest behind the visor.
+
+Then, The Explorer holds still, head tilted, while Control answers in a calm adult English voice: "Flour from milled grain, water, living yeast from its dry packet, and mined salt. Water wakes the dormant yeast, flour feeds it, and salt slows it slightly while tightening the net to come." The Explorer stays in place, mouth closed.
+
+Finally, The camera begins a slow dolly in. Acoustic environment: soft water sounds and dough room tone; clear close dialogue front and center. The Explorer stays in frame, mouth closed.
+
+Reference lock: continue directly from the supplied still/reference image; it is the authoritative first frame and starting composition. Preserve the exact character identities, character count, wardrobes, set layout, lighting, and every visible prop's physical size, shape, placement, and attachment. Animate only the character actions explicitly requested in the scene direction. Keep all unattended characters, props, and background elements stationary within the scene. Follow the camera movement explicitly requested in the scene direction; if none is requested, keep the camera locked to the reference framing. Directed camera motion may change framing, perspective, screen positions, apparent size, and visibility without physically moving or changing the scene's objects. Do not introduce, duplicate, physically remove, relocate, reshape, or float any character or prop.
+
+--- WORKFLOW ------------------------------------------------------------------
+  File                  C:\pycode\app-vidgen-dist\workflows\LTX25_T2V_I2V_Two_Stage_Distilled.json
+  sha256                57670467f85dbbc5
+  ComfyUI               http://localhost:18188
+  Rules guard           ⚠ UNAPPROVED CHANGE — UNAPPROVED CHANGE to protected files: 2 added
+
+--- REPRODUCE -----------------------------------------------------------------
+  Settings tab  ->  '↺ Load settings from a render…'  ->  pick
+      s02_20261031222309.json
+  (restores every setting above, including both seeds)

@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "episode_id": "EP001",
+  "reviewed_at_utc": "2026-11-01T04:34:54Z",
+  "source_package_sha256": "1180988dc669b3ad0994182d8186fd44196c1575eb1ba98970ec1be47bffa602",
+  "validator_sha256": "2c1e2586c4473530c8932a6611af27920e784eae41d35fe4076bca7a46be43f6",
+  "status": "PASS",
+  "errors": [],
+  "warnings": [
+    "[META-W001] channel.json declares metadata_validation.'primary_keyword_log_required' but this validator does not implement it -- check it by hand",
+    "[META-W001] channel.json declares metadata_validation.'primary_keyword_description_first_words' but this validator does not implement it -- check it by hand",
+    "[META-W001] channel.json declares metadata_validation.'thumbnail_overlay_words_max' but this validator does not implement it -- check it by hand",
+    "[META-W001] channel.json declares metadata_validation.'thumbnail_primary_phrase_max_words' but this validator does not implement it -- check it by hand",
+    "[META-W001] channel.json declares metadata_validation.'thumbnail_context_line_max_words' but this validator does not implement it -- check it by hand",
+    "[META-W001] channel.json declares metadata_validation.'thumbnail_brand_footer_max_words' but this validator does not implement it -- check it by hand",
+    "[META-W001] channel.json declares metadata_validation.'thumbnail_default_layout' but this validator does not implement it -- check it by hand",
+    "[META-W001] channel.json declares metadata_validation.'thumbnail_exception_documentation_required' but this validator does not implement it -- check it by hand",
+    "[META-W001] channel.json declares metadata_validation.'video_specific_keywords_required' but this validator does not implement it -- check it by hand",
+    "[META-W001] channel.json declares metadata_validation.'video_specific_keyword_count_min' but this validator does not implement it -- check it by hand",
+    "[META-W001] channel.json declares metadata_validation.'video_specific_keyword_count_max' but this validator does not implement it -- check it by hand",
+    "[META-W001] channel.json declares metadata_validation.'video_specific_keywords_must_include_primary' but this validator does not implement it -- check it by hand",
+    "[META-W001] channel.json declares metadata_validation.'video_specific_keywords_must_match_upload_artifacts' but this validator does not implement it -- check it by hand",
+    "[META-W001] channel.json declares metadata_validation.'thumbnail_generation_prompt_required' but this validator does not implement it -- check it by hand",
+    "[META-W001] channel.json declares metadata_validation.'thumbnail_exact_typography_spec_required' but this validator does not implement it -- check it by hand",
+    "[META-W001] channel.json declares metadata_validation.'thumbnail_reference_manifest_required' but this validator does not implement it -- check it by hand",
+    "[META-W001] channel.json declares metadata_validation.'thumbnail_reference_paths_must_be_stable' but this validator does not implement it -- check it by hand",
+    "[META-W001] channel.json declares metadata_validation.'thumbnail_alternate_full_prompt_required' but this validator does not implement it -- check it by hand"
+  ],
+  "facts": {
+    "title": "How Bread Rises: Inside the Dough",
+    "title_length": 33,
+    "title_max_chars": 70,
+    "description_length": 1875
+  }
+}

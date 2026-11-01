@@ -213,3 +213,29 @@ SC02, SC05, SC08, SC12: awaiting owner viewing and verdicts.
   hidden behind the opaque visor for the whole clip. No re-render
   needed; the still-layer fallback (larger visor figure) is not
   required.
+- SC06 PASS (owner watched the re-render). The single Explorer stays
+  planted at the right edge; no duplication and no emergence from
+  the bread. No re-render needed.
+- SC10 PASS (owner watched the re-render). The single Explorer stays
+  planted at the right edge; no second Explorer appears. No
+  re-render needed.
+- SC11 PASS (owner watched the re-render). The single Explorer stays
+  planted at the left edge; no second Explorer jumps in. No
+  re-render needed.
+- SC07 PASS (owner watched the camera-fixed re-render, with the 04g
+  approval). The camera now holds wide on the re-inflating bubbles
+  and the doming surface; the Explorer stays small at the left edge.
+  No re-render needed.
+- All 12 clips now carry an owner-watched PASS. The five pilot clips
+  (SC01, SC02, SC05, SC08, SC12) are written up per-check in
+  qa/ltx-pilot-qa.json for the 04h gate.
+- SC07 RE-RENDER (owner watched the re-render): the stationary fix
+  held - no walking, no disappearance - but the camera focus moved
+  to the Explorer instead of the bubbles and the loaf walls. Root
+  cause layer: prompt delta. The final beat named the doming surface
+  as the end state, but no beat held the camera wide on the bubbles
+  during the dialogue, so LTX pushed in on the speaker. Fix at 04f3:
+  the camera stays wide on the re-inflating bubbles during the
+  Explorer and Control beats, and ends on the re-inflating bubbles
+  and doming surface with the Explorer still small at the left edge.
+  Re-render SC07 only.

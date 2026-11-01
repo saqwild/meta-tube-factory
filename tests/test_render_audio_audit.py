@@ -205,6 +205,11 @@ class ReviewEpisode(unittest.TestCase):
         code = raa.review_episode("demo", "EP001", model_name="muse-voice-transcribe-1.0")
         self.assertEqual(code, 1)
 
+    def test_real_transcriber_factory_constructs(self):
+        # Regression: the factory itself must build without touching the API.
+        fn = self._real_transcriber_factory("muse-voice-transcribe-1.0")
+        self.assertTrue(callable(fn))
+
     def test_missing_manifest_is_a_setup_error(self):
         (self.ep / "renders" / "render-manifest.json").unlink()
         code = raa.review_episode("demo", "EP001", model_name="muse-voice-transcribe-1.0")

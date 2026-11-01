@@ -162,12 +162,12 @@ def _muse_transcriber(model_name: str = "muse-voice-transcribe-1.0") -> Transcri
     import sys
     import tempfile
 
-    sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
     import meta_models
 
     def _transcribe(path: Path) -> str:
         with tempfile.TemporaryDirectory() as tmp:
-            wav = pathlib.Path(tmp) / "audio.wav"
+            wav = Path(tmp) / "audio.wav"
             proc = subprocess.run(
                 ["ffmpeg", "-y", "-i", str(path), "-vn", "-ac", "1", "-ar", "16000", str(wav)],
                 capture_output=True, text=True,

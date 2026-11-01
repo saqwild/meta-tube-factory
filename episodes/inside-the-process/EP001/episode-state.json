@@ -1,7 +1,7 @@
 {
   "episode_id": "EP001",
   "channel_slug": "inside-the-process",
-  "status": "open",
+  "status": "closed",
   "stage_sequence": [
     "00-preflight",
     "01-ideation",
@@ -27,7 +27,7 @@
     "06a-postproduction-assembly",
     "07-final-package-qa"
   ],
-  "next_stage": "04h-ltx-pilot-qa",
+  "next_stage": null,
   "completed_stages": [
     {
       "stage": "00-preflight",
@@ -860,10 +860,218 @@
           }
         ]
       }
+    },
+    {
+      "stage": "04f3-ltx-prompt-final",
+      "completed_at": "2026-10-31T21:24:00+00:00",
+      "approved": false,
+      "note": "SC07 camera fix: wide on re-inflating bubbles during dialogue, ends on bubbles/dom surface, Explorer small at left edge; validator PASS",
+      "deliverable_digest": {
+        "digest_sha256": "72997958cafbaa170ddc6391c490268433aa1043ef935d112700aa2008cff551",
+        "files": [
+          {
+            "path": "_context/ltx-prompt-manifest.json",
+            "sha256": "dfdeffa9b292ce32c9302868836d7bedc5f132bda6efd86ffa16ba5924015a37"
+          },
+          {
+            "path": "_context/ltx-prompt-review.json",
+            "sha256": "faa3fdb68230e13873d7873d271f1316f3c89e3d41e84759dde8e8411906f769"
+          },
+          {
+            "path": "prompts/7-video-prompts.md",
+            "sha256": "b09573a2979a92c72c9c516f41390129206ac494c49e4b35e0792a867ecd11d0"
+          }
+        ]
+      }
+    },
+    {
+      "stage": "04g-ltx-render-package",
+      "completed_at": "2026-10-31T21:30:54+00:00",
+      "approved": true,
+      "note": "Owner approved 04g; SC07 re-render PASS (owner watched)",
+      "deliverable_digest": {
+        "digest_sha256": "df674f1fe94905cf00d4197ffeb3cb69db9ba935ad0ff209667fc6231a6f0649",
+        "files": [
+          {
+            "path": "exports/ltx-render-package/master-prompt.txt",
+            "sha256": "70814adb2150990a6a2a26874745c57571dd32a4f978bd43e93112fe5a6ca4c0"
+          },
+          {
+            "path": "exports/ltx-render-package/negative-prompt.txt",
+            "sha256": "1fbf3af8d272dad579562f70631d23df10ce8c77f323201f860d6df4ce507c9b"
+          },
+          {
+            "path": "exports/ltx-render-package/render-manifest.json",
+            "sha256": "b375336a33f573d47c2199e53d2c47b15d77df4ea508104fd672636755305525"
+          },
+          {
+            "path": "exports/ltx-render-package/render-settings.json",
+            "sha256": "500e6fce04a5e50d254ba9933b540b79335755237232e54118b8d5c1a1f06b43"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC01.png",
+            "sha256": "1c6b090107a0cfdf847a58f21aac97a641d56a7d60a181abb946c608bf31a4d0"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC02.png",
+            "sha256": "4cd97cf03d43d7ba03e9b16dd5c8f81d109f952c49d343cdd9623168530a1578"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC03.png",
+            "sha256": "b38cc34e2e59935ca54b7d4de6c961ea8394605c7b6de8f9f53a9835284a7aae"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC04.png",
+            "sha256": "1e975c6d8e979d56066d41802c90c0fd2f7eec92b9c6c576fc49a28ec0f738c5"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC05.png",
+            "sha256": "22be4885b887aafe9a4e1e7fc0ddf1bfcb48e9097dfb45f0c92d157fed284bcc"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC06.png",
+            "sha256": "e9c8fa1a4f99d1914ded3c7132b33a95d7cbc36505fb165994d7aad277c5d0aa"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC07.png",
+            "sha256": "9dc1bbbab79ae5f1311a8619672a58365e301f74b5757717d37914d85f93f389"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC08.png",
+            "sha256": "e1a365d93c074fccee90e21537c95b44a980da526bde9449f005250cd6bbb118"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC09.png",
+            "sha256": "b6c6ed0893e41fb5012e8bc30bcaa10b9dd0b6e455fde7d615f684b787c12d7e"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC10.png",
+            "sha256": "0d05e1eb886428ae99c929591adf4977a18870fb7acbb1694cee2552137a98d6"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC11.png",
+            "sha256": "ce36a25c5e2a65bc1ec37158fbca06b1499f59be561db02b9384355408bca6f7"
+          },
+          {
+            "path": "exports/ltx-render-package/stills/SC12.png",
+            "sha256": "e65a7247e8bd49936f93ca430998afae5c9e468201deb025386967b3ec46eb5d"
+          }
+        ]
+      }
+    },
+    {
+      "stage": "04h-ltx-pilot-qa",
+      "completed_at": "2026-11-01T03:38:51+00:00",
+      "approved": true,
+      "note": "Owner approved 04h on watched verdicts; qa/ltx-pilot-qa.json PASS, schema valid, all 12 clips owner-watched PASS",
+      "deliverable_digest": {
+        "digest_sha256": "6a2873b1083f5ae8f1db9460f1f87cda287ecb8da7979c67937e53a57da41260",
+        "files": [
+          {
+            "path": "qa/ltx-pilot-qa.json",
+            "sha256": "d4a966c88c9ed595d9d6e71a87d11775331f0dabcfae6a35100e1183c42e5460"
+          }
+        ]
+      }
+    },
+    {
+      "stage": "05-render-ingest",
+      "completed_at": "2026-11-01T03:41:00+00:00",
+      "approved": false,
+      "note": "12/12 clips probed: 20.04s, 1344x768, audio present, SHA-256 recorded, sidecar settings match package, source stills correctly paired; renders/render-manifest.json PASS",
+      "deliverable_digest": {
+        "digest_sha256": "4229959352827bea597b906a46f3dfa02809d00b3ffad658a5aedc8e505a851f",
+        "files": [
+          {
+            "path": "renders/render-manifest.json",
+            "sha256": "74467993d15ef503de4a5ba76f905deeb1ec75bc60a6cd49c212551e5ad3311c"
+          }
+        ]
+      }
+    },
+    {
+      "stage": "05a-render-qa",
+      "completed_at": "2026-11-01T03:51:10+00:00",
+      "approved": false,
+      "note": "Muse Voice Transcribe audit PASS 12/12 (0.92-1.00); owner-watched render-qa PASS all clips; tool fix: pathlib NameError in render_audio_audit with regression test (28 tests OK)",
+      "deliverable_digest": {
+        "digest_sha256": "c019f55deb7fa7bd24558499b3c0ff251255096b8a4a7e13d3a31a6942db96fd",
+        "files": [
+          {
+            "path": "qa/render-qa.md",
+            "sha256": "483714531baf8fcb30c240db06fe3c0132963699a05bcd92ccb3a1398352a59f"
+          }
+        ]
+      }
+    },
+    {
+      "stage": "06-distribution-metadata",
+      "completed_at": "2026-11-01T04:02:28+00:00",
+      "approved": true,
+      "note": "Owner approved 06; metadata validator OVERALL PASS; package.md + keyword-research.md on file",
+      "deliverable_digest": {
+        "digest_sha256": "09304b82d9744c102760c5d4e7ec5e241462b1200ee18d3629b79e51e30fb3ec",
+        "files": [
+          {
+            "path": "metadata/package.md",
+            "sha256": "3133b62df3666a31a0144b424f0f4d8057e7fe6f2b5c93c69e1693d50c808888"
+          }
+        ]
+      }
+    },
+    {
+      "stage": "06a-postproduction-assembly",
+      "completed_at": "2026-11-01T04:32:56+00:00",
+      "approved": true,
+      "note": "Owner approved 06a after watching the captioned master; ffmpeg assembly per owner cut list, Muse Voice Transcribe captions burned + SRT",
+      "deliverable_digest": {
+        "digest_sha256": "75e0143581992f32393af7f62127b4280d0fc0666e2146dedcc339711727b888",
+        "files": [
+          {
+            "path": "exports/final/EP001_HowBreadRisesInsideTheDough_Captioned.mp4",
+            "sha256": "4576f16fffff82885bacdb976df193eb2e2f8ecca92c9a4e593e379a8b88a84b"
+          },
+          {
+            "path": "exports/final/EP001_HowBreadRisesInsideTheDough_Full.mp4",
+            "sha256": "0ef156144e0c96c70e795f69309156f20daa9d7dc5e8fb636ac8069db839e4cd"
+          },
+          {
+            "path": "postprod/handoff.md",
+            "sha256": "1a035aa295a78f071d0bbca3e29dd48f5c352ba9371eb4d8c413a82a69063650"
+          },
+          {
+            "path": "postprod/postprod-config.json",
+            "sha256": "534b9e2b12127410132c3d1b5d74e232ed968a858bef6323deab8dd6c4fa07c2"
+          },
+          {
+            "path": "postprod/postprod-manifest.json",
+            "sha256": "3bb20ed2caaeb0d6818d6dcd2b0cc70d9c90d7dbbc3ef0ff449d2a740337e546"
+          },
+          {
+            "path": "postprod/staging-manifest.json",
+            "sha256": "1255b89adaa65052a21be93e7948292c75ee489fb0c572bff167afece46a9f9f"
+          }
+        ]
+      }
+    },
+    {
+      "stage": "07-final-package-qa",
+      "completed_at": "2026-11-01T04:39:10+00:00",
+      "approved": false,
+      "note": "Final QA PASS: keywords/tags/upload artifacts mirrored, thumbnail pair matches brief at 1280x720 and 120px legible, health 0 fail (5 stale-approval warnings accepted with reasons), metadata + LTX + transcribe audits PASS",
+      "deliverable_digest": {
+        "digest_sha256": "424c126049198011366f94958e24d39b227e703881caf72463cf65cfffaeebce",
+        "files": [
+          {
+            "path": "final-qa.md",
+            "sha256": "40392bb1531f9492efa2371f222e2d795e582d9f2505f61350a48f94661f35f4"
+          }
+        ]
+      }
     }
   ],
   "created_at": "2026-10-30T10:54:35+00:00",
-  "updated_at": "2026-10-31T20:15:38+00:00",
+  "updated_at": "2026-11-01T04:39:10+00:00",
   "revisions": [
     {
       "reopened_at": "2026-10-30T14:03:39+00:00",
@@ -892,6 +1100,13 @@
       "to_stage": "04f2-frame0-stills",
       "approved": true,
       "note": "Owner: SC01 identity fine, but still shows cloth in two hands plus a second cloth; fix single-cloth one-hand staging and the GLOBAL cloth leak at 04f3"
+    },
+    {
+      "reopened_at": "2026-10-31T21:23:15+00:00",
+      "from_next_stage": "04h-ltx-pilot-qa",
+      "to_stage": "04f3-ltx-prompt-final",
+      "approved": true,
+      "note": "SC07 re-render: camera pushed to Explorer; hold camera wide on re-inflating bubbles, end on bubbles/dom surface"
     }
   ]
 }

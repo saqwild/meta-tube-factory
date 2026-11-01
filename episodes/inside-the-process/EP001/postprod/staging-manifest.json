@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "episode_id": "EP001",
+  "method": "ffmpeg (segments normalized to 1344x768/24fps, audio resampled 48k stereo, concat)",
+  "inserts": [
+    {
+      "label": "INTRO",
+      "file": "assembly/intro-slide.png",
+      "duration": 3.0
+    },
+    {
+      "label": "OUTRO",
+      "file": "assembly/outro-slide.png",
+      "duration": 5.0
+    }
+  ],
+  "clips": [
+    {
+      "clip": "SC01",
+      "source": "renders/ltx-inbox/s01_20261101010657.mp4",
+      "source_sha256": "08227b05999e8b14add79046e7cdf79e9dc36c2b4198a100d9b6b8ae8ace871f",
+      "kept_range": "full",
+      "staged_video_seconds": 20.04,
+      "staged_audio_seconds": 20.04,
+      "master_start_seconds": 3.0
+    },
+    {
+      "clip": "SC02",
+      "source": "renders/ltx-inbox/s02_20261031222309.mp4",
+      "source_sha256": "63db56b066c00f654f9922d9b5183d30bd48ae16d2c41a13b3d35a05560d4036",
+      "kept_range": "0.00-17.04",
+      "staged_video_seconds": 17.04,
+      "staged_audio_seconds": 17.04,
+      "master_start_seconds": 23.04
+    },
+    {
+      "clip": "SC03",
+      "source": "renders/ltx-inbox/s03_20261031222600.mp4",
+      "source_sha256": "2c5b6f5d16268c6d157f35f194e08b5784e99a14dbf2ccd355dee6df8ebfb5c3",
+      "kept_range": "0.00-17.04",
+      "staged_video_seconds": 17.04,
+      "staged_audio_seconds": 17.04,
+      "master_start_seconds": 40.08
+    },
+    {
+      "clip": "SC04",
+      "source": "renders/ltx-inbox/s04_20261101011003.mp4",
+      "source_sha256": "adb8ccb468f517f71d4b892c0a091a5e7cc5ded12d1b5c7e29859da686b6dd9e",
+      "kept_range": "full",
+      "staged_video_seconds": 20.04,
+      "staged_audio_seconds": 20.04,
+      "master_start_seconds": 57.12
+    },
+    {
+      "clip": "SC05",
+      "source": "renders/ltx-inbox/s05_20261101011309.mp4",
+      "source_sha256": "9daa5e457ebe9fdf076e3f3436bc120d25fdbe916438c2d4ad85565fc84b5c54",
+      "kept_range": "full",
+      "staged_video_seconds": 20.04,
+      "staged_audio_seconds": 20.04,
+      "master_start_seconds": 77.16
+    },
+    {
+      "clip": "SC06",
+      "source": "renders/ltx-inbox/s06_20261101011611.mp4",
+      "source_sha256": "0e387e9f0265dc70a9ce7efe0d185647f94b4e899ab6adb3045d1ac8483141aa",
+      "kept_range": "full",
+      "staged_video_seconds": 20.04,
+      "staged_audio_seconds": 20.04,
+      "master_start_seconds": 97.2
+    },
+    {
+      "clip": "SC07",
+      "source": "renders/ltx-inbox/s07_20261101012928.mp4",
+      "source_sha256": "4492139839657bf714cd0e76b1452a87d4f511205aea9462f09271ce9c40ac8f",
+      "kept_range": "full",
+      "staged_video_seconds": 20.04,
+      "staged_audio_seconds": 20.04,
+      "master_start_seconds": 117.24
+    },
+    {
+      "clip": "SC08",
+      "source": "renders/ltx-inbox/s08_20261031234801.mp4",
+      "source_sha256": "5f4854c857802c9f2accfbb7c37707d8c6378575521f5828f81abc1c9e7ef5da",
+      "kept_range": "full",
+      "staged_video_seconds": 20.04,
+      "staged_audio_seconds": 20.04,
+      "master_start_seconds": 137.28
+    },
+    {
+      "clip": "SC09",
+      "source": "renders/ltx-inbox/s09_20261031224309.mp4",
+      "source_sha256": "0c82b56f7f5f01d8c26f76a43a72972aec4788c2daf03733ffd91d27b638a99e",
+      "kept_range": "0.00-17.04",
+      "staged_video_seconds": 17.04,
+      "staged_audio_seconds": 17.04,
+      "master_start_seconds": 157.32
+    },
+    {
+      "clip": "SC10",
+      "source": "renders/ltx-inbox/s10_20261101012210.mp4",
+      "source_sha256": "b7e996927932b1e3e9f7e0dd526fa4cb9c25f880055ac3fd8fb5b38c40d8f1b2",
+      "kept_range": "0.00-17.04",
+      "staged_video_seconds": 17.04,
+      "staged_audio_seconds": 17.04,
+      "master_start_seconds": 174.36
+    },
+    {
+      "clip": "SC11",
+      "source": "renders/ltx-inbox/s11_20261101012512.mp4",
+      "source_sha256": "b6b73fe85fc5b0f638860bdbf0f59c9b8bac1c607ccb885f5d49c9965097c5e5",
+      "kept_range": "full",
+      "staged_video_seconds": 20.04,
+      "staged_audio_seconds": 20.04,
+      "master_start_seconds": 191.4
+    },
+    {
+      "clip": "SC12",
+      "source": "renders/ltx-inbox/s12_20261031235636.mp4",
+      "source_sha256": "a8ca6cb055c5c2aadacb2907ab537444031fac848307d74ff8a59be77b2687d6",
+      "kept_range": "full",
+      "staged_video_seconds": 20.04,
+      "staged_audio_seconds": 20.04,
+      "master_start_seconds": 211.44
+    }
+  ]
+}

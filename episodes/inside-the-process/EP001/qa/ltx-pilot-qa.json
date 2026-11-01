@@ -1,0 +1,277 @@
+{
+  "schema_version": 1,
+  "episode_id": "EP001",
+  "watched_by": "owner (saqwild)",
+  "watched_at_utc": "2026-11-01T03:37:10Z",
+  "package_manifest_sha256": "b375336a33f573d47c2199e53d2c47b15d77df4ea508104fd672636755305525",
+  "settings_profile": {
+    "workflow": "LTX25_T2V_I2V_Two_Stage_Distilled.json",
+    "megapixels": 0.98,
+    "duration_seconds": 20,
+    "cfg": 1.2,
+    "cfg_refine": 1.0,
+    "cfg_audio": 1.0,
+    "img_compression": 22
+  },
+  "status": "PASS",
+  "clips": [
+    {
+      "clip": "SC01",
+      "render_path": "renders/ltx-inbox/s01_20261101010657.mp4",
+      "coverage": [
+        "opening",
+        "prop_interaction"
+      ],
+      "checks": {
+        "beat_adherence": {
+          "result": "PASS",
+          "note": "The one linen cloth settles in one hand at the adult's side and the risen dough stays fully uncovered, as beaten."
+        },
+        "frame0_fidelity": {
+          "result": "PASS",
+          "note": "Clip starts from the approved CAST-002 still; identity, kitchen and capsule match frame 0."
+        },
+        "dialogue": {
+          "result": "PASS",
+          "note": "Control narration only, the authorised SC01 lines, audible and unhurried."
+        },
+        "speaker_binding": {
+          "result": "PASS",
+          "note": "The adult's mouth stays closed while Control narrates off-screen."
+        },
+        "identity_and_cast_count": {
+          "result": "PASS",
+          "note": "Exactly one adult, matching the CAST-002 sheet (short tight curly hair, navy hoodie)."
+        },
+        "prop_interaction": {
+          "result": "PASS",
+          "note": "One cloth, one bowl; the cloth never covers the dough and no prop duplicates."
+        },
+        "environment_and_camera": {
+          "result": "PASS",
+          "note": "Kitchen stays stable; the push-in ends on the risen dough and the descending capsule."
+        },
+        "audio": {
+          "result": "PASS",
+          "note": "Quiet kitchen room tone with cloth rustle; trailing silence is logged for the 06a trim, not a render fault."
+        },
+        "artifacts": {
+          "result": "PASS",
+          "note": "No burned-in text, no anatomy failures; hands are clean with short nails."
+        }
+      },
+      "verdict": "PASS"
+    },
+    {
+      "clip": "SC02",
+      "render_path": "renders/ltx-inbox/s02_20261031222309.mp4",
+      "coverage": [
+        "multi_character"
+      ],
+      "checks": {
+        "beat_adherence": {
+          "result": "PASS",
+          "note": "The Explorer turns to camera and asks his question inside the wet mixed mass, as beaten."
+        },
+        "frame0_fidelity": {
+          "result": "PASS",
+          "note": "Clip starts from the approved still; capsule rests behind him in the dough."
+        },
+        "dialogue": {
+          "result": "PASS",
+          "note": "Explorer question and Control answer are the authorised lines, intelligible over helmet radio."
+        },
+        "speaker_binding": {
+          "result": "PASS",
+          "note": "Only the Explorer's line is delivered on-screen; Control answers off-screen with the visor closed."
+        },
+        "identity_and_cast_count": {
+          "result": "PASS",
+          "note": "One Explorer, opaque black full-face visor, no face visible, no extra figure."
+        },
+        "prop_interaction": {
+          "result": "PASS",
+          "note": "No props touched; hands stay empty as blocked."
+        },
+        "environment_and_camera": {
+          "result": "PASS",
+          "note": "Wet mass and flour pockets stay stable; only the named ambient drift moves."
+        },
+        "audio": {
+          "result": "PASS",
+          "note": "Clean dialogue over dough ambience; any tail silence is a 06a trim item."
+        },
+        "artifacts": {
+          "result": "PASS",
+          "note": "No burned-in text; suit and helmet render clean."
+        }
+      },
+      "verdict": "PASS"
+    },
+    {
+      "clip": "SC05",
+      "render_path": "renders/ltx-inbox/s05_20261101011309.mp4",
+      "coverage": [
+        "dense_dialogue"
+      ],
+      "checks": {
+        "beat_adherence": {
+          "result": "PASS",
+          "note": "Bubbles inflate and the net stretches in a slow swell while the Explorer stays settled on the mass."
+        },
+        "frame0_fidelity": {
+          "result": "PASS",
+          "note": "Starts from the approved stretched-net still; the Explorer holds his frame-0 spot at the edge."
+        },
+        "dialogue": {
+          "result": "PASS",
+          "note": "Explorer line and Control's long answer are the authorised words at a natural pace."
+        },
+        "speaker_binding": {
+          "result": "PASS",
+          "note": "The Explorer speaks his line only; Control's answer is off-screen and his mouth stays closed behind the visor."
+        },
+        "identity_and_cast_count": {
+          "result": "PASS",
+          "note": "Exactly one Explorer for the whole clip; no second figure appears on the fixed re-render."
+        },
+        "prop_interaction": {
+          "result": "PASS",
+          "note": "Hands stay empty; the net is never gripped."
+        },
+        "environment_and_camera": {
+          "result": "PASS",
+          "note": "The tilt-up ends on the stretched gluten net and inflated bubbles, not on the Explorer."
+        },
+        "audio": {
+          "result": "PASS",
+          "note": "Stretching creaks under clear dialogue; visor stays opaque so no lip-sync artifact is visible."
+        },
+        "artifacts": {
+          "result": "PASS",
+          "note": "No face appears through the visor on the re-render; no burned-in text."
+        }
+      },
+      "verdict": "PASS"
+    },
+    {
+      "clip": "SC08",
+      "render_path": "renders/ltx-inbox/s08_20261031234801.mp4",
+      "coverage": [
+        "continuity"
+      ],
+      "checks": {
+        "beat_adherence": {
+          "result": "PASS",
+          "note": "Oven spring: bubbles expand fast and the dome rises while the Explorer braces, as beaten."
+        },
+        "frame0_fidelity": {
+          "result": "PASS",
+          "note": "Starts from the approved oven-heat still with the Explorer braced at the edge."
+        },
+        "dialogue": {
+          "result": "PASS",
+          "note": "Explorer line and Control's oven-spring answer are the authorised words."
+        },
+        "speaker_binding": {
+          "result": "PASS",
+          "note": "Explorer delivers his line; Control answers off-screen, Explorer mouth closed behind the visor."
+        },
+        "identity_and_cast_count": {
+          "result": "PASS",
+          "note": "One Explorer, visor opaque throughout the heat sequence."
+        },
+        "prop_interaction": {
+          "result": "PASS",
+          "note": "No prop contact; bracing reads against the foam only."
+        },
+        "environment_and_camera": {
+          "result": "PASS",
+          "note": "Heat glow and steam stay stable; the dolly ends on the expanding bubbles and rising dome."
+        },
+        "audio": {
+          "result": "PASS",
+          "note": "Low oven roar under clear dialogue, clean tail."
+        },
+        "artifacts": {
+          "result": "PASS",
+          "note": "No burned-in text, no anatomy or suit artifacts."
+        }
+      },
+      "verdict": "PASS"
+    },
+    {
+      "clip": "SC12",
+      "render_path": "renders/ltx-inbox/s12_20261031235636.mp4",
+      "coverage": [
+        "warm_close"
+      ],
+      "checks": {
+        "beat_adherence": {
+          "result": "PASS",
+          "note": "The cooled loaf is held steady and the cut slice reveals the finished crumb, as beaten."
+        },
+        "frame0_fidelity": {
+          "result": "PASS",
+          "note": "Starts from the approved close-up still: loaf on the wooden board, one slice cut."
+        },
+        "dialogue": {
+          "result": "PASS",
+          "note": "Closing lines are the authorised words, delivered inside the clip."
+        },
+        "speaker_binding": {
+          "result": "PASS",
+          "note": "Speech binds to the adult at the board; no other mouth moves."
+        },
+        "identity_and_cast_count": {
+          "result": "PASS",
+          "note": "Only the adult's hands and the loaf are in frame; exactly the blocked cast."
+        },
+        "prop_interaction": {
+          "result": "PASS",
+          "note": "One hand holds the loaf steady with short clean nails and minimal arm hair; no duplicate hands."
+        },
+        "environment_and_camera": {
+          "result": "PASS",
+          "note": "Camera stays on the bread zoom the owner asked for; kitchen background stable."
+        },
+        "audio": {
+          "result": "PASS",
+          "note": "Quiet kitchen tone, clean start and tail."
+        },
+        "artifacts": {
+          "result": "PASS",
+          "note": "No burned-in text; crumb and crust render clean."
+        }
+      },
+      "verdict": "PASS"
+    }
+  ],
+  "open_question_findings": [
+    {
+      "question": "frame0_adherence_strictness",
+      "observation": "On the fixed re-renders (SC01, SC05, SC06, SC07, SC10, SC11) the clips hold their approved frame 0 when the prompt states a positive stay-delta; the earlier drift cases all traced to prompt wording that contradicted or under-specified the still.",
+      "verdict": "confirmed_still_true",
+      "evidence_clips": [
+        "SC01",
+        "SC05",
+        "SC06",
+        "SC07",
+        "SC10",
+        "SC11"
+      ]
+    },
+    {
+      "question": "dialogue_occupancy_at_20s",
+      "observation": "Owner viewing found short dialogue with dead-silence tails on several 20 s clips (SC02-SC06 batch); the fix is a 06a assembly trim, so occupancy is not yet measured from transcripts.",
+      "verdict": "inconclusive",
+      "evidence_clips": [
+        "SC02",
+        "SC03",
+        "SC04",
+        "SC05",
+        "SC06"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "app": "vidgen-dist",
+  "schema": 1,
+  "rendered_at": "2026-11-01T01:13:09",
+  "elapsed_seconds": 186.2,
+  "performance": {
+    "started_at": "2026-11-01T01:10:03",
+    "queued_at": "2026-11-01T01:10:05",
+    "execution_completed_at": "2026-11-01T01:12:39",
+    "saved_at": "2026-11-01T01:13:09",
+    "pre_queue_seconds": 1.6,
+    "queue_to_execution_complete_seconds": 154.2,
+    "post_execution_seconds": 30.5,
+    "end_to_end_seconds": 186.2,
+    "note": "queue_to_execution_complete includes ComfyUI queue wait and graph execution; it is not a GPU-only measurement."
+  },
+  "output": "s05_20261101011309.mp4",
+  "comfy": {
+    "url": "http://localhost:18188",
+    "prompt_id": "3fe94425-a425-40a1-a88d-38c17ee2b45e",
+    "returned_filename": "LTX-2.5_i2v_00003_.mp4"
+  },
+  "source_image": {
+    "path": "C:\\pycode\\vidgen-meta\\episodes\\inside-the-process\\EP001\\exports\\ltx-render-package\\stills\\SC05.png",
+    "uploaded_as": "SC05.png",
+    "size": [
+      2016,
+      1152
+    ]
+  },
+  "prompt": {
+    "text": "Continue from the still. the Explorer in an ivory industrial helmet with an opaque black full-face visor and cyan side-light rings, orange technical coveralls, chest instrument and grey boots rises with a stretching dough mass as millions of tiny bubbles inflate the foam city, warm golden light. Photoreal cinematic scientific visualization, warm polished home realism, ivory-and-orange equipment palette, cyan accent light. Low motion.\n\nAt the opening of the shot, Bubbles inflate in a slow swell. Ambient (slow, subtle): walls stretch and light moves across the foam.\n\nThen, The Explorer stays settled on the stretching mass, head raised, his opaque black full-face visor fully opaque, and says over helmet radio in a calm adult male English voice: \"The whole city is lifting, walls and all.\" His mouth returns to rest.\n\nThen, The Explorer holds still, head tilted, while Control answers in a calm adult English voice: \"Millions of tiny bubbles are inflating at once, and the net stretches instead of tearing. That shared stretch, bubble after bubble, is the rise you saw from your counter. Together, they lift everything.\" The Explorer stays in place, his opaque black visor fully opaque, mouth closed.\n\nFinally, The camera begins a slow tilt up with the rise. The camera ends on the stretched gluten net and inflated bubbles. Acoustic environment: slow stretching creaks; clear close dialogue front and center. The Explorer stays in frame, mouth closed.\n\nReference lock: continue directly from the supplied still/reference image; it is the authoritative first frame and starting composition. Preserve the exact character identities, character count, wardrobes, set layout, lighting, and every visible prop's physical size, shape, placement, and attachment. Animate only the character actions explicitly requested in the scene direction. Keep all unattended characters, props, and background elements stationary within the scene. Follow the camera movement explicitly requested in the scene direction; if none is requested, keep the camera locked to the reference framing. Directed camera motion may change framing, perspective, screen positions, apparent size, and visibility without physically moving or changing the scene's objects. Do not introduce, duplicate, physically remove, relocate, reshape, or float any character or prop.",
+    "words": 350,
+    "quoted_words": 41,
+    "effective_text": null,
+    "enhancer_status": "off"
+  },
+  "workflow": {
+    "path": "C:\\pycode\\app-vidgen-dist\\workflows\\LTX25_T2V_I2V_Two_Stage_Distilled.json",
+    "sha256_16": "57670467f85dbbc5"
+  },
+  "geometry": {
+    "known": true,
+    "governed_by": "16:9 (Widescreen), 0.98 MP",
+    "requested": [
+      1344,
+      768
+    ],
+    "source": [
+      1344,
+      768
+    ],
+    "base": [
+      672,
+      384
+    ],
+    "output": [
+      1344,
+      768
+    ],
+    "warnings": []
+  },
+  "guidance": {
+    "summary": "Effective guidance: pass 1 at CFG 1.20  →  pass 2 at CFG 1.00",
+    "messages": [
+      [
+        "ok",
+        "Negative prompt active on pass 1."
+      ]
+    ],
+    "negative_active": true,
+    "two_pass": true
+  },
+  "settings_ltx": {
+    "megapixels": 0.98,
+    "fps": 24,
+    "duration": 20,
+    "cfg": 1.2,
+    "cfg_refine": 1.0,
+    "cfg_audio": 1.0,
+    "sampler_base": "",
+    "sampler_refine": "",
+    "lora_strength": 0.5,
+    "steps": 8,
+    "img_compression": 22,
+    "use_two_pass": true,
+    "two_pass_base_scale": "half",
+    "refine_audio_pass2": true,
+    "text_to_video": false,
+    "prepared_image": false,
+    "resize_image": true,
+    "diffusion_model": "ltx-2.5-22b-distilled-transformer-bf16.safetensors",
+    "vae_video": "ltx-2.5-video-vae-bf16.safetensors",
+    "vae_audio": "ltx-2.5-audio-vae-bf16.safetensors",
+    "upscaler": "ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors",
+    "text_encoder": "gemma4-12b-with-proj-ltx-2.5-bf16.safetensors",
+    "enhancer_enabled": false,
+    "seed": 123456789,
+    "seed_refine": -1,
+    "sigmas_pass1": "1.0, 0.99375, 0.9875, 0.98125, 0.975, 0.909375, 0.725, 0.421875, 0.0",
+    "sigmas_refine": "0.85, 0.7250, 0.4219, 0.0",
+    "neg_base": "duplicate character, cloned character, extra character beyond those described, merged faces, identity drift, deformed hands, deformed paws, extra limbs, duplicate prop, floating object, on-screen text, subtitles, captions, watermark, logo, motion blur smear, warped geometry, flickering artifacts, cel-shaded cartoon, flat vector art, children's-book illustration, glossy 3D toy render, technical diagram, infographic styling, arrows, callout labels, leader lines, toy packaging, baby-voice childlike styling, visible brand logo, real company signage, franchise character resemblance, gore, medical horror, human face visible through visor, transparent visor, face inside helmet, molten stream rejoining the cut gob, bending or drooping machine blades, shoulder patch, arm badge, chest emblem, insignia, flag, mission patch, ribbed helmet band, helmet stripes, visible face behind the visor, hologram, wireframe body, medical infographic, neon outline diagram, labelled anatomy diagram, second Explorer, second Person",
+    "comfy_poll_retries": 600,
+    "cfg_video": 1.0,
+    "width": 1280,
+    "height": 704,
+    "aspect_ratio": "16:9 (Widescreen)"
+  },
+  "queued": {
+    "seeds": {
+      "pass1": 123456789,
+      "pass2": 123456790
+    },
+    "cfg": {
+      "pass1": 1.2,
+      "pass2": 1.0
+    },
+    "sigmas": {
+      "pass1": "1.0, 0.99375, 0.9875, 0.98125, 0.975, 0.909375, 0.725, 0.421875, 0.0",
+      "pass2": "0.85, 0.7250, 0.4219, 0.0"
+    },
+    "img_compression": 22,
+    "negative": "duplicate character, cloned character, extra character beyond those described, merged faces, identity drift, deformed hands, deformed paws, extra limbs, duplicate prop, floating object, on-screen text, subtitles, captions, watermark, logo, motion blur smear, warped geometry, flickering artifacts, cel-shaded cartoon, flat vector art, children's-book illustration, glossy 3D toy render, technical diagram, infographic styling, arrows, callout labels, leader lines, toy packaging, baby-voice childlike styling, visible brand logo, real company signage, franchise character resemblance, gore, medical horror, human face visible through visor, transparent visor, face inside helmet, molten stream rejoining the cut gob, bending or drooping machine blades, shoulder patch, arm badge, chest emblem, insignia, flag, mission patch, ribbed helmet band, helmet stripes, visible face behind the visor, hologram, wireframe body, medical infographic, neon outline diagram, labelled anatomy diagram, second Explorer, second Person",
+    "latent_frames": 481,
+    "audio_frames": 481,
+    "use_two_pass": null,
+    "text_to_video": false,
+    "two_pass_base_scale": null,
+    "audio_through_refine_pass": true,
+    "models": {
+      "diffusion": "ltx-2.5-22b-distilled-transformer-bf16.safetensors",
+      "vae": [
+        "ltx-2.5-audio-vae-bf16.safetensors",
+        "ltx-2.5-video-vae-bf16.safetensors"
+      ],
+      "text_encoder": [
+        "gemma4-12b-with-proj-ltx-2.5-bf16.safetensors"
+      ],
+      "upscaler": [
+        "ltx-2.5-latent-spatial-upscaler-x2-bf16-1.0.safetensors"
+      ]
+    },
+    "prose": {
+      "fps": 24,
+      "duration_seconds": 20.0,
+      "enhancer_enabled": null
+    }
+  },
+  "rules_guard": {
+    "ok": false,
+    "status": "drift",
+    "detail": "UNAPPROVED CHANGE to protected files: 2 added"
+  }
+}

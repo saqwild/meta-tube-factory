@@ -1,4 +1,7 @@
 {
+  "schema_version": 1,
+  "episode_id": "EP001",
+  "channel_slug": "inside-the-process",
   "clips": {
     "SC01": {
       "chars": {
@@ -41,7 +44,7 @@
     "SC02": {
       "chars": {
         "EXPLORER": {
-          "pos": "center-left",
+          "pos": "left",
           "facing": "camera three-quarter",
           "gaze": "at the wet mass around him",
           "pose": "standing inside the mixing dough, capsule behind",
@@ -69,7 +72,7 @@
       ],
       "end_state": {
         "EXPLORER": {
-          "pos": "center-left",
+          "pos": "left",
           "pose": "standing inside the dough",
           "hands": "empty"
         }
@@ -111,7 +114,7 @@
     "SC04": {
       "chars": {
         "EXPLORER": {
-          "pos": "center-right",
+          "pos": "right",
           "facing": "camera three-quarter",
           "gaze": "at the first bubbles",
           "pose": "standing in the foam city as bubbles form",
@@ -133,7 +136,7 @@
       ],
       "end_state": {
         "EXPLORER": {
-          "pos": "center-right",
+          "pos": "right",
           "pose": "standing in the foam city",
           "hands": "empty"
         }
@@ -175,7 +178,7 @@
     "SC06": {
       "chars": {
         "EXPLORER": {
-          "pos": "center-left",
+          "pos": "left",
           "facing": "camera three-quarter",
           "gaze": "at the redistributed bubbles",
           "pose": "braced as the mass is shaped",
@@ -197,7 +200,7 @@
       ],
       "end_state": {
         "EXPLORER": {
-          "pos": "center-left",
+          "pos": "left",
           "pose": "inside the shaped loaf",
           "hands": "empty"
         }
@@ -271,7 +274,7 @@
     "SC09": {
       "chars": {
         "EXPLORER": {
-          "pos": "center-right",
+          "pos": "right",
           "facing": "camera",
           "gaze": "at the firming walls",
           "pose": "standing in the setting crumb",
@@ -293,7 +296,7 @@
       ],
       "end_state": {
         "EXPLORER": {
-          "pos": "center-right",
+          "pos": "right",
           "pose": "standing in the set crumb",
           "hands": "empty"
         }
@@ -335,7 +338,7 @@
     "SC11": {
       "chars": {
         "EXPLORER": {
-          "pos": "center-left",
+          "pos": "left",
           "facing": "camera",
           "gaze": "at the cooling crumb",
           "pose": "inside the cooling loaf as steam drifts",
@@ -357,7 +360,7 @@
       ],
       "end_state": {
         "EXPLORER": {
-          "pos": "center-left",
+          "pos": "left",
           "pose": "inside the cooled loaf",
           "hands": "empty"
         }

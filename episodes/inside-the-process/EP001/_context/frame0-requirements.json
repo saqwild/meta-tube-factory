@@ -1,4 +1,7 @@
 {
+  "schema_version": 1,
+  "episode_id": "EP001",
+  "channel_slug": "inside-the-process",
   "clips": [
     {
       "clip": "SC01",

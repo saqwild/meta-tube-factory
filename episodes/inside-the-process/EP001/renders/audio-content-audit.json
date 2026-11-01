@@ -1,0 +1,144 @@
+{
+  "schema_version": 2,
+  "episode_id": "EP001",
+  "reviewed_at_utc": "2026-11-01T03:49:55Z",
+  "transcribe_model": "muse-voice-transcribe-1.0",
+  "similarity_threshold": 0.6,
+  "source_manifest_sha256": "74467993d15ef503de4a5ba76f905deeb1ec75bc60a6cd49c212551e5ad3311c",
+  "source_prompts_sha256": "b09573a2979a92c72c9c516f41390129206ac494c49e4b35e0792a867ecd11d0",
+  "status": "PASS",
+  "clips": [
+    {
+      "clip": "SC01",
+      "status": "PASS",
+      "score": 0.9876543209876543,
+      "expected": "You left a heavy ball of dough, and came back to find it doubled. The flour began as wheat in a field long before it reached this bowl. Today we travel inside it, with a fictional guide, at magnified scale.",
+      "transcribed": "You left a heavy ball of dough and came came back to find it doubled. The flour began as wheat in a field long before it reached this bowl. Today we travel inside it with a fictional guide at magnified scale.",
+      "reasons": [],
+      "negations_expected": {},
+      "negations_heard": {}
+    },
+    {
+      "clip": "SC02",
+      "status": "PASS",
+      "score": 0.963855421686747,
+      "expected": "Control, what exactly are we standing in here? Flour from milled grain, water, living yeast from its dry packet, and mined salt. Water wakes the dormant yeast, flour feeds it, and salt slows it slightly while tightening the net to come.",
+      "transcribed": "Control, what exactly are we standing in here? Flower from from milled grain, water, living yeast from its dry packet, and mined salt. Water wakes the dormant yeast, flour feeds it, and salt slows it slightly while tightening the net to come.",
+      "reasons": [],
+      "negations_expected": {},
+      "negations_heard": {}
+    },
+    {
+      "clip": "SC03",
+      "status": "PASS",
+      "score": 0.9195402298850575,
+      "expected": "It feels like a net being woven around us. It is. Kneading pulls the flour proteins into long elastic strands. This net is the scaffolding of your loaf. Without it, every bubble we meet would simply escape. Watch it hold its shape.",
+      "transcribed": "It feels like a net being woven around us. It is. Needing pulls the flower proteins into long elastic strands. This This net is the scaffolding of your loaf. Without it every bubble we bubble we meet would simply escape. Watch it hold its shape.",
+      "reasons": [],
+      "negations_expected": {
+        "without": 1
+      },
+      "negations_heard": {
+        "without": 1
+      }
+    },
+    {
+      "clip": "SC04",
+      "status": "PASS",
+      "score": 0.9876543209876543,
+      "expected": "Something is breathing down here, Control. Yeast. It feeds on sugars in the flour and breathes out carbon dioxide. Each breath becomes a bubble, and your net from the last step is what catches them all. That is our engine.",
+      "transcribed": "Something is breathing down here, Control. Yeast. It feeds on sugars in the flour and breathes out carbon dioxide, each breath becomes a bubble and your net from the last step is what catches catches them all. That is our engine.",
+      "reasons": [],
+      "negations_expected": {},
+      "negations_heard": {}
+    },
+    {
+      "clip": "SC05",
+      "status": "PASS",
+      "score": 1.0,
+      "expected": "The whole city is lifting, walls and all. Millions of tiny bubbles are inflating at once, and the net stretches instead of tearing. That shared stretch, bubble after bubble, is the rise you saw from your counter. Together, they lift everything.",
+      "transcribed": "The whole city is lifting, walls and all. Millions of tiny bubbles are inflating at once, and the net stretches instead of tearing. That shared stretch bubble after bubble is the rise you saw from your counter. Together they lift everything,",
+      "reasons": [],
+      "negations_expected": {},
+      "negations_heard": {}
+    },
+    {
+      "clip": "SC06",
+      "status": "PASS",
+      "score": 0.9879518072289156,
+      "expected": "You are squashing the city flat again. Only its biggest, weakest bubbles. Shaping evens the foam and tensions the surface, so the second rise builds a loaf shape instead of a spreading puddle on your tray. The shape now holds promise.",
+      "transcribed": "You are squashing the city flat again. Only its its biggest weakest bubbles shaping evens the foam and tensions the surface, so the second rise builds a loaf shape instead of a spreading puddle on your tray. The shape now holds promise.",
+      "reasons": [],
+      "negations_expected": {},
+      "negations_heard": {}
+    },
+    {
+      "clip": "SC07",
+      "status": "PASS",
+      "score": 0.9487179487179487,
+      "expected": "The workers are at it again, slower now. Warmth sets their pace; a cool corner would slow them further. Given time, the shaped loaf fills with gas again. This patience is where much of the flavour quietly builds.",
+      "transcribed": "The workers are at it again, slower now. Warmth sets their pace, a cool corner would corner would slow them further. Given time, the shaped loaf fills with gas again. This patience is where much of the flavor quietly builds.",
+      "reasons": [],
+      "negations_expected": {},
+      "negations_heard": {}
+    },
+    {
+      "clip": "SC08",
+      "status": "PASS",
+      "score": 0.9879518072289156,
+      "expected": "It is growing faster than ever in here. Oven spring. Heat expands every trapped bubble at once, and the yeast works furiously for a few last minutes. Watch the walls: they are about to stop stretching forever. Hold on with me.",
+      "transcribed": "It is growing faster than ever in here. Oven spring. Heat expands every trapped bubble at once and the yeast works furiously for a few last minutes. Watch the walls they are about to to stop stretching forever. Hold on with me.",
+      "reasons": [],
+      "negations_expected": {},
+      "negations_heard": {}
+    },
+    {
+      "clip": "SC09",
+      "status": "PASS",
+      "score": 0.9534883720930233,
+      "expected": "The city has stopped moving. It feels solid. It is setting. The starch has swelled and locked the foam in place, while the crust browns and crispens above us. From here on, this is bread, not dough. The colour is the receipt.",
+      "transcribed": "The city has stopped moving. It It feels solid. It is setting. The starch has swelled and locked the foam in place while while the crust browns and crispens above us. From here on, this is bread, not dough. The color is the receipt.",
+      "reasons": [],
+      "negations_expected": {
+        "NOT": 1
+      },
+      "negations_heard": {
+        "NOT": 1
+      }
+    },
+    {
+      "clip": "SC10",
+      "status": "PASS",
+      "score": 0.9743589743589743,
+      "expected": "Then nothing down here survived the oven? Nothing did, and that is fine. The heat killed the yeast as the loaf baked; its gas and structure are its gift to you. The crumb around us is the finished city.",
+      "transcribed": "The nothing down here survived the oven? Nothing did, and that is fine. The heat killed the yeast as the loaf baked, its gas and structure are its gift to you. The crumb around us is the finished city.",
+      "reasons": [],
+      "negations_expected": {
+        "nothing": 2
+      },
+      "negations_heard": {
+        "nothing": 2
+      }
+    },
+    {
+      "clip": "SC11",
+      "status": "PASS",
+      "score": 0.975,
+      "expected": "It smells finished. How can you be sure? Colour, a hollow sound, and a set crumb tell your baker it is done. Cooling finishes the work; slice too early and the soft middle turns gummy. Patience is an ingredient here.",
+      "transcribed": "It smells finished. How can you be sure? Color, a hollow sound, and a set crumb tell your baker it is done. Cooling finishes the work slice too early and the soft middle turns gummy patience is an ingredient here.",
+      "reasons": [],
+      "negations_expected": {},
+      "negations_heard": {}
+    },
+    {
+      "clip": "SC12",
+      "status": "PASS",
+      "score": 1.0,
+      "expected": "Every bubble in that slice is a breath the yeast left behind: the soft crumb holds them, the firm crust protects them. Wrapped tonight, it firms slowly as it rests. Tell us below: what should we travel inside next?",
+      "transcribed": "Every bubble in that slice is a breath the yeast left behind the soft crumb holds them the firm crust protects them wrapped tonight it firms slowly as it rests tell us below what should we travel inside next",
+      "reasons": [],
+      "negations_expected": {},
+      "negations_heard": {}
+    }
+  ]
+}

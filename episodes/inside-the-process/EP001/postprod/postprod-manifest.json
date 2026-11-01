@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "episode_id": "EP001",
+  "channel_slug": "inside-the-process",
+  "method": "ffmpeg local assembly (owner decision 2026-10-29; askyt_editor not used for cutting)",
+  "script": "_scripts/2026-10-29-assemble-master.py",
+  "master": {
+    "path": "exports/final/EP001_HowBreadRisesInsideTheDough_Full.mp4",
+    "sha256": "0ef156144e0c96c70e795f69309156f20daa9d7dc5e8fb636ac8069db839e4cd",
+    "duration_seconds": 236.5,
+    "resolution": "1344x768",
+    "fps": 24
+  },
+  "timeline": [
+    {"label": "INTRO", "start": 0.0, "duration": 3.0},
+    {"label": "SC01", "start": 3.0, "duration": 20.04},
+    {"label": "SC02", "start": 23.04, "duration": 17.04, "trim": "last 3 s (owner)"},
+    {"label": "SC03", "start": 40.08, "duration": 17.04, "trim": "last 3 s (owner)"},
+    {"label": "SC04", "start": 57.12, "duration": 20.04},
+    {"label": "SC05", "start": 77.16, "duration": 20.04},
+    {"label": "SC06", "start": 97.2, "duration": 20.04},
+    {"label": "SC07", "start": 117.24, "duration": 20.04},
+    {"label": "SC08", "start": 137.28, "duration": 20.04},
+    {"label": "SC09", "start": 157.32, "duration": 17.04, "trim": "last 3 s (owner)"},
+    {"label": "SC10", "start": 174.36, "duration": 17.04, "trim": "last 3 s (owner)"},
+    {"label": "SC11", "start": 191.4, "duration": 20.04},
+    {"label": "SC12", "start": 211.44, "duration": 20.04},
+    {"label": "OUTRO", "start": 231.48, "duration": 5.0}
+  ],
+  "qa": {
+    "frame_sweep": "PASS - intro, SC01 and outro frames viewed from the master (qa/frames-master/)",
+    "dialogue": "PASS - clip audio already verified against locked lines at 05a (Muse Voice Transcribe, 12/12); assembly adds no speech",
+    "slides": "PASS - intro/outro text verbatim from assembly/assembly-notes.md (outro SAM line corrected to the audit actually run)",
+    "package_times": "Chapters and Problems re-measured from this master and updated in metadata/package.md; metadata validator PASS after update"
+  },
+  "owner_gate": "06a completes only when the owner watches the master and approves"
+}

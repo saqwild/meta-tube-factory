@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "episode_id": "EP001",
+  "channel_slug": "inside-the-process",
+  "method": "ffmpeg",
+  "method_note": "Owner decision 2026-10-29: cuts are made locally with ffmpeg from the owner's exact clip/time list; askyt_editor is not used for cutting this episode, so this file records the ffmpeg assembly config instead of an askyt_editor config.",
+  "script": "_scripts/2026-10-29-assemble-master.py",
+  "captions_script": "_scripts/2026-10-29-build-captions.py",
+  "transcribe_script": "_scripts/2026-10-29-transcribe-master.py",
+  "input_dir": "renders/ltx-inbox",
+  "output_dir": "exports/final",
+  "resolution": "1344x768",
+  "fps": 24,
+  "slides": {
+    "intro_seconds": 3.0,
+    "outro_seconds": 5.0,
+    "spec": "assembly/assembly-notes.md"
+  },
+  "cuts": {
+    "SC02": {"keep": "0.00-17.04"},
+    "SC03": {"keep": "0.00-17.04"},
+    "SC09": {"keep": "0.00-17.04"},
+    "SC10": {"keep": "0.00-17.04"},
+    "others": "full clip"
+  },
+  "outputs": {
+    "clean_master": "exports/final/EP001_HowBreadRisesInsideTheDough_Full.mp4",
+    "captioned_master": "exports/final/EP001_HowBreadRisesInsideTheDough_Captioned.mp4",
+    "caption_track": "exports/final/EP001_HowBreadRisesInsideTheDough_Full.srt"
+  }
+}
