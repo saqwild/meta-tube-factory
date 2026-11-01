@@ -175,16 +175,84 @@ that changed after it was hashed.
 
 ## Run it
 
-```bash
-pip install -r requirements.txt
-python tools/meta_models.py config   # key present? models wired?
-python tools/meta_models.py smoke    # one live Muse Spark call
-python tools/preflight.py            # resume or start an episode
-python -m unittest discover -s tests
+You do not drive the `.py` tools stage by stage. You run **Muse
+Code** inside this repo and talk to it in plain language; the agent
+reads the operating rules, does one pipeline stage at a time, and
+stops at every owner gate for your approval. The commands below are
+all the setup there is.
+
+### 1. Install Muse Code
+
+Windows (PowerShell):
+
+```powershell
+irm https://dev.meta.ai/install.ps1 | iex
 ```
 
-Set `MODEL_API_KEY` in your environment or a local `.env` (never commit
-it; see `.env.example`).
+macOS / Linux:
+
+```bash
+curl -fsSL https://dev.meta.ai/install.sh | bash
+```
+
+### 2. Get the repo and open it
+
+```bash
+git clone https://github.com/saqwild/meta-tube-factory.git
+cd meta-tube-factory
+pip install -r requirements.txt
+```
+
+Set `MODEL_API_KEY` in your environment or in a local `.env` file
+(never commit it; see `.env.example`). Then start Muse Code in
+this folder.
+
+### 3. Start with a natural prompt
+
+Examples of how an episode actually starts and continues:
+
+> Review the repo, check if anything is pending, then start a new
+> episode for inside-the-process.
+
+> The new episode is "How Bread Rises: Inside the Dough". Run the
+> next stage, then stop and show me what you produced.
+
+> Approve 04g.
+
+The agent resumes from `episode-state.json`, works the single active
+stage, and waits at owner gates (script review, render package,
+pilot QA, metadata, assembled cut) until you approve in plain words,
+exactly as EP001 above was produced. Rendering itself happens in the
+external LTX app from the package the pipeline hands you; the agent
+tells you when, and what to bring back.
+
+### Adding a new channel
+
+A channel is data, not code — one folder under `channel_profiles/`.
+
+1. Copy the sample channel folder to your new channel's slug:
+   `channel_profiles/inside-the-process` →
+   `channel_profiles/<your-slug>`.
+2. Ask the model to adapt it, for example:
+
+> Review the sample channel files I copied into
+> `channel_profiles/<your-slug>` and update each file for my niche:
+> [describe your niche, audience, and format]. Keep the same schema
+> and stage sequence; change identity, cast, compliance, and format
+> numbers only where my niche requires, and draft the channel bible
+> to match instead of keeping the sample channel's.
+
+3. Start an episode on the new channel with the same natural prompt
+   as above, naming your channel.
+
+### Under the hood (optional checks)
+
+```bash
+python tools/meta_models.py config   # key present? models wired?
+python tools/meta_models.py smoke    # one live Muse Spark call
+python tools/preflight.py resume inside-the-process EP001
+python -m unittest discover -s tests
+```
 
 ## Repo map
 
